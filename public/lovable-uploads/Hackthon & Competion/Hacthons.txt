@@ -1,0 +1,60 @@
+Hackathons & Competitions :
+1) SIH :
+Decription :
+We are thrilled to share our journey as Finalists at the Smart India Hackathon 2024! 🎉 Team Sashwat is incredibly grateful for this opportunity to innovate, collaborate, and push the boundaries of technology for good. A special thank you to IIT Tirupati for hosting such a well-organized and impactful finale, and for providing constant support throughout the event.
+
+We would also like to extend our heartfelt thanks to our Academic Mentor, Amar Sir, and our Industrial Mentor, Neeraj Kumar, for their invaluable guidance and unwavering support. Their expertise and encouragement played a crucial role in our journey.
+
+This experience has been nothing short of transformative. We are excited to continue our exploration, learning, and creation in the tech space, with a focus on driving meaningful impact. Here’s to more opportunities to innovate and contribute to the future!
+Linkdeing post :
+https://www.linkedin.com/posts/guru-dahiphale-02862225b_sih2024-teamsashwat-sihfinalist-activity-7273925986352578561-ITmJ?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEaYcbYBsHLwdPpM8toTg-RmrKEyXErPMIU
+2) IBM 
+Description :
+Proud Moment for MITAOE!
+Team Shaswat has secured 4th place at the IBM SkillsBuild Maharashtra State-Level Hackathon 2025!
+
+Meet the Team:
+Viraj Mandlik
+Hanumant Kakde
+Dr. Sunita Barve (Faculty Mentor)
+
+Their innovative project, Sentify—a Sentiment Analysis Web App for Mental Health—aims to bridge the gap between AI and mental wellness.
+
+Why Sentify?
+Mental health challenges often go unnoticed due to traditional inefficiencies. Team Shaswat tackled this by leveraging IBM watsonx.ai, Machine Learning, and Natural Language Processing to enable real-time sentiment analysis for early detection and support
+
+Tech Stack:
+IBM watsonx.ai | Watsonx Assistant | Natural Language Understanding
+Speech-to-Text | IBM DB2 | IBM Cloud Object Storage
+
+Special thanks to Aditya Dambale (Edunet Foundation), Jayesh Raut, Dr. Anuradha Pawar, Dr.Shitalkumar A Jain , and Khushboo Kumari for this amazing opportunity! 
+
+Check out their live project here: https://lnkd.in/ducWFpMe 
+
+A heartfelt thanks to IBM & Edunet Foundation for organizing this transformative event!
+Linkedin link :
+https://www.linkedin.com/posts/mit-academy-of-engineering_ibmhackathon-aiforgood-mentalhealthtech-activity-7292487484871991296-wZd_?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEaYcbYBsHLwdPpM8toTg-RmrKEyXErPMIU
+
+3)E-Cell
+Thrilled to share that our team Sashwat won First Prize in the Ideathon at MIT E-SUMMIT 2024! 🏆 It was an incredible experience competing alongside talented innovators, pushing the boundaries of creativity and impact. Grateful for this opportunity and excited for what lies ahead! 
+post link
+https://www.linkedin.com/posts/guru-dahiphale-02862225b_mitesummit2024-innovation-ideathon-ugcPost-7260965386878156801-HQOx?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEaYcbYBsHLwdPpM8toTg-RmrKEyXErPMIU
+
+4)Cavista :
+The Cavista Technologies India Hackathon 2025 was a remarkable triumph, showcasing incredible talent and innovation. As the event drew to a close, it was time to celebrate the outstanding achievements of the winners. 
+I was the first runner up and team leader of team shashwat
+Claiming the First Prize was Team Veda Verse from Vishwakarma Institute of Technology (VIT), who impressed the judges with their groundbreaking concept. Team Shashwat from the MIT Academy of Engineering, Alandi, followed closely in second place. Their creative solutions garnered significant attention. 
+
+The Third Prize was awarded to Team TLE from the Pimpri Chinchwad College of Engineering (PCCOE), recognizing their impressive project that showcased technical prowess. 
+
+A Special Recognition award was granted to Team Dynamic Dialers from PCCOE for their exceptional work and innovative approach.  The event was a vibrant celebration of creativity, as participants presented a wealth of inspiring ideas and solutions, making the competition an unforgettable experience for everyone involved.
+Post link
+https://www.linkedin.com/posts/cavista_cavistatechnologieshackathon2025-cavistatechnologiesindia-activity-7299699112914874368-0vP8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEaYcbYBsHLwdPpM8toTg-RmrKEyXErPMIU
+
+5) Avinya
+🚀 Honored to receive the Best Paper Award at AVINYA 2025! 🏆🎉
+I am thrilled to share that our research paper, "AI-Driven Emotion and Sentiment Analysis for Early Mental Health Detection," was recognized with the Best Paper Award at AVINYA 2025 - Undergraduate Students' Conference, held at MIT Academy of Engineering, Pune.
+Mental health issues are often detected late due to the limitations of traditional clinical methods. Our research leverages advanced AI models, including BERT-Large, to analyze both text and voice data in real time, offering deeper emotional insights. This scalable and AI-driven system bridges the gap between conventional assessments and AI-powered mental health evaluation, enabling early intervention and improved patient outcomes.
+This achievement would not have been possible without the collaboration and support of my co-authors:
+post link
+https://www.linkedin.com/posts/viraj-mandlik-21a79a290_ai-mentalhealth-sentimentanalysis-activity-7301601151601278976-IBig?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEaYcbYBsHLwdPpM8toTg-RmrKEyXErPMIU

@@ -1,0 +1,209 @@
+Project 1:
+Name : Aarogya
+Description :Aarogya: Revolutionizing Home Healthcare with AI and Machine Learning
+Viraj Mandlik, #OPEN_TO_WORK
+Viraj Mandlik
+SIH 2024 Grand Finalist | Cavista Technologies Hackathon 2025 First Runner Up | IBM Hackathon 2025 - 4th Place Winner | E-Cell Ideathon Winner 2024 | Java and Mern Full-Stack Developer | Competitive Programming (Java)
+
+
+February 26, 2025
+Challenges in Healthcare Decision-Making:
+
+Lack of real-time medical knowledge updates
+Inconsistent diagnoses across different medical practices (Allopathy vs. Ayurveda)
+Limited multimodal AI support (Text, Images, Voice not fully integrated)
+Delayed critical alerts in patient monitoring
+
+To solve delayed diagnoses and outdated knowledge, there is a need to integrate AI-driven multimodal analysis, real-time research updates, and Ayurveda-Allopathy treatment insights.
+
+What Our Solution Brings:
+
+🔍 Multimodal Image Analysis: AI that understands medical scans, images, and text together.
+ 📈 Web-Scraped Real-Time Updates: Always up-to-date AI-driven recommendations 🌿 Ayurveda + Allopathy Knowledge Base: Hybrid treatment suggestions 
+🩺 AI-Powered Symptoms Analyzer: User-friendly patient interaction
+
+Our solution predicts health issues, personalizes care plans, and enhances remote monitoring, making home healthcare more proactive and patient-centered. 🎉
+
+
+
+Impact & Benefits:
+
+For Patients: Faster, more reliable AI-driven diagnosis & hybrid treatment options
+For Doctors: AI-assisted decision-making with updated real-time knowledge
+For Healthcare Systems: Reduced misdiagnosis rates, improved patient management
+
+Future Scope:
+
+Federated Learning for Privacy-Preserving AI in Healthcare
+Blockchain Integration for Secure Medical Record Storage
+Ayurveda + Allopathy AI Expansion into Multiple Diseases
+Integration with Smart Wearables for Continuous Health Monitoring
+
+Conclusion:
+
+Aarogya = AI + Reliable Data + Multimodal Decision Support
+
+Why Our Solution is Unique:
+
+AI-Powered Image & Symptoms Analysis
+Web-Scraped, Up-to-Date Medical Knowledge
+Hybrid Ayurveda & Allopathy Treatment Suggestions
+Real-Time Critical Alerts & Advanced Treatment Recognition
+
+A heartfelt thanks to Cavista Technologies for organizing this hackathon and giving us this fantastic opportunity. Special shoutout to Neha Hajare Raut Ma'am and MIT Academy of Engineering, Alandi, Pune for their support and mentorship.
+
+A huge round of applause to my amazing team members:
+
+Kartikey Sapkal 
+Yash Gunjal 
+VISHAL KESHARWANI 
+Dhanwantari Chavan 
+vidya Bingi 
+Parth Kulkarni 
+
+Stay tuned for more updates and photos of our project!
+
+#AI #MachineLearning #Healthcare #Innovation #Hackathon
+Technologies :Take it afrom above description only
+Git hub Link :https://github.com/virajmandlik/Temp
+
+Project 2
+Name :AutoCadChatbot
+Descrition :
+Floor Plan Generator
+A simple web application that allows users to create floor plans by entering room dimensions. The app takes in the dimensions of rooms and generates a floor plan in the DXF format (a file format used for CAD drawings), which can then be downloaded for use in design applications.
+
+Features
+Users can enter room dimensions (width and height).
+Automatically generates a floor plan based on the provided room dimensions.
+Downloads the generated floor plan as a DXF file (AutoCAD file format).
+Built with Python, Flask, and the ezdxf library for generating the floor plan in the DXF format.
+Tech Stack
+Backend: Python, Flask
+Frontend: HTML, JavaScript (for interaction with the bot)
+File Format: DXF (AutoCAD Drawing Exchange Format)
+Libraries:
+Flask for the web framework
+ezdxf for creating the DXF file
+requests for handling API requests
+Requirements
+Before running this project locally, you need to install the required dependencies. This project uses a requirements.txt file to specify the necessary Python packages.
+
+Dependencies
+Python 3.x
+Flask
+ezdxf
+requests
+Installation
+github link:
+https://github.com/virajmandlik/AUTOCAD_CHATBOT
+
+Project 3
+Name :
+CalciMitra
+Description
+Smart Calcualtor created by java swing, mysql,apache netbeans
+github link
+https://github.com/virajmandlik/CalciMitra-JavaSwing
+project 4
+Name :
+Sentify
+Descrtion :
+Sentiment Analysis for Mental Health Detection
+Overview
+Sentiment Analysis, powered by Machine Learning, offers a transformative approach to the early detection of mental health disorders. By analyzing textual data such as social media posts and patient statements, this project aims to identify mental health conditions like anxiety and depression at an early stage.
+
+Traditional diagnostic methods are often resource-intensive and leave many individuals untreated. Machine learning models provide an efficient and timely way to recognize these conditions, leading to early intervention and personalized treatment strategies. This approach complements existing mental health diagnostic practices and improves overall outcomes by offering deeper insights into mental well-being.
+
+Features
+Textual Data Analysis: The project analyzes text from various sources, such as social media posts and patient statements, to assess sentiment.
+Machine Learning Models: Leveraging powerful machine learning algorithms, it identifies early signs of mental health disorders like anxiety and depression.
+Early Detection: Provides an efficient method for early detection, helping with timely interventions and personalized care.
+Complementary to Traditional Methods: This model enhances traditional diagnostic techniques by offering an additional layer of analysis and understanding.
+github link
+https://github.com/virajmandlik/IBM-Sentiment-Analysis
+
+Project 5
+Name 
+ClubRankers
+Descrition
+ClubRankers - Empowering College Clubs and Students
+
+Creating a platform for college clubs and students to connect and showcase activities.
+
+Facilitating club enrollment, event postings, recruitment, and achievements.
+
+Utilizing Flask framework with MySQL for robust data management and visualization.
+Developed a web application to address these challenges.
+
+Implemented features for club registration, event management, and data-driven insights through visualizations.
+
+Improved visibility and engagement for clubs and students alike.
+Github
+https://github.com/virajmandlik
+Project 6
+ReportEase
+Educational institutions generate vast amounts of diverse and fragmented data annually, making the preparation of comprehensive reports a complex and time-intensive task. This project introduces an automated Smart Reporting Portal designed to streamline data integration, analysis, and visualization. Leveraging cutting-edge technologies like AWS, Node.js, and React.js, the portal addresses inefficiencies in manual reporting by enabling secure data collection, real-time collaboration, and customizable visualizations. Key features include user authentication, automated report generation, and adherence to data privacy standards like GDPR. This innovative platform enhances reporting accuracy, facilitates insightful decision-making, and empowers educational institutions to focus on strategic growth.
+
+The Smart Reporting Portal streamlines data management and reporting in educational institutions through the following workflow:
+User Interaction: Clients select their role (e.g., admin, teacher) via a user-friendly interface.
+Server Operations: Data is added, validated, and analyzed through the backend server.
+Data Storage: Structured data is stored in a database, while larger datasets and reports are securely managed in Amazon S3.
+Report Generation: The system generates customized, insightful reports tailored to user needs.
+Feedback Loop: The server ensures synchronization between the database and S3 for updated data.
+This efficient solution simplifies reporting, ensures secure data handling, and supports data-driven decisions.
+The Smart Reporting Portal streamlines data management and reporting in educational institutions through the following workflow:
+User Interaction: Clients select their role (e.g., admin, teacher) via a user-friendly interface.
+Server Operations: Data is added, validated, and analyzed through the backend server.
+Data Storage: Structured data is stored in a database, while larger datasets and reports are securely managed in Amazon S3.
+Report Generation: The system generates customized, insightful reports tailored to user needs.
+Feedback Loop: The server ensures synchronization between the database and S3 for updated data.
+This efficient solution simplifies reporting, ensures secure data handling, and supports data-driven decisions.
+
+
+
+Github Link
+https://github.com/SashwatOrg/v_07
+
+Project 07
+CalciMitra
+Smart Calcualtor created by java swing, mysql,apache netbeans
+able to -> perfomr the chain calculations, store them in the encrypted format, send them encrytpyted key via email to other person.
+github link
+https://github.com/virajmandlik/CalciMitra-JavaSwing/
+
+Project 08
+Surakshit.
+**Surakshit** is a secure, locally hosted file-sharing system built using Node.js and JavaScript. It transforms your laptop into a private server, allowing users to connect via IP address and log in using their credentials. Once authenticated, users can securely access and manage their designated folders on the server. Designed for privacy and efficiency, Surakshit ensures seamless and protected file sharing within a trusted network.
+git hub link
+https://github.com/virajmandlik/Surakshit
+Project 09
+Name :
+PassowrdManagerVault
+Description
+About
+A react , nodejs, Mysql based simple password manager
+github link
+https://github.com/virajmandlik/Password_manager
+
+Project 10
+Name :
+EmployeeManagemenSystem
+Description
+**Employee Management System** is a Java Swing-based application built with MySQL and JDBC for efficient employee record management. It allows administrators to add, update, and remove employee details with a user-friendly interface. The system ensures smooth data storage, retrieval, and organization using MySQL, while JDBC enables seamless database connectivity. With a secure login system, it provides role-based access to maintain data integrity and confidentiality.
+Project 11:
+Name :
+FrieghtTransportationSystem
+Descritpion
+Background:
+The freight transportation industry faces challenges like a lack of transparency, inefficiencies, security risks, and shipment disputes. Blockchain offers transparency, automation, and security.
+
+Motivation:
+To overcome inefficiencies and risks in traditional freight transport.
+
+Project Idea:
+A blockchain-based system for secure tracking, automation with smart contracts, and real-time monitoring.
+Prevent shipment tampering.
+Automate workflows using smart contracts.
+Enable real-time monitoring.
+Enhance security and efficiency.

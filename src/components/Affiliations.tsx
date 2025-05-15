@@ -40,7 +40,7 @@ const Affiliations: React.FC = () => {
     <section id="affiliations" className="section-padding bg-gradient-to-b from-background/95 to-background/90">
       <div className="section-container">
         <SectionHeading 
-          title="Affiliations & Coding" 
+          title="Affiliations" 
           subtitle="Additional Activities" 
         />
         

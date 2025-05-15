@@ -152,3 +152,236 @@
 .tech-icon {
   filter: drop-shadow(0 0 8px rgba(100, 149, 237, 0.5));
 }
+/* Add to your CSS */
+.skill-hexagon {
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: all 0.3s ease;
+}
+
+.hexagon-inner {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.skill-hexagon:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.skill-hexagon:hover .hexagon-inner {
+  background: rgba(var(--color-accent-rgb), 0.2);
+}
+
+@media (max-width: 640px) {
+  .skill-hexagon {
+    width: 100px;
+    height: 100px;
+  }
+}
+/* Skills Section Specific CSS */
+
+/* Fancy domain box styling */
+.fancy-domain-box {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.fancy-domain-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Gradient text colors */
+.text-gradient-to-indigo-600 {
+  background: linear-gradient(to right, #818cf8, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-to-cyan-600 {
+  background: linear-gradient(to right, #22d3ee, #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-to-teal-600 {
+  background: linear-gradient(to right, #2dd4bf, #0d9488);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-to-amber-600 {
+  background: linear-gradient(to right, #fbbf24, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-to-pink-600 {
+  background: linear-gradient(to right, #f472b6, #db2777);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient stops for SVG circles */
+.stop-from-emerald-500 {
+  stop-color: #10b981;
+}
+
+.stop-to-teal-400 {
+  stop-color: #2dd4bf;
+}
+
+.stop-from-blue-500 {
+  stop-color: #3b82f6;
+}
+
+.stop-to-cyan-400 {
+  stop-color: #22d3ee;
+}
+
+.stop-from-violet-500 {
+  stop-color: #8b5cf6;
+}
+
+.stop-to-purple-400 {
+  stop-color: #c084fc;
+}
+
+.stop-from-amber-500 {
+  stop-color: #f59e0b;
+}
+
+.stop-to-yellow-400 {
+  stop-color: #facc15;
+}
+
+
+/* Projects Section Specific CSS */
+
+/* Gradient text for project headings */
+.text-gradient-primary {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect for project cards */
+.glass-morphism {
+  background: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-morphism:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Project card hover effects */
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.glass-morphism::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-morphism:hover::after {
+  opacity: 1;
+  animation: shimmer 2s infinite;
+}
+
+/* Floating animation for badges */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.glass-morphism span:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Perspective effect for project cards */
+.grid {
+  perspective: 1000px;
+}
+
+/* Glow effect for buttons */
+.glass-morphism button:hover,
+.glass-morphism a:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Background blur effects */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Modal animation helpers */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Apply animations to modal elements */
+.modal-enter {
+  animation: fadeIn 0.3s ease forwards, scaleIn 0.3s ease forwards;
+}
+
+.modal-content-enter {
+  animation: slideUp 0.4s ease forwards;
+}
+
+/* Staggered animation delays for children */
+.modal-content-enter > *:nth-child(1) { animation-delay: 0.1s; }
+.modal-content-enter > *:nth-child(2) { animation-delay: 0.2s; }
+.modal-content-enter > *:nth-child(3) { animation-delay: 0.3s; }
+.modal-content-enter > *:nth-child(4) { animation-delay: 0.4s; }
+
+

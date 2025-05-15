@@ -1,54 +1,81 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Trophy, Award, Calendar, ChevronDown, ChevronUp, ExternalLink, Users } from 'lucide-react';
-import SectionHeading from './SectionHeading';
-import AnimatedCard from './AnimatedCard';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './ui/dialog';
-import hack01 from '../../public/lovable-uploads/Hackthon & Competion/AvinyaCompetion/1.jpeg'
-import hack02 from '../../public/lovable-uploads/Hackthon & Competion/AvinyaCompetion/2.jpeg'
-import hack04 from '../../public/lovable-uploads/Hackthon & Competion/Cavista/3.jpeg'
-import hack05 from '../../public/lovable-uploads/Hackthon & Competion/Cavista/2.jpeg'
-import hack06 from '../../public/lovable-uploads/Hackthon & Competion/Cavista/1.jpeg'
-import hack07 from '../../public/lovable-uploads/Hackthon & Competion/E-Cell/IMG-20250413-WA0020.jpg'
-import hack08 from '../../public/lovable-uploads/Hackthon & Competion/E-Cell/IMG-20250413-WA0021.jpg'
-import hack09 from '../../public/lovable-uploads/Hackthon & Competion/E-Cell/idea03.jpg'
-import hack09a from '../../public/lovable-uploads/Hackthon & Competion/E-Cell/IMG-20250413-WA0022.jpg'
-import hack10 from '../../public/lovable-uploads/Hackthon & Competion/IBM/bmc.jpeg'
-import hack11 from '../../public/lovable-uploads/Hackthon & Competion/IBM/1740464644045.jpeg'
-import hack12 from '../../public/lovable-uploads/Hackthon & Competion/IBM/me.jpeg'
-import hack03 from '../../public/lovable-uploads/Hackthon & Competion/IBM/1740464647851.jpeg'
-import hack13 from '../../public/lovable-uploads/Hackthon & Competion/SIH/Sih01.jpg'
-import hack14 from '../../public/lovable-uploads/Hackthon & Competion/SIH/Sih02.jpg'
-import hack15 from '../../public/lovable-uploads/Hackthon & Competion/SIH/Sih03.jpg'
-import hack16 from '../../public/lovable-uploads/Hackthon & Competion/SIH/Sih04.jpg'
-import hack17 from '../../public/lovable-uploads/Hackthon & Competion/SIH/1.jpg'
-import hack18 from '../../public/lovable-uploads/Hackthon & Competion/SIH/2.jpg'
-import hack19 from '../../public/lovable-uploads/Hackthon & Competion/SIH/3.jpg'
-import hack20 from '../../public/lovable-uploads/Hackthon & Competion/SIH/4.jpg'
-import hack21 from '../../public/lovable-uploads/Hackthon & Competion/SIH/6.jpg'
-import hack22 from '../../public/lovable-uploads/Hackthon & Competion/SIH/5.jpg'
-import hack23 from '../../public/lovable-uploads/Hackthon & Competion/SIH/8.jpg'
-import hack24 from '../../public/lovable-uploads/Hackthon & Competion/SIH/9.jpg'
-import hack25 from '../../public/lovable-uploads/Hackthon & Competion/SIH/IMG-20250413-WA0023.jpg'
+"use client"
+
+import type React from "react"
+import { useState, useRef, useEffect } from "react"
+import { motion, useInView, AnimatePresence } from "framer-motion"
+import { Trophy, Award, Calendar, ChevronDown, ChevronUp, ExternalLink, Users, Sparkles } from 'lucide-react'
+import SectionHeading from "./SectionHeading"
+import AnimatedCard from "./AnimatedCard"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog"
+import hack01 from "../../public/lovable-uploads/Hackthon & Competion/AvinyaCompetion/1.jpeg"
+import hack02 from "../../public/lovable-uploads/Hackthon & Competion/AvinyaCompetion/2.jpeg"
+import hack04 from "../../public/lovable-uploads/Hackthon & Competion/Cavista/3.jpeg"
+import hack05 from "../../public/lovable-uploads/Hackthon & Competion/Cavista/2.jpeg"
+import hack06 from "../../public/lovable-uploads/Hackthon & Competion/Cavista/1.jpeg"
+import hack07 from "../../public/lovable-uploads/Hackthon & Competion/E-Cell/IMG-20250413-WA0020.jpg"
+import hack08 from "../../public/lovable-uploads/Hackthon & Competion/E-Cell/IMG-20250413-WA0021.jpg"
+import hack09 from "../../public/lovable-uploads/Hackthon & Competion/E-Cell/idea03.jpg"
+import hack09a from "../../public/lovable-uploads/Hackthon & Competion/E-Cell/IMG-20250413-WA0022.jpg"
+import hack10 from "../../public/lovable-uploads/Hackthon & Competion/IBM/bmc.jpeg"
+import hack11 from "../../public/lovable-uploads/Hackthon & Competion/IBM/1740464644045.jpeg"
+import hack12 from "../../public/lovable-uploads/Hackthon & Competion/IBM/me.jpeg"
+import hack03 from "../../public/lovable-uploads/Hackthon & Competion/IBM/1740464647851.jpeg"
+import hack13 from "../../public/lovable-uploads/Hackthon & Competion/SIH/Sih01.jpg"
+import hack14 from "../../public/lovable-uploads/Hackthon & Competion/SIH/Sih02.jpg"
+import hack15 from "../../public/lovable-uploads/Hackthon & Competion/SIH/Sih03.jpg"
+import hack16 from "../../public/lovable-uploads/Hackthon & Competion/SIH/Sih04.jpg"
+import hack17 from "../../public/lovable-uploads/Hackthon & Competion/SIH/1.jpg"
+import hack18 from "../../public/lovable-uploads/Hackthon & Competion/SIH/2.jpg"
+import hack19 from "../../public/lovable-uploads/Hackthon & Competion/SIH/3.jpg"
+import hack20 from "../../public/lovable-uploads/Hackthon & Competion/SIH/4.jpg"
+import hack21 from "../../public/lovable-uploads/Hackthon & Competion/SIH/6.jpg"
+import hack22 from "../../public/lovable-uploads/Hackthon & Competion/SIH/5.jpg"
+import hack23 from "../../public/lovable-uploads/Hackthon & Competion/SIH/8.jpg"
+import hack24 from "../../public/lovable-uploads/Hackthon & Competion/SIH/9.jpg"
+import hack25 from "../../public/lovable-uploads/Hackthon & Competion/SIH/IMG-20250413-WA0023.jpg"
 
 interface Hackathon {
-  id: string;
-  title: string;
-  description: string;
-  fullDescription: string;
-  achievement: string;
-  date: string;
-  team: string;
-  image: string;
-  images?: string[];
-  link?: string;
+  id: string
+  title: string
+  description: string
+  fullDescription: string
+  achievement: string
+  date: string
+  team: string
+  image: string
+  images?: string[]
+  link?: string
 }
 
 const Hackathons: React.FC = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [selectedHackathon, setSelectedHackathon] = useState<Hackathon | null>(null);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false)
+  const [selectedHackathon, setSelectedHackathon] = useState<Hackathon | null>(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [shouldAnimate, setShouldAnimate] = useState(false)
   
+  // Create a ref for the section
+  const sectionRef = useRef<HTMLElement>(null)
+  
+  // Use Framer Motion's useInView hook to detect when the section is in view
+  const isInView = useInView(sectionRef, {
+    once: false, // Trigger every time, not just once
+    amount: 0.1, // Trigger when at least 10% of the element is in view
+  })
+  
+  // Effect to handle animation state based on view
+  useEffect(() => {
+    if (isInView) {
+      // When section comes into view, trigger animations
+      setShouldAnimate(true)
+    } else {
+      // When section goes out of view, reset animations after a delay
+      const timer = setTimeout(() => {
+        setShouldAnimate(false)
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [isInView])
+
   const hackathons: Hackathon[] = [
     {
       id: "hack1",
@@ -142,71 +169,238 @@ const Hackathons: React.FC = () => {
       ],
       link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_datathon2025-teamshashwat-hackathonwinners-activity-7316120214511706115-VqTs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
     }
-  ];
+  ]
 
-  const displayedHackathons = showAll ? hackathons : hackathons.slice(0, 3);
+  const displayedHackathons = showAll ? hackathons : hackathons.slice(0, 3)
+
+  // Define animation variants for the hackathon cards
+  const cardVariants = [
+    // 3D Flip animation
+    {
+      hidden: { opacity: 0, rotateY: 90, scale: 0.8 },
+      visible: (i: number) => ({
+        opacity: 1,
+        rotateY: 0,
+        scale: 1,
+        transition: {
+          type: "spring",
+          stiffness: 50,
+          damping: 15,
+          delay: i * 0.15,
+        },
+      }),
+      hover: { 
+        y: -10, 
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+        transition: { duration: 0.3 } 
+      },
+    },
+    // Staggered reveal from bottom with bounce
+    {
+      hidden: { opacity: 0, y: 100, scale: 0.9 },
+      visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+          type: "spring",
+          stiffness: 80,
+          damping: 12,
+          delay: i * 0.15,
+        },
+      }),
+      hover: { 
+        scale: 1.05, 
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+        transition: { duration: 0.3 } 
+      },
+    },
+    // Zoom and rotate
+    {
+      hidden: { opacity: 0, scale: 0.5, rotate: -10 },
+      visible: (i: number) => ({
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        transition: {
+          type: "spring",
+          stiffness: 70,
+          damping: 10,
+          delay: i * 0.15,
+        },
+      }),
+      hover: { 
+        rotate: 2, 
+        scale: 1.03, 
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+        transition: { duration: 0.3 } 
+      },
+    },
+  ]
+
+  // Image animation variants
+  const imageVariants = {
+    hidden: { opacity: 0.6, scale: 1.2, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  }
+
+  // Badge animation variants
+  const badgeVariants = {
+    hidden: { opacity: 0, scale: 0, x: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+        delay: 0.3,
+      },
+    },
+  }
+
+  // Button animation variants
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5,
+        duration: 0.5,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)",
+      transition: { duration: 0.2 },
+    },
+    tap: { scale: 0.95 },
+  }
+
+  // Section heading animation variants
+  const headingVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1,
+        duration: 0.6,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  }
 
   return (
-    <section id="hackathons" className="section-padding bg-gradient-to-b from-background to-background/95">
-      <div className="section-container">
-        <SectionHeading 
-          title="Hackathons & Competitions" 
-          subtitle="Problem Solving in Action" 
-        />
+    <section 
+      id="hackathons" 
+      className="section-padding bg-gradient-to-b from-background to-background/95 relative overflow-hidden"
+      ref={sectionRef}
+    >
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="section-container relative z-10">
+        <motion.div
+          variants={headingVariants}
+          initial="hidden"
+          animate={shouldAnimate ? "visible" : "hidden"}
+        >
+          <SectionHeading 
+            title="Hackathons & Competitions" 
+            subtitle="Problem Solving in Action" 
+          />
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {displayedHackathons.map((hackathon, index) => (
-            <motion.div
-              key={hackathon.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <AnimatedCard 
-                className="h-full cursor-pointer hover:border-primary/30 transition-colors"
-                glowOnHover={true}
-                tiltAmount={0}
-                onClick={() => setSelectedHackathon(hackathon)}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 perspective-container">
+          {displayedHackathons.map((hackathon, index) => {
+            // Select a different animation style based on index
+            const animationIndex = index % cardVariants.length
+            const animation = cardVariants[animationIndex]
+
+            return (
+              <motion.div
+                key={hackathon.id}
+                custom={index}
+                variants={animation}
+                initial="hidden"
+                animate={shouldAnimate ? "visible" : "hidden"}
+                whileHover="hover"
+                className="hackathon-card"
+                style={{ transformStyle: "preserve-3d" }}
               >
-                <div className="relative aspect-video mb-4 overflow-hidden rounded-t-lg bg-gray-800">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                  <img 
-                    src={hackathon.image} 
-                    alt={hackathon.title} 
-                    className="w-full h-full object-contain"
-                  />
-                  <div className="absolute top-3 right-3 z-20">
-                    <span className="glass-morphism px-3 py-1 rounded-full text-xs font-medium border border-primary/30 flex items-center">
-                      <Trophy size={14} className="mr-1 text-primary" />
-                      {hackathon.achievement}
-                    </span>
+                <div 
+                  className="h-full glass-morphism rounded-xl overflow-hidden cursor-pointer hover:border-primary/30 transition-colors"
+                  onClick={() => setSelectedHackathon(hackathon)}
+                >
+                  <div className="relative aspect-video mb-4 overflow-hidden rounded-t-lg bg-gray-800">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                    <motion.img 
+                      src={hackathon.image} 
+                      alt={hackathon.title} 
+                      className="w-full h-full object-contain"
+                      variants={imageVariants}
+                      initial="hidden"
+                      animate={shouldAnimate ? "visible" : "hidden"}
+                      whileHover="hover"
+                    />
+                    <motion.div 
+                      className="absolute top-3 right-3 z-20"
+                      variants={badgeVariants}
+                      initial="hidden"
+                      animate={shouldAnimate ? "visible" : "hidden"}
+                    >
+                      <span className="glass-morphism px-3 py-1 rounded-full text-xs font-medium border border-primary/30 flex items-center">
+                        <Trophy size={14} className="mr-1 text-primary" />
+                        {hackathon.achievement}
+                      </span>
+                    </motion.div>
                   </div>
-                </div>
-                
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold mb-2">{hackathon.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{hackathon.description}</p>
                   
-                  <div className="space-y-3 mb-4">
-                    <div className="flex items-center text-sm">
-                      <Calendar size={16} className="mr-2 text-primary" />
-                      <span>{hackathon.date}</span>
-                    </div>
-                    <div className="flex items-center text-sm">
-                      <Users size={16} className="mr-2 text-primary" />
-                      <span>{hackathon.team}</span>
+                  <div className="p-5">
+                    <h3 className="text-xl font-semibold mb-2">{hackathon.title}</h3>
+                    <p className="text-gray-300 text-sm mb-4">{hackathon.description}</p>
+                    
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-center text-sm">
+                        <Calendar size={16} className="mr-2 text-primary" />
+                        <span>{hackathon.date}</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <Users size={16} className="mr-2 text-primary" />
+                        <span>{hackathon.team}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </AnimatedCard>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          })}
         </div>
         
         {/* Show more/less button */}
         <div className="flex justify-center">
-          <button
+          <motion.button
+            variants={buttonVariants}
+            initial="hidden"
+            animate={shouldAnimate ? "visible" : "hidden"}
+            whileHover="hover"
+            whileTap="tap"
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center glass-morphism px-6 py-3 rounded-lg border border-primary/30 hover:bg-primary/10 transition-colors"
           >
@@ -221,14 +415,14 @@ const Hackathons: React.FC = () => {
                 Show More Hackathons
               </>
             )}
-          </button>
+          </motion.button>
         </div>
 
         {/* Dialog for hackathon details */}
         {selectedHackathon && (
           <Dialog open={!!selectedHackathon} onOpenChange={() => {
-            setSelectedHackathon(null);
-            setSelectedImage(null);
+            setSelectedHackathon(null)
+            setSelectedImage(null)
           }}>
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
@@ -261,7 +455,7 @@ const Hackathons: React.FC = () => {
                     onClick={() => setSelectedImage(selectedHackathon.images![0])}
                   >
                     <img 
-                      src={selectedHackathon.images[0]} 
+                      src={selectedHackathon.images[0] || "/placeholder.svg"} 
                       alt={selectedHackathon.title} 
                       className="w-full h-full object-contain"
                     />
@@ -276,7 +470,7 @@ const Hackathons: React.FC = () => {
                         onClick={() => setSelectedImage(img)}
                       >
                         <img 
-                          src={img} 
+                          src={img || "/placeholder.svg"} 
                           alt={`${selectedHackathon.title} - ${idx + 1}`} 
                           className="w-full h-full object-cover"
                         />
@@ -313,7 +507,7 @@ const Hackathons: React.FC = () => {
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden p-0 bg-transparent border-none">
               <div className="relative w-full h-full flex items-center justify-center">
                 <img 
-                  src={selectedImage} 
+                  src={selectedImage || "/placeholder.svg"} 
                   alt="Selected hackathon image" 
                   className="max-w-full max-h-[80vh] object-contain"
                 />
@@ -332,7 +526,7 @@ const Hackathons: React.FC = () => {
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hackathons;
+export default Hackathons

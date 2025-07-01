@@ -99,8 +99,10 @@ const Projects: React.FC = () => {
       shortDescription: "AI-Based Disease Prediction System",
       fullDescription:
         "MediPlus is an AI-powered healthcare web application that enables accurate disease prediction at your fingertips. Users can input symptoms such as fatigue, fever, or sore throat to receive instant, highly accurate predictions. The system provides severity analysis to determine if a condition is mild, moderate, or severe, helping users make informed decisions. It also offers personalized treatment advice including rest, medication, or further consultation options. Built using Machine Learning, Flask, and HTML/CSS, MediPlus is designed to make early diagnosis fast, intelligent, and accessible.",
-      technologies: ["Machine Learning", "Flask", "Html/CSS", "Healthcare"],
-      links: { github: "https://github.com/Guruvd07" },
+      technologies: ["Machine Learning", "NodeJs" , "Flask", "Html/CSS", "Streamlit" , "Healthcare"],
+      links: { github: "https://github.com/Guruvd07/HealthCare.git",
+               live: "https://health-care-udiv.vercel.app/"
+    },
       image: pro01,
       date: "2025",
       featured: true,
@@ -110,14 +112,14 @@ const Projects: React.FC = () => {
       title: "Gamified AI Platform for Coding & Language Mastery",
       shortDescription: "Making Learning Addictive with Quizzes, XP & Leaderboards",
       fullDescription: `🎓 Students (Ages 15–35): School & college learners struggling with syntax and structure.\n\n
-\n\n\n👨‍💻 Aspiring Coders & Linguists: Beginners looking for fun, supportive platforms. \n\n
-🌐 Rural & Underserved Learners: Voice-based & gamified interface removes tech entry barriers.\n\n
+         \n\n\n👨‍💻 Aspiring Coders & Linguists: Beginners looking for fun, supportive platforms. \n\n
+     🌐 Rural & Underserved Learners: Voice-based & gamified interface removes tech entry barriers.\n\n
 
-Sustainability Approach : \n
-☁️ Cloud-Native Architecture – Requires minimal infrastructure, easy to scale\n
-📶 Low-Bandwidth Optimizations – Supports rural and mobile-first access\n
-🌐 Multilingual Support – Inclusive for non-English speakers\n
-🔄 Reusable Quiz Engine – Built for long-term content expansion and reuse`,
+     Sustainability Approach : \n
+     ☁️ Cloud-Native Architecture – Requires minimal infrastructure, easy to scale\n
+     📶 Low-Bandwidth Optimizations – Supports rural and mobile-first access\n
+     🌐 Multilingual Support – Inclusive for non-English speakers\n
+     🔄 Reusable Quiz Engine – Built for long-term content expansion and reuse`,
 
       technologies: ["React", "Node.js", "MongoDB", "AWS"],
       links: { github: "https://github.com/Guruvd07" },
@@ -127,28 +129,30 @@ Sustainability Approach : \n
     },
     {
       id: "project6",
-      title: "Sentiment Analysis using BertLSTM",
-      shortDescription: "Sentiment Analysis for Mental Health Detection",
-      fullDescription:
-        "This project focuses on Sentiment Analysis of textual data using a hybrid deep learning model that combines BERT(Bidirectional Encoder Representations from Transformers) and LSTM (Long Short-Term Memory). The goal was to classify text data (such as tweets, reviews, or comments) into sentiment categories like Positive, Negative, and Neutral by leveraging both the powerful contextual embeddings from BERT and the sequence modeling ability of LSTM.",
-      technologies: ["Machine Learning", "BertLSTM", "Text Analysis", "Python"],
-      links: { github: "https://github.com/Guruvd07" },
-      image: pro24,
+      title: "Narmada Traders - Bilingual Billing System",
+      shortDescription: "Professional billing system with English-to-Marathi conversion and PDF generation",
+      fullDescription: "🏪 A modern, bilingual billing system built for Narmada Traders furniture store. Features smart item entry with auto-complete suggestions, real-time English-to-Marathi conversion, and professional PDF generation with perfect Devanagari font rendering. Includes cultural elements like traditional god names, signature sections, and optimized single-page A4 layout for business use.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "html2pdf.js", "Vite"],
+      links: { 
+        github: "https://github.com/Guruvd07/Billing-System.git",
+        live: "https://billing-system-lime.vercel.app/" // Add your deployed URL here
+      },
+      image: pro24, // Add your project screenshot variable here
       date: "2025",
-      featured: true,
+      featured: true, // Set to true since it's a comprehensive, unique project
     },
-    {
-      id: "project7",
-      title: "Mental Health Mood Prediction using Streamlit & Random Forest",
-      shortDescription: "WebApp which Predict the user's mood based on past behavior patterns",
-      fullDescription:
-        "📘 Project Overview: This interactive Streamlit application enables users to log daily digital platform usage and mental health indicators (like anxiety, depression levels, and self-esteem). The app stores data locally and leverages machine learning to predict the user's mood based on past behavior patterns.",
-      technologies: ["Machine Learning", "Streamlit", "Flask", "Python"],
-      links: { github: "https://github.com/Guruvd07" },
-      image: pro05,
-      date: "2023",
-      featured: false,
-    },
+    // {
+    //   id: "project7",
+    //   title: "Mental Health Mood Prediction using Streamlit & Random Forest",
+    //   shortDescription: "WebApp which Predict the user's mood based on past behavior patterns",
+    //   fullDescription:
+    //     "📘 Project Overview: This interactive Streamlit application enables users to log daily digital platform usage and mental health indicators (like anxiety, depression levels, and self-esteem). The app stores data locally and leverages machine learning to predict the user's mood based on past behavior patterns.",
+    //   technologies: ["Machine Learning", "Streamlit", "Flask", "Python"],
+    //   links: { github: "https://github.com/Guruvd07" },
+    //   image: pro05,
+    //   date: "2023",
+    //   featured: false,
+    // },
   ]
 
   const displayedProjects = showAllProjects ? projects : projects.filter((_, index) => index < 6)

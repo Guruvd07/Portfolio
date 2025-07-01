@@ -10,7 +10,7 @@ const VirtualAssistant: React.FC = () => {
   const isMobile = useIsMobile();
 
   const sectionMessages: Record<string, string> = {
-    home: "Welcome! I'm Guru Dahiphale, a tech enthusiast and developer.",
+    home: "Welcome! I'm Guru Dahiphale | Data & ML Innovator",
     about: "Learn more about my background, skills, and interests.",
     skills: "Explore my technical skills and areas of expertise.",
     projects: "Check out some of my recent projects and work.",

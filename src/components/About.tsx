@@ -22,6 +22,8 @@ import { FaBrain, FaChartLine, FaDatabase, FaServer, FaCode } from "react-icons/
 import { BsRobot, BsLightningCharge } from "react-icons/bs"
 import { TbBrandOpenai } from "react-icons/tb"
 import SectionHeading from "./SectionHeading"
+import { Server} from "lucide-react";
+
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null)
@@ -93,16 +95,41 @@ const About: React.FC = () => {
   // Skill categories with icons and items
   const skillCategories = [
     {
-      name: "Data Science",
+      name: "Data Engineering",
+      icon: <Server className="w-5 h-5" />,
+      color: "from-blue-500 to-indigo-600",
+      skills: [
+        { icon: <SiPython className="text-xl" />, name: "Docker", color: "bg-blue-100 text-blue-600" },
+        { icon: <FaBrain className="text-xl" />, name: "ETL Pipelines", color: "bg-orange-100 text-orange-600" },
+        { icon: <BsRobot className="text-xl" />, name: "dbt", color: "bg-red-100 text-red-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Web Scraping", color: "bg-emerald-100 text-emerald-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Data Cleaning", color: "bg-emerald-100 text-emerald-600" },
+      ],
+    },
+    {
+      name: "Data Analysis",
+      icon: <BarChart3 className="w-5 h-5" />,
+      color: "from-blue-500 to-indigo-600",
+      skills: [
+        { icon: <SiPython className="text-xl" />, name: "EDA", color: "bg-blue-100 text-blue-600" },
+        { icon: <FaBrain className="text-xl" />, name: "Power BI", color: "bg-orange-100 text-orange-600" },
+        { icon: <BsRobot className="text-xl" />, name: "Pandas", color: "bg-red-100 text-red-600" },
+        { icon: <SiPandas className="text-xl" />, name: "NumPy", color: "bg-emerald-100 text-emerald-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Visualization", color: "bg-emerald-100 text-emerald-600" },
+        
+      ],
+    },
+    {
+      name: "Machine Learning Engineering",
       icon: <Brain className="w-5 h-5" />,
       color: "from-blue-500 to-indigo-600",
       skills: [
-        { icon: <SiPython className="text-xl" />, name: "Python", color: "bg-blue-100 text-blue-600" },
-        { icon: <FaBrain className="text-xl" />, name: "ML", color: "bg-orange-100 text-orange-600" },
-        { icon: <BsRobot className="text-xl" />, name: "DL", color: "bg-red-100 text-red-600" },
-        { icon: <SiPandas className="text-xl" />, name: "EDA", color: "bg-emerald-100 text-emerald-600" },
-        { icon: <SiScikitlearn className="text-xl" />, name: "Scikit", color: "bg-yellow-100 text-yellow-600" },
-        { icon: <SiTensorflow className="text-xl" />, name: "TensorFlow", color: "bg-orange-100 text-orange-600" },
+        { icon: <SiPython className="text-xl" />, name: "Scikit-Learn", color: "bg-blue-100 text-blue-600" },
+        { icon: <FaBrain className="text-xl" />, name: "TensorFlow", color: "bg-orange-100 text-orange-600" },
+        { icon: <BsRobot className="text-xl" />, name: "Deep Learning", color: "bg-red-100 text-red-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Predictive Modeling", color: "bg-emerald-100 text-emerald-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Flask", color: "bg-emerald-100 text-emerald-600" },
+
       ],
     },
     {
@@ -111,8 +138,7 @@ const About: React.FC = () => {
       color: "from-purple-500 to-pink-600",
       skills: [
         { icon: <FaChartLine className="text-xl" />, name: "OCR", color: "bg-purple-100 text-purple-600" },
-        { icon: <BiData className="text-xl" />, name: "PowerBI", color: "bg-yellow-100 text-yellow-600" },
-        { icon: <TbBrandOpenai className="text-xl" />, name: "AI", color: "bg-green-100 text-green-600" },
+        { icon: <BiData className="text-xl" />, name: "TesseractOCR", color: "bg-yellow-100 text-yellow-600" },
       ],
     },
     {
@@ -120,21 +146,9 @@ const About: React.FC = () => {
       icon: <Database className="w-5 h-5" />,
       color: "from-emerald-500 to-teal-600",
       skills: [
-        { icon: <FaDatabase className="text-xl" />, name: "Database", color: "bg-indigo-100 text-indigo-600" },
         { icon: <SiMysql className="text-xl" />, name: "MySQL", color: "bg-blue-50 text-blue-500" },
         { icon: <FaServer className="text-xl" />, name: "SQL", color: "bg-teal-100 text-teal-600" },
-      ],
-    },
-    {
-      name: "Web Development",
-      icon: <Code className="w-5 h-5" />,
-      color: "from-cyan-500 to-blue-600",
-      skills: [
-        { icon: <SiReact className="text-xl" />, name: "React", color: "bg-cyan-100 text-cyan-600" },
-        { icon: <SiTypescript className="text-xl" />, name: "TSX", color: "bg-blue-100 text-blue-700" },
-        { icon: <SiHtml5 className="text-xl" />, name: "HTML", color: "bg-orange-100 text-orange-600" },
-        { icon: <SiCss3 className="text-xl" />, name: "CSS", color: "bg-blue-100 text-blue-600" },
-        { icon: <SiFlask className="text-xl" />, name: "Flask", color: "bg-gray-100 text-gray-600" },
+        { icon: <FaDatabase className="text-xl" />, name: "PostreSQL", color: "bg-indigo-100 text-indigo-600" },
       ],
     },
   ]
@@ -218,33 +232,49 @@ const About: React.FC = () => {
             variants={containerVariants}
           >
             <div className="space-y-6 text-gray-300">
-              <motion.p variants={fadeInUpVariants} custom={0} className="text-lg">
-                I'm a{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-semibold">
-                  Data Science and Machine Learning Enthusiast
-                </span>{" "}
-                with a passion for transforming complex problems into intelligent solutions. My work revolves around
-                predictive modeling, deep learning architectures, and data-driven decision making.
-              </motion.p>
+            <motion.p variants={fadeInUpVariants} custom={0} className="text-lg">
+    I'm a{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-semibold">
+      Data Engineering and Machine Learning Enthusiast
+    </span>{" "}
+    passionate about building end-to-end solutions by transforming raw data into
+    actionable insights and intelligent predictions.
+  </motion.p>
 
-              <motion.p variants={fadeInUpVariants} custom={1}>
-                My expertise in{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-medium">
-                  Optical Character Recognition (OCR)
-                </span>{" "}
-                allows me to extract valuable information from documents and images, while my{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
-                  SQL and database management skills
-                </span>{" "}
-                enable efficient data storage, retrieval, and analysis for informed decision-making.
-              </motion.p>
+  <motion.p variants={fadeInUpVariants} custom={1}>
+    My expertise in{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-medium">
+      Data Engineering
+    </span>{" "}
+    includes{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
+      Docker, ETL pipelines, dbt, and web scraping
+    </span>
+    , enabling me to collect, clean, and structure raw data into usable formats
+    for analytics and machine learning.
+  </motion.p>
 
-              <motion.p variants={fadeInUpVariants} custom={2}>
-                I actively engage in technical competitions and hackathons, where I refine my ability to develop
-                innovative AI solutions under constraints. This experimental approach complements my academic rigor in
-                computer engineering and data science.
-              </motion.p>
+  <motion.p variants={fadeInUpVariants} custom={2}>
+    I specialize in{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-500 font-medium">
+      Data Analysis and ML Engineering
+    </span>{" "}
+    where I leverage{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium">
+      SQL, predictive modeling, and deployment workflows
+    </span>{" "}
+    to uncover insights, build scalable models, and drive data-informed
+    decision-making.
+  </motion.p>
 
+  <motion.p variants={fadeInUpVariants} custom={3}>
+    I actively work on{" "}
+    <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-medium">
+      real-world projects, competitions, and hackathons
+    </span>
+    , where I refine my ability to develop innovative, production-ready AI
+    solutions that bridge the gap between raw data and business intelligence.
+  </motion.p>
               <motion.div variants={fadeInUpVariants} custom={3} className="pt-4">
                 <a
                   href="#contact"
@@ -284,7 +314,7 @@ const About: React.FC = () => {
                 {[
                   { icon: Briefcase, label: "Current Role", value: "Data Scientist" },
                   { icon: GraduationCap, label: "Education", value: "Computer Science, B.Tech" },
-                  { icon: Calendar, label: "Experience", value: "SDE Intern at BTD Service India " },
+                  { icon: Calendar, label: "Experience", value: "Ex - SDE Intern at BTD Service India " },
                 ].map((item, index) => (
                   <motion.div
                     key={index}

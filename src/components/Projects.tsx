@@ -8,7 +8,7 @@ import SectionHeading from "./SectionHeading"
 import pro01 from "../../public/lovable-uploads/Projects/Aaroya/Mediplus.jpg"
 import pro05 from "../../public/lovable-uploads/Projects/CalciMitra/1.jpg"
 import pro06 from "../../public/lovable-uploads/Projects/ClubRankers/21.png"
-import pro11 from "../../public/lovable-uploads/Projects/FrieghtTransportationSystem/Major Project 2024-25.png"
+import pro11 from "../../public/lovable-uploads/Projects/FrieghtTransportationSystem/Screenshot 2025-08-19 153027.jpg"
 import pro13 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
 import pro19 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
 import pro24 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
@@ -71,16 +71,43 @@ const Projects: React.FC = () => {
     },
     {
       id: "project2",
-      title: "Freight Transportation System",
-      shortDescription: "Blockchain-based solution for secure freight management",
+      title: "CarGuru AI – Used Car Price Prediction",
+      shortDescription: "AI-powered platform for accurate and transparent used car pricing.",
       fullDescription:
-        "Background: The freight transportation industry faces challenges like a lack of transparency, inefficiencies, security risks, and shipment disputes. Blockchain offers transparency, automation, and security. Motivation: To overcome inefficiencies and risks in traditional freight transport. Project Idea: A blockchain-based system for secure tracking, automation with smart contracts, and real-time monitoring. Prevents shipment tampering, automates workflows using smart contracts, and enables real-time monitoring to enhance security and efficiency.",
-      technologies: ["Blockchain", "Smart Contracts", "React", "Node.js", "Web3"],
-      links: { github: "https://github.com/Guruvd07" },
+        "Background: The used car market often lacks transparency in pricing due to varying conditions, locations, and seller bias. Motivation: To bring accuracy, transparency, and trust in pricing using machine learning and real-world data. Project Idea: An end-to-end system covering data engineering, data cleaning, data analysis, ML engineering, and deployment. Real car listings were scraped, preprocessed, and analyzed. A CatBoost regression model (R² = 88%) was trained for price prediction. Finally, a Flask-based web app with HTML/CSS/JS frontend was deployed, allowing users to predict car prices, view brand logos, and explore similar cars in real-time.",
+      technologies: [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Selenium",
+        "CatBoost",
+        "scikit-learn",
+        "Flask",
+        "HTML",
+        "CSS",
+      ],
+      links: { github: "https://github.com/Guruvd07/car-price-predictor",
+      live: "https://car-price-predictor-s3ha.onrender.com/"},
       image: pro11,
-      date: "2024",
+      date: "2025",
       featured: false,
     },
+
+    {
+      id: "project4",
+      title: "GuruCare+",
+      shortDescription: "AI-Based Disease Prediction System",
+      fullDescription:
+        "MediPlus is an AI-powered healthcare web application that enables accurate disease prediction at your fingertips. Users can input symptoms such as fatigue, fever, or sore throat to receive instant, highly accurate predictions. The system provides severity analysis to determine if a condition is mild, moderate, or severe, helping users make informed decisions. It also offers personalized treatment advice including rest, medication, or further consultation options. Built using Machine Learning, Flask, and HTML/CSS, MediPlus is designed to make early diagnosis fast, intelligent, and accessible.",
+      technologies: ["Machine Learning", "NodeJs" , "Flask", "Html/CSS", "Streamlit" , "Healthcare"],
+      links: { github: "https://github.com/Guruvd07/GuruCare",
+               live: "https://medical-frontend-oxk9.onrender.com/"
+    },
+      image: pro01,
+      date: "2025",
+      featured: true,
+    },
+    
     {
       id: "project3",
       title: "ClubRankers",
@@ -93,20 +120,7 @@ const Projects: React.FC = () => {
       date: "2022",
       featured: true,
     },
-    {
-      id: "project4",
-      title: "MediPlus",
-      shortDescription: "AI-Based Disease Prediction System",
-      fullDescription:
-        "MediPlus is an AI-powered healthcare web application that enables accurate disease prediction at your fingertips. Users can input symptoms such as fatigue, fever, or sore throat to receive instant, highly accurate predictions. The system provides severity analysis to determine if a condition is mild, moderate, or severe, helping users make informed decisions. It also offers personalized treatment advice including rest, medication, or further consultation options. Built using Machine Learning, Flask, and HTML/CSS, MediPlus is designed to make early diagnosis fast, intelligent, and accessible.",
-      technologies: ["Machine Learning", "NodeJs" , "Flask", "Html/CSS", "Streamlit" , "Healthcare"],
-      links: { github: "https://github.com/Guruvd07/HealthCare.git",
-               live: "https://health-care-udiv.vercel.app/"
-    },
-      image: pro01,
-      date: "2025",
-      featured: true,
-    },
+  
     {
       id: "project5",
       title: "Gamified AI Platform for Coding & Language Mastery",

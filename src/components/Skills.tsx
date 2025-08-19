@@ -3,13 +3,46 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Brain, Code, Database, FileText, FlaskRoundIcon as Flask, BarChart3, Atom, FileCode2, Palette, Github, GitBranch, Gitlab, Send, Cpu, LayoutGrid, Star, Sparkles } from 'lucide-react'
+import {
+  Brain,
+  Code,
+  Database,
+  FileText,
+  FlaskRoundIcon as Flask,
+  BarChart3,
+  Atom,
+  FileCode2,
+  Palette,
+  Github,
+  GitBranch,
+  Gitlab,
+  Send,
+  Cpu,
+  LayoutGrid,
+  Star,
+  Sparkles,
+  Server,
+  Shuffle,
+  Box,
+  Globe,
+  Eraser,
+  FileSpreadsheet,
+  Calculator,
+  LineChart,
+  Layers,
+  TrendingUp,
+  Bot,
+  Wrench,
+  BookOpen
+} from "lucide-react";
+
+
 
 interface Skill {
   name: string
   level: number
   icon: React.ElementType
-  category: "Data Science" | "frontend" | "database" | "devops" | "other" | "tools"
+  category: "Data Engineering" | "Data Analysis" | "Machine Learning Engineering" | "Database" | "OCR & Analytics" | "other" | "tools"
 }
 
 const Skills: React.FC = () => {
@@ -21,27 +54,43 @@ const Skills: React.FC = () => {
   }, [])
 
   const skills: Skill[] = [
-    // DataScience
-    { name: "Machine Learning", level: 90, icon: Brain, category: "Data Science" },
-    { name: "Deep Learning", level: 80, icon: Brain, category: "Data Science" },
-    { name: "EDA", level: 90, icon: BarChart3, category: "Data Science" },
-    { name: "Flask", level: 90, icon: Flask, category: "Data Science" },
-    { name: "OCR", level: 90, icon: FileText, category: "Data Science" },
-    { name: "PowerBI", level: 80, icon: BarChart3, category: "Data Science" },
+    // Data Engineering
+    { name: "Docker", level: 85, icon: Server, category: "Data Engineering" },
+    { name: "ETL Pipelines", level: 85, icon: Shuffle, category: "Data Engineering" },
+    { name: "dbt", level: 80, icon: Box, category: "Data Engineering" },
+    { name: "Web Scraping", level: 80, icon: Globe, category: "Data Engineering" },
+    { name: "Data Cleaning", level: 90, icon: Eraser, category: "Data Engineering" },
 
-    // Frontend
-    { name: "ReactJS", level: 90, icon: Atom, category: "frontend" },
-    { name: "TypeScript", level: 85, icon: FileCode2, category: "frontend" },
-    { name: "HTML/CSS", level: 95, icon: Palette, category: "frontend" },
+    // Data Analysis
+    { name: "EDA", level: 90, icon: BarChart3, category: "Data Analysis" },
+    { name: "Power BI", level: 85, icon: BarChart3, category: "Data Analysis" },
+    { name: "Pandas", level: 90, icon: FileSpreadsheet, category: "Data Analysis" },
+    { name: "NumPy", level: 85, icon: Calculator, category: "Data Analysis" },
+    { name: "Visualization", level: 85, icon: LineChart, category: "Data Analysis" },
+
+    // Machine Learning Engineering
+    { name: "Scikit-Learn", level: 90, icon: Brain, category: "Machine Learning Engineering" },
+    { name: "TensorFlow", level: 85, icon: Cpu, category: "Machine Learning Engineering" },
+    { name: "Deep Learning", level: 80, icon: Layers, category: "Machine Learning Engineering" },
+    { name: "Predictive Modeling", level: 85, icon: TrendingUp, category: "Machine Learning Engineering" },
+
+    // OCR & Analytics
+    { name: "OCR", level: 85, icon: FileText, category: "OCR & Analytics" },
+    { name: "TesseractOCR", level: 80, icon: Bot, category: "OCR & Analytics" },
 
     // Database
-    { name: "SQL", level: 80, icon: Database, category: "database" },
+    { name: "SQL", level: 90, icon: Database, category: "Database" },
+    { name: "MySQL", level: 85, icon: Database, category: "Database" },
+    { name: "PostgreSQL", level: 80, icon: Database, category: "Database" },
 
     // Tools
+    { name: "Docker", level: 85, icon: Server, category: "tools" },
     { name: "GitHub", level: 90, icon: Github, category: "tools" },
-    { name: "GitLab", level: 85, icon: Gitlab, category: "tools" },
     { name: "VS Code", level: 90, icon: Code, category: "tools" },
     { name: "Postman", level: 85, icon: Send, category: "tools" },
+    { name: "Jupyter Notebook", level: 90, icon: BookOpen, category: "tools" },
+    { name: "Google Colab", level: 85, icon: Atom, category: "tools" },
+    
 
     // Other
     { name: "OS Concepts", level: 85, icon: Cpu, category: "other" },
@@ -51,38 +100,53 @@ const Skills: React.FC = () => {
 
   const categories = [
     {
-      id: "Data Science",
-      name: "Data Science",
+      id: "Data Engineering",
+      name: "Data Engineering",
+      icon: Server,
+      description: "ETL pipelines, Docker, dbt, and data preparation",
+      color: "from-blue-600 to-indigo-600",
+      lightColor: "from-blue-400 to-indigo-400",
+    },
+    {
+      id: "Data Analysis",
+      name: "Data Analysis",
+      icon: BarChart3,
+      description: "Exploratory analysis, BI, and visualization",
+      color: "from-cyan-600 to-sky-600",
+      lightColor: "from-cyan-400 to-sky-400",
+    },
+    {
+      id: "Machine Learning Engineering",
+      name: "Machine Learning Engineering",
       icon: Brain,
-      description: "Machine learning, data analysis, and AI expertise",
-      color: "from-purple-600 to-indigo-600",
-      lightColor: "from-purple-400 to-indigo-400",
+      description: "ML models, DL, and deployment",
+      color: "from-purple-600 to-pink-600",
+      lightColor: "from-purple-400 to-pink-400",
     },
-    { 
-      id: "frontend", 
-      name: "Frontend", 
-      icon: Code, 
-      description: "Creating beautiful, responsive user interfaces",
-      color: "from-blue-600 to-cyan-600",
-      lightColor: "from-blue-400 to-cyan-400",
-    },
-    { 
-      id: "database", 
-      name: "Database", 
-      icon: Database, 
-      description: "Data storage, retrieval, and management",
+    {
+      id: "Database",
+      name: "Database",
+      icon: Database,
+      description: "Efficient storage, queries, and management",
       color: "from-emerald-600 to-teal-600",
       lightColor: "from-emerald-400 to-teal-400",
     },
-    { 
-      id: "tools", 
-      name: "Tools", 
-      icon: Github, 
+    {
+      id: "OCR & Analytics",
+      name: "OCR & Analytics",
+      icon: FileText,
+      description: "Extracting and analyzing information from text/images",
+      color: "from-pink-600 to-rose-600",
+      lightColor: "from-pink-400 to-rose-400",
+    },
+    {
+      id: "tools",
+      name: "Tools",
+      icon: Wrench,
       description: "Development tools and productivity enhancers",
       color: "from-orange-600 to-amber-600",
       lightColor: "from-orange-400 to-amber-400",
     },
-   
   ]
 
   // Group skills by category for display

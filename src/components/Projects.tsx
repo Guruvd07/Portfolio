@@ -87,7 +87,7 @@ const Projects: React.FC = () => {
         "CSS",
       ],
       links: { github: "https://github.com/Guruvd07/car-price-predictor",
-      live: "https://car-price-predictor-s3ha.onrender.com/"},
+      live: "https://car-price-predictor-1gcq.onrender.com/"},
       image: pro11,
       date: "2025",
       featured: false,

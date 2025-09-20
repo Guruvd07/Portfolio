@@ -12,6 +12,8 @@ import pro11 from "../../public/lovable-uploads/Projects/FrieghtTransportationSy
 import pro13 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
 import pro19 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
 import pro24 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
+import pro25 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
+
 
 interface Project {
   id: string
@@ -59,13 +61,13 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: "project1",
-      title: "ReportEase",
-      shortDescription: "Automated Smart Reporting Portal for educational institutions",
+      title: "SentimentGuru AI",
+      shortDescription: "Predicts YouTube comment sentiment and provides a video rating with visual charts.",
       fullDescription:
-        "Educational institutions generate vast amounts of diverse and fragmented data annually, making the preparation of comprehensive reports a complex and time-intensive task. This project introduces an automated Smart Reporting Portal designed to streamline data integration, analysis, and visualization. Leveraging cutting-edge technologies like AWS, Node.js, and React.js, the portal addresses inefficiencies in manual reporting by enabling secure data collection, real-time collaboration, and customizable visualizations. Key features include user authentication, automated report generation, and adherence to data privacy standards like GDPR. This innovative platform enhances reporting accuracy, facilitates insightful decision-making, and empowers educational institutions to focus on strategic growth.",
-      technologies: ["AWS", "Node.js", "React.js", "Database Management", "Data Visualization"],
-      links: { github: "https://github.com/SashwatOrg/v_07" },
-      image: pro19,
+        "SentimentGuru AI is an end-to-end web application that analyzes YouTube video comments, predicts sentiment, and provides an overall rating and visual insights for a video. It helps content creators and viewers understand audience reactions at a glance.",
+      technologies: ["Python", "Flask", "Hugging Face Transformers", "WordCloud", "Data Visualization" , 'API' , 'HTML/CSS/JS'],
+      links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
+      image: pro25,
       date: "2024",
       featured: true,
     },
@@ -105,6 +107,18 @@ const Projects: React.FC = () => {
     },
       image: pro01,
       date: "2025",
+      featured: true,
+    },
+    {
+      id: "project1",
+      title: "ReportEase",
+      shortDescription: "Automated Smart Reporting Portal for educational institutions",
+      fullDescription:
+        "Educational institutions generate vast amounts of diverse and fragmented data annually, making the preparation of comprehensive reports a complex and time-intensive task. This project introduces an automated Smart Reporting Portal designed to streamline data integration, analysis, and visualization. Leveraging cutting-edge technologies like AWS, Node.js, and React.js, the portal addresses inefficiencies in manual reporting by enabling secure data collection, real-time collaboration, and customizable visualizations. Key features include user authentication, automated report generation, and adherence to data privacy standards like GDPR. This innovative platform enhances reporting accuracy, facilitates insightful decision-making, and empowers educational institutions to focus on strategic growth.",
+      technologies: ["AWS", "Node.js", "React.js", "Database Management", "Data Visualization"],
+      links: { github: "https://github.com/SashwatOrg/v_07" },
+      image: pro19,
+      date: "2024",
       featured: true,
     },
     

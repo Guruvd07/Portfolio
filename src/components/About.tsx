@@ -99,11 +99,14 @@ const About: React.FC = () => {
       icon: <Server className="w-5 h-5" />,
       color: "from-blue-500 to-indigo-600",
       skills: [
-        { icon: <SiPython className="text-xl" />, name: "Docker", color: "bg-blue-100 text-blue-600" },
         { icon: <FaBrain className="text-xl" />, name: "ETL Pipelines", color: "bg-orange-100 text-orange-600" },
-        { icon: <BsRobot className="text-xl" />, name: "dbt", color: "bg-red-100 text-red-600" },
+        { icon: <SiPython className="text-xl" />, name: "API ", color: "bg-blue-100 text-blue-600" },
         { icon: <SiPandas className="text-xl" />, name: "Web Scraping", color: "bg-emerald-100 text-emerald-600" },
-        { icon: <SiPandas className="text-xl" />, name: "Data Cleaning", color: "bg-emerald-100 text-emerald-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Data Loading", color: "bg-emerald-100 text-emerald-600" },
+        { icon: <BsRobot className="text-xl" />, name: "Data Storage", color: "bg-red-100 text-red-600" },
+        { icon: <SiPandas className="text-xl" />, name: "Data Transformation", color: "bg-emerald-100 text-emerald-600" },
+        
+
       ],
     },
     {
@@ -148,7 +151,6 @@ const About: React.FC = () => {
       skills: [
         { icon: <SiMysql className="text-xl" />, name: "MySQL", color: "bg-blue-50 text-blue-500" },
         { icon: <FaServer className="text-xl" />, name: "SQL", color: "bg-teal-100 text-teal-600" },
-        { icon: <FaDatabase className="text-xl" />, name: "PostreSQL", color: "bg-indigo-100 text-indigo-600" },
       ],
     },
   ]
@@ -248,7 +250,7 @@ const About: React.FC = () => {
     </span>{" "}
     includes{" "}
     <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
-      Docker, ETL pipelines, dbt, and web scraping
+      ETL pipelines, API , Web Scraping , Data Loading , Data Storage , Data Transformation
     </span>
     , enabling me to collect, clean, and structure raw data into usable formats
     for analytics and machine learning.

@@ -20,6 +20,10 @@ import Event04b from "../../public/lovable-uploads/Events & Speaking/Guru/cn3.jp
 import Event04c from "../../public/lovable-uploads/Events & Speaking/Guru/cn1.jpeg"
 import Event04d from "../../public/lovable-uploads/Events & Speaking/Guru/cn4.jpeg"
 import Event04e from "../../public/lovable-uploads/Events & Speaking/Guru/cn5.jpeg"
+import Event05a from "../../public/lovable-uploads/Events & Speaking/sih guidance/1.jpg"
+import Event05b from "../../public/lovable-uploads/Events & Speaking/sih guidance/2.jpg"
+import Event05c from "../../public/lovable-uploads/Events & Speaking/sih guidance/3.jpg"
+
 
 interface Event {
   id: string;
@@ -32,7 +36,7 @@ interface Event {
   image: string;
   images?: string[];
   link?: string;
-  eventType: 'award' | 'Felicitation' | 'organizer' | 'Inauguration';
+  eventType: 'Guidance_Session' | 'award' | 'Felicitation' | 'organizer' | 'Inauguration';
 }
 
 const Events: React.FC = () => {
@@ -43,6 +47,23 @@ const Events: React.FC = () => {
   const events: Event[] = [
     {
       id: "event1",
+      title: "Guidance Session for SIH 2025 Aspirants ",
+      description: "",
+      fullDescription: "Our college organized a guidance session for juniors participating in SIH 2025, where we, as SIH 2024 finalists, shared insights, strategies, and tips to help them prepare effectively and excel in the competition.",
+      date: "2025",
+      location: "MIT Academy of Engineering, Pune",
+      audience: "Team Shashwat",
+      image: Event05a,
+      images: [
+        Event05a,
+        Event05b,
+        Event05c
+      ],
+      // link: "https://www.linkedin.com/posts/viraj-mandlik-21a79a290_ai-mentalhealth-sentimentanalysis-activity-7301601151601278976-IBig",
+      eventType: "Guidance_Session"
+    },
+    {
+      id: "event2",
       title: "Awarded at Nakshatra'25 🚀 ",
       description: "Awarded for outstanding performance as SIH Finalists",
       fullDescription: "Proud to share that me and my team Shashwat were awarded at our college event Nakshatra 2025 for being finalists in the prestigious Smart India Hackathon (SIH)! Our journey through the Smart India Hackathon was filled with innovation, teamwork, and problem-solving under real-world pressure. Being selected as finalists among thousands of teams across India was a huge achievement in itself, and being recognized at our college made it even more special.",
@@ -59,7 +80,7 @@ const Events: React.FC = () => {
       eventType: "award"
     },
     {
-      id: "event2",
+      id: "event3",
       title: "Felicitated at MITAOE ",
       description: "Felicitated at MITAOE as Smart India Hackathon Finalists 🏅",
       fullDescription: "Excited to share that me and my team were felicitated at MIT Academy of Engineering (MITAOE) for being finalists in the Smart India Hackathon (SIH) 2025! Being recognized by our institution for our innovation and dedication was a proud moment for all of us. Representing MITAOE at a national-level platform like SIH was an enriching experience, and the felicitation truly acknowledged our hard work and passion for solving real-world challenges.",
@@ -75,7 +96,7 @@ const Events: React.FC = () => {
       eventType: "Felicitation"
     },
     {
-      id: "event3",
+      id: "event4",
       title: "MAHATech 2025 Organizer",
       description: "Part of the organizing team for this grand industrial exhibition, gaining hands-on experience in event planning, business interactions, and leadership.",
       fullDescription: "✨ Excited to share my incredible journey at MAHATech 2025! ✨\n\nBeing a part of the organizing team for this grand industrial exhibition was a truly enriching experience. From crowd management, sales, and registration to handling multiple event operations, I got hands-on exposure to event planning, problem-solving, and business interactions.\n\nThis journey helped me sharpen my leadership, coordination, and communication skills, and it was an honor to work alongside some amazing professionals and industry experts.",
@@ -93,7 +114,7 @@ const Events: React.FC = () => {
       eventType: "organizer"
     },
     {
-      id: "event4",
+      id: "event5",
       title: "Official Inauguration of 10x Club MITAOE |",
       description: "Official launch of the 10x Club at MITAOE to promote innovation, collaboration, and student-led growth in tech and entrepreneurship. The event was honored by the presence of distinguished guests and faculty members.",
       fullDescription: "TThe 10x Club was officially inaugurated at MIT Academy of Engineering (MITAOE) as a student-driven initiative focused on innovation, peer learning, and real-world problem solving. This event marked the beginning of a new platform dedicated to empowering students to think bigger, build smarter, and grow together in the fields of technology and entrepreneurship. \n\n The inauguration ceremony was graced by several distinguished guests and faculty members who have been instrumental in supporting and nurturing student innovation: \n\n Director: Gaudar Sir \n\n Deputy Director: Shitalkumar Jain Sir \n\n CSE Department Dean: Gaudar Ma'am \n\n Chief Guest: Pooja Rathore Ma'am \n\n Faculty Members: Manish Giri Sir , Santosh Warpe Sir , Meenakshi Ma'am \n\n Club Faculty Head: Bhagyashree Alhat Ma'am  \n\n Their presence added great value to the event, providing insights and encouragement that will guide the club in its future endeavors. Following the inauguration, the 10x Club launched its recruitment process, inviting students with a passion for innovation, learning, and impact to join the community and contribute to its mission. \n\n  This milestone marks just the beginning of the 10x Club's journey—one that promises to foster creativity, leadership, and hands-on experiences for all its members.",
@@ -132,6 +153,8 @@ const Events: React.FC = () => {
 
   const getEventLabel = (eventType: string) => {
     switch (eventType) {
+      case 'Guidance_Session':
+        return 'Guidance_Session';
       case 'award':
         return 'Award';
       case 'Felicitation':

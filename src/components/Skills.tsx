@@ -55,11 +55,15 @@ const Skills: React.FC = () => {
 
   const skills: Skill[] = [
     // Data Engineering
-    { name: "Docker", level: 85, icon: Server, category: "Data Engineering" },
     { name: "ETL Pipelines", level: 85, icon: Shuffle, category: "Data Engineering" },
-    { name: "dbt", level: 80, icon: Box, category: "Data Engineering" },
     { name: "Web Scraping", level: 80, icon: Globe, category: "Data Engineering" },
+    { name: "API", level: 80, icon: Globe, category: "Data Engineering" },
+    { name: "Data Loading", level: 80, icon: Globe, category: "Data Engineering" },
+    { name: "Data Storage", level: 80, icon: Globe, category: "Data Engineering" },
     { name: "Data Cleaning", level: 90, icon: Eraser, category: "Data Engineering" },
+    { name: "Data Transformation", level: 90, icon: Eraser, category: "Data Engineering" },
+    { name: "Docker", level: 85, icon: Server, category: "Data Engineering" },
+
 
     // Data Analysis
     { name: "EDA", level: 90, icon: BarChart3, category: "Data Analysis" },
@@ -81,7 +85,6 @@ const Skills: React.FC = () => {
     // Database
     { name: "SQL", level: 90, icon: Database, category: "Database" },
     { name: "MySQL", level: 85, icon: Database, category: "Database" },
-    { name: "PostgreSQL", level: 80, icon: Database, category: "Database" },
 
     // Tools
     { name: "Docker", level: 85, icon: Server, category: "tools" },
@@ -103,7 +106,7 @@ const Skills: React.FC = () => {
       id: "Data Engineering",
       name: "Data Engineering",
       icon: Server,
-      description: "ETL pipelines, Docker, dbt, and data preparation",
+      description: "ETL pipelines , data preparation",
       color: "from-blue-600 to-indigo-600",
       lightColor: "from-blue-400 to-indigo-400",
     },

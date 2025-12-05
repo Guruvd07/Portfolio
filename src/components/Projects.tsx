@@ -13,7 +13,7 @@ import pro13 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
 import pro19 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
 import pro24 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
 import pro25 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
-
+import pro26 from "../../public/lovable-uploads/Projects/GuruInsightAI/After.jpg"
 
 interface Project {
   id: string
@@ -68,9 +68,32 @@ const Projects: React.FC = () => {
       technologies: ["Python", "Flask", "Hugging Face Transformers", "WordCloud", "Data Visualization" , 'API' , 'HTML/CSS/JS'],
       links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
       image: pro25,
-      date: "2024",
+      date: "2025",
       featured: true,
     },
+    {
+      id: "project2",
+      title: "InsightGuru AI",
+      shortDescription: "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
+      fullDescription:
+        "InsightGuru AI is an advanced AI system that analyzes YouTube videos by extracting transcripts through a 4-level pipeline (VTT → TimedText → Transcript API → Whisper ASR). It detects keyword-specific segments and generates precise, context-aware summaries using FLAN-T5 transformers. The project includes real-time processing through a sleek Flask web interface, helping users quickly find what a speaker said about any topic or person.",
+      technologies: [
+        "Python",
+        "Flask",
+        "Hugging Face Transformers",
+        "FLAN-T5",
+        "Whisper ASR",
+        "YouTube API",
+        "NLP",
+        "Text Summarization",
+        "HTML/CSS/JS"
+      ],
+      links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
+      image: pro26, // replace with your actual imported image variable
+      date: "2025",
+      featured: true,
+    },
+    
     {
       id: "project2",
       title: "CarGuru AI – Used Car Price Prediction",

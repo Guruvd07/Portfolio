@@ -8,14 +8,10 @@ import {
   Code,
   Database,
   FileText,
-  FlaskRoundIcon as Flask,
   BarChart3,
   Atom,
-  FileCode2,
-  Palette,
   Github,
   GitBranch,
-  Gitlab,
   Send,
   Cpu,
   LayoutGrid,
@@ -23,7 +19,6 @@ import {
   Sparkles,
   Server,
   Shuffle,
-  Box,
   Globe,
   Eraser,
   FileSpreadsheet,
@@ -36,13 +31,11 @@ import {
   BookOpen
 } from "lucide-react";
 
-
-
 interface Skill {
   name: string
   level: number
   icon: React.ElementType
-  category: "Data Engineering" | "Data Analysis" | "Machine Learning Engineering" | "Database" | "OCR & Analytics" | "other" | "tools"
+  category: "Data Engineering" | "Data Analysis" | "Machine Learning Engineering" | "Database" | "OCR" | "tools" | "other"
 }
 
 const Skills: React.FC = () => {
@@ -54,59 +47,95 @@ const Skills: React.FC = () => {
   }, [])
 
   const skills: Skill[] = [
-    // Data Engineering
-    { name: "ETL Pipelines", level: 85, icon: Shuffle, category: "Data Engineering" },
-    { name: "Web Scraping", level: 80, icon: Globe, category: "Data Engineering" },
-    { name: "API", level: 80, icon: Globe, category: "Data Engineering" },
-    { name: "Data Loading", level: 80, icon: Globe, category: "Data Engineering" },
-    { name: "Data Storage", level: 80, icon: Globe, category: "Data Engineering" },
+    // -------------------------------------
+    // DATA ENGINEERING
+    // -------------------------------------
+    { name: "ETL Pipelines", level: 90, icon: Shuffle, category: "Data Engineering" },
+    { name: "REST API Extraction", level: 85, icon: Globe, category: "Data Engineering" },
+    { name: "Web Scraping", level: 85, icon: Globe, category: "Data Engineering" },
     { name: "Data Cleaning", level: 90, icon: Eraser, category: "Data Engineering" },
     { name: "Data Transformation", level: 90, icon: Eraser, category: "Data Engineering" },
-    { name: "Docker", level: 85, icon: Server, category: "Data Engineering" },
-
-
-    // Data Analysis
+    { name: "Data Loading", level: 85, icon: Globe, category: "Data Engineering" },
+  
+    // -------------------------------------
+    // DATA ANALYSIS
+    // -------------------------------------
     { name: "EDA", level: 90, icon: BarChart3, category: "Data Analysis" },
     { name: "Power BI", level: 85, icon: BarChart3, category: "Data Analysis" },
     { name: "Pandas", level: 90, icon: FileSpreadsheet, category: "Data Analysis" },
     { name: "NumPy", level: 85, icon: Calculator, category: "Data Analysis" },
     { name: "Visualization", level: 85, icon: LineChart, category: "Data Analysis" },
+  
+    // -------------------------------------
+    // MACHINE LEARNING (ONLY ML)
+    // -------------------------------------
+// -------------------------------------
+// MACHINE LEARNING (ONLY ML)
+// -------------------------------------
+{ name: "Scikit-Learn", level: 90, icon: Brain, category: "Machine Learning Engineering" },
+{ name: "Predictive Modeling", level: 90, icon: TrendingUp, category: "Machine Learning Engineering" },
+{ name: "Model Evaluation", level: 85, icon: Brain, category: "Machine Learning Engineering" },
 
-    // Machine Learning Engineering
-    { name: "Scikit-Learn", level: 90, icon: Brain, category: "Machine Learning Engineering" },
-    { name: "TensorFlow", level: 85, icon: Cpu, category: "Machine Learning Engineering" },
-    { name: "Deep Learning", level: 80, icon: Layers, category: "Machine Learning Engineering" },
-    { name: "Predictive Modeling", level: 85, icon: TrendingUp, category: "Machine Learning Engineering" },
+// NEW ML SKILLS
+{ name: "Feature Engineering", level: 85, icon: Layers, category: "Machine Learning Engineering" },
+{ name: "Hyperparameter Tuning", level: 80, icon: Wrench, category: "Machine Learning Engineering" },
+{ name: "Cross-Validation (CV)", level: 90, icon: Shuffle, category: "Machine Learning Engineering" },
 
-    // OCR & Analytics
-    { name: "OCR", level: 85, icon: FileText, category: "OCR & Analytics" },
-    { name: "TesseractOCR", level: 80, icon: Bot, category: "OCR & Analytics" },
-
-    // Database
+  
+    // -------------------------------------
+    // DEEP LEARNING + NLP (Combined)
+    // -------------------------------------
+    { name: "ANN", level: 85, icon: Layers, category: "Deep Learning" },
+    { name: "CNN", level: 85, icon: Layers, category: "Deep Learning" },
+    { name: "Transfer Learning", level: 80, icon: Layers, category: "Deep Learning" },
+  
+    // NLP inside DL Category
+    { name: "Transformers (BERT, T5)", level: 90, icon: Brain, category: "Deep Learning" },
+    { name: "Hugging Face", level: 85, icon: Bot, category: "Deep Learning" },
+    { name: "Whisper ASR", level: 80, icon: Bot, category: "Deep Learning" },
+  
+    // -------------------------------------
+    // OCR
+    // -------------------------------------
+    { name: "OCR", level: 90, icon: FileText, category: "OCR" },
+    { name: "Tesseract OCR", level: 85, icon: Bot, category: "OCR" },
+    { name: "Image-to-Text Extraction", level: 85, icon: FileText, category: "OCR" },
+  
+    // -------------------------------------
+    // DATABASE
+    // -------------------------------------
     { name: "SQL", level: 90, icon: Database, category: "Database" },
     { name: "MySQL", level: 85, icon: Database, category: "Database" },
+    { name: "MongoDB", level: 80, icon: Database, category: "Database" },
+  
+    // -------------------------------------
+    // TOOLS
+    // -------------------------------------
+// -------------------------------------
+// TOOLS
+// -------------------------------------
+{ name: "Docker", level: 85, icon: Server, category: "tools" },
+{ name: "GitHub", level: 90, icon: Github, category: "tools" },
+{ name: "VS Code", level: 90, icon: Code, category: "tools" },
+{ name: "Jupyter Notebook", level: 90, icon: BookOpen, category: "tools" },
+{ name: "Google Colab", level: 85, icon: Atom, category: "tools" },
+{ name: "MySQL Workbench", level: 85, icon: Database, category: "tools" },
 
-    // Tools
-    { name: "Docker", level: 85, icon: Server, category: "tools" },
-    { name: "GitHub", level: 90, icon: Github, category: "tools" },
-    { name: "VS Code", level: 90, icon: Code, category: "tools" },
-    { name: "Postman", level: 85, icon: Send, category: "tools" },
-    { name: "Jupyter Notebook", level: 90, icon: BookOpen, category: "tools" },
-    { name: "Google Colab", level: 85, icon: Atom, category: "tools" },
-    
-
-    // Other
+  
+    // -------------------------------------
+    // OTHER
+    // -------------------------------------
     { name: "OS Concepts", level: 85, icon: Cpu, category: "other" },
     { name: "System Design", level: 85, icon: LayoutGrid, category: "other" },
     { name: "Git", level: 90, icon: GitBranch, category: "other" },
-  ]
-
+  ];
+  
   const categories = [
     {
       id: "Data Engineering",
       name: "Data Engineering",
       icon: Server,
-      description: "ETL pipelines , data preparation",
+      description: "Pipelines, APIs, data preparation",
       color: "from-blue-600 to-indigo-600",
       lightColor: "from-blue-400 to-indigo-400",
     },
@@ -114,45 +143,52 @@ const Skills: React.FC = () => {
       id: "Data Analysis",
       name: "Data Analysis",
       icon: BarChart3,
-      description: "Exploratory analysis, BI, and visualization",
+      description: "Exploratory analysis, BI, visualization",
       color: "from-cyan-600 to-sky-600",
       lightColor: "from-cyan-400 to-sky-400",
     },
     {
       id: "Machine Learning Engineering",
-      name: "Machine Learning Engineering",
+      name: "Machine Learning",
       icon: Brain,
-      description: "ML models, DL, and deployment",
+      description: "ML models, predictive modeling, evaluation",
       color: "from-purple-600 to-pink-600",
       lightColor: "from-purple-400 to-pink-400",
+    },
+    {
+      id: "Deep Learning",
+      name: "Deep Learning & NLP",
+      icon: Layers,
+      description: "Neural networks, Transformers, Whisper ASR, NLP tasks",
+      color: "from-fuchsia-600 to-violet-600",
+      lightColor: "from-fuchsia-400 to-violet-400",
+    },
+    {
+      id: "OCR",
+      name: "OCR",
+      icon: FileText,
+      description: "Extracting text from images & PDFs",
+      color: "from-red-600 to-rose-600",
+      lightColor: "from-red-400 to-rose-400",
     },
     {
       id: "Database",
       name: "Database",
       icon: Database,
-      description: "Efficient storage, queries, and management",
+      description: "Storage, querying, and management",
       color: "from-emerald-600 to-teal-600",
       lightColor: "from-emerald-400 to-teal-400",
-    },
-    {
-      id: "OCR & Analytics",
-      name: "OCR & Analytics",
-      icon: FileText,
-      description: "Extracting and analyzing information from text/images",
-      color: "from-pink-600 to-rose-600",
-      lightColor: "from-pink-400 to-rose-400",
     },
     {
       id: "tools",
       name: "Tools",
       icon: Wrench,
-      description: "Development tools and productivity enhancers",
+      description: "Developer tools & productivity",
       color: "from-orange-600 to-amber-600",
       lightColor: "from-orange-400 to-amber-400",
     },
-  ]
-
-  // Group skills by category for display
+  ];
+  
   const groupedSkills = categories.map((category) => ({
     ...category,
     skills: skills.filter((skill) => skill.category === category.id),
@@ -160,33 +196,26 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* Background */}  
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500 opacity-10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-500 opacity-10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          
           <h2 className="text-4xl md:text-5xl font-bold mb-4">My Skills</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my technical skills across different domains, from data science to frontend development
+            Explore my technical expertise across Data Engineering, ML, Deep Learning, NLP, and more.
           </p>
         </div>
 
-        {/* Domain boxes in a grid layout */}
+        {/* Skill categories grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {groupedSkills.map((domain, index) => (
             <motion.div
               key={domain.id}
               initial={{ opacity: 0, y: 50 }}
-              animate={{ 
-                opacity: isInView ? 1 : 0, 
-                y: isInView ? 0 : 50,
-              }}
-              transition={{ 
-                duration: 0.5, 
-                delay: index * 0.1,
-              }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <DomainBox 
                 domain={domain} 
@@ -200,6 +229,8 @@ const Skills: React.FC = () => {
     </section>
   )
 }
+
+/* ------------------------- Domain Box Component ------------------------- */
 
 interface DomainBoxProps {
   domain: {
@@ -217,8 +248,6 @@ interface DomainBoxProps {
 
 const DomainBox: React.FC<DomainBoxProps> = ({ domain, hoveredSkill, onHoverSkill }) => {
   const DomainIcon = domain.icon
-
-  // Calculate average skill level for the domain
   const avgSkillLevel =
     domain.skills.length > 0
       ? Math.round(domain.skills.reduce((sum, skill) => sum + skill.level, 0) / domain.skills.length)
@@ -226,20 +255,13 @@ const DomainBox: React.FC<DomainBoxProps> = ({ domain, hoveredSkill, onHoverSkil
 
   return (
     <div className="fancy-domain-box h-full">
-      {/* Outer border with gradient */}
       <div className={`p-[1px] rounded-2xl bg-gradient-to-br ${domain.color} shadow-xl hover:shadow-2xl transition-all duration-300 h-full`}>
-        {/* Inner content */}
         <div className="bg-gray-900 rounded-2xl h-full overflow-hidden">
-          {/* Domain header */}
           <div className={`p-6 relative overflow-hidden`}>
-            {/* Header background */}
             <div className={`absolute inset-0 bg-gradient-to-br ${domain.color} opacity-10`}></div>
-            
-            {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-20 h-20 bg-white opacity-5 rounded-full blur-xl"></div>
             <div className="absolute bottom-0 left-0 w-10 h-10 bg-white opacity-5 rounded-full blur-lg"></div>
-            
-            {/* Header content */}
+
             <div className="flex items-center relative z-10">
               <div className={`p-3 rounded-xl bg-gradient-to-br ${domain.color} mr-4 shadow-lg`}>
                 <DomainIcon className="w-6 h-6 text-white" />
@@ -255,17 +277,15 @@ const DomainBox: React.FC<DomainBoxProps> = ({ domain, hoveredSkill, onHoverSkil
                 </h3>
                 <p className="text-xs text-gray-400 mt-1">{domain.description}</p>
               </div>
-              
+
               <div className="ml-2">
-                <Sparkles className={`w-5 h-5 text-gradient-${domain.color.split(' ')[1]}`} />
+                <Sparkles className="w-5 h-5 text-white/30" />
               </div>
             </div>
-            
-            {/* Divider */}
+
             <div className="mt-4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
           </div>
 
-          {/* Skills grid inside the domain box */}
           <div className="p-6 relative">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {domain.skills.map((skill) => (
@@ -286,6 +306,8 @@ const DomainBox: React.FC<DomainBoxProps> = ({ domain, hoveredSkill, onHoverSkil
   )
 }
 
+/* ------------------------- Skill Item Component ------------------------- */
+
 interface SkillItemProps {
   skill: Skill
   domainColor: string
@@ -295,7 +317,6 @@ interface SkillItemProps {
 }
 
 const SkillItem: React.FC<SkillItemProps> = ({ skill, domainColor, isHovered, onHover, onLeave }) => {
-  // Calculate colors based on skill level
   const getColorClass = (level: number) => {
     if (level >= 90) return "from-emerald-500 to-teal-400"
     if (level >= 80) return "from-blue-500 to-cyan-400"
@@ -312,9 +333,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, domainColor, isHovered, on
       onHoverStart={onHover}
       onHoverEnd={onLeave}
     >
-      {/* Circular skill item */}
       <div className="relative">
-        {/* Skill level ring */}
         <div className="absolute inset-0 rounded-full">
           <svg className="w-full h-full" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="8" />
@@ -344,13 +363,11 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, domainColor, isHovered, on
           </svg>
         </div>
 
-        {/* Circular background with border */}
         <div
           className={`w-20 h-20 rounded-full flex items-center justify-center 
           bg-gray-800 border border-gray-700 transition-all duration-300 relative
           ${isHovered ? "border-white/30 shadow-lg" : ""}`}
         >
-          {/* Icon */}
           <div className="z-10 relative">
             <div
               className={`
@@ -372,7 +389,6 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, domainColor, isHovered, on
           </div>
         </div>
 
-        {/* Skill level badge */}
         <div className="absolute -top-2 -right-2">
           <div className={`bg-gradient-to-r ${domainColor} text-white text-xs font-bold rounded-full w-7 h-7 flex items-center justify-center shadow-lg border border-white/20`}>
             {skill.level}
@@ -380,13 +396,11 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, domainColor, isHovered, on
         </div>
       </div>
 
-      {/* Skill name */}
       <div className="mt-3 text-center">
-        <h4 className={`font-medium text-sm transition-all duration-300 ${isHovered ? 'text-white' : 'text-gray-300'}`}>
+        <h4 className={`font-medium text-sm transition-all duration-300 ${isHovered ? "text-white" : "text-gray-300"}`}>
           {skill.name}
         </h4>
 
-        {/* Small dots indicator */}
         <div className="mt-1 flex justify-center">
           {[1, 2, 3, 4, 5].map((level) => (
             <div

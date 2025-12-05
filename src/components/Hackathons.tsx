@@ -33,6 +33,13 @@ import hack22 from "../../public/lovable-uploads/Hackthon & Competion/SIH/5.jpg"
 import hack23 from "../../public/lovable-uploads/Hackthon & Competion/SIH/8.jpg"
 import hack24 from "../../public/lovable-uploads/Hackthon & Competion/SIH/9.jpg"
 import hack25 from "../../public/lovable-uploads/Hackthon & Competion/SIH/IMG-20250413-WA0023.jpg"
+import hack26 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758726998496.jpeg"
+import hack27 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758726998568.jpeg"
+import hack28 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758726998961.jpeg"
+import hack29 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758727000041.jpeg"
+import hack30 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758727000745.jpeg"
+
+
 
 interface Hackathon {
   id: string
@@ -168,7 +175,30 @@ const Hackathons: React.FC = () => {
         hack02,
       ],
       link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_datathon2025-teamshashwat-hackathonwinners-activity-7316120214511706115-VqTs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
+    },
+
+    {
+      id: "hack6",
+      title: "Judge – PromptWars 2025",
+      description: "Served as a Judge at PromptWars 2025, organized by ASSCET MIT AOE.",
+      fullDescription:
+        "✨ From Participant to Judge – A Full Circle Moment.\n\nI had the wonderful opportunity to serve as a judge for PromptWars 2025, organized by ASSCET MIT AOE. Not long ago, I was participating in such competitions, and being on the judging panel this time was a truly special milestone.\n\nIt was inspiring to evaluate the creativity, innovation, and energy showcased by the participants. A big congratulations to all the winners and heartfelt appreciation to my fellow evaluators Hanumant Kakde, Vishal Kesharwani, Sai Gulve, and special thanks to Dhanwantari Chavan for leading the event so well as the President.",
+      achievement: "Judge – PromptWars 2025",
+      date: "2025",
+      team: "Judging Panel",
+      image: hack27, // Add your image import here
+      images: [
+        hack27, // main image
+        hack26,
+        hack28,
+        hack29,
+        hack30 // additional event photos if available
+      ],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_promptwars-judge-mitaoe-activity-XXXX", // Replace with your actual LinkedIn post link
     }
+    
+
+
   ]
 
   const displayedHackathons = showAll ? hackathons : hackathons.slice(0, 3)

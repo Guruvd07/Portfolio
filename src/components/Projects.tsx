@@ -95,7 +95,7 @@ const Projects: React.FC = () => {
     },
     
     {
-      id: "project2",
+      id: "project3",
       title: "CarGuru AI – Used Car Price Prediction",
       shortDescription: "AI-powered platform for accurate and transparent used car pricing.",
       fullDescription:
@@ -133,7 +133,7 @@ const Projects: React.FC = () => {
       featured: true,
     },
     {
-      id: "project1",
+      id: "project5",
       title: "ReportEase",
       shortDescription: "Automated Smart Reporting Portal for educational institutions",
       fullDescription:

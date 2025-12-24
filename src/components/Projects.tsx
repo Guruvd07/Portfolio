@@ -3,17 +3,52 @@
 import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
-import { Github, ExternalLink, ChevronRight, ChevronDown, ChevronUp, Sparkles } from 'lucide-react'
+import {
+  Github,
+  ExternalLink,
+  ChevronRight,
+  ChevronDown,
+  ChevronUp,
+  Sparkles,
+  X,
+  ChevronLeft,
+  ChevronDownIcon,
+} from "lucide-react"
 import SectionHeading from "./SectionHeading"
 import pro01 from "../../public/lovable-uploads/Projects/Aaroya/Mediplus.jpg"
-import pro05 from "../../public/lovable-uploads/Projects/CalciMitra/1.jpg"
 import pro06 from "../../public/lovable-uploads/Projects/ClubRankers/21.png"
 import pro11 from "../../public/lovable-uploads/Projects/FrieghtTransportationSystem/Screenshot 2025-08-19 153027.jpg"
 import pro13 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
 import pro19 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
 import pro24 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
+import pro27 from "../../public/lovable-uploads/Projects/Guru DOC AI/1.jpg"
+import pro28 from "../../public/lovable-uploads/Projects/Guru DOC AI/2.jpg"
+import pro29 from "../../public/lovable-uploads/Projects/Guru DOC AI/3.jpg"
+import pro30 from "../../public/lovable-uploads/Projects/Guru DOC AI/4.jpg"
+import pro31 from "../../public/lovable-uploads/Projects/Guru DOC AI/5.jpg"
+import pro32 from "../../public/lovable-uploads/Projects/Guru DOC AI/6.jpg"
+import pro33 from "../../public/lovable-uploads/Projects/Guru DOC AI/7.jpg"
+import pro34 from "../../public/lovable-uploads/Projects/GuruInsightAI/After.jpg"
+import pro35 from "../../public/lovable-uploads/Projects/GuruInsightAI/Before.jpg"
 import pro25 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
-import pro26 from "../../public/lovable-uploads/Projects/GuruInsightAI/After.jpg"
+// import pro36 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
+import pro37 from "../../public/lovable-uploads/Projects/Youtube/2.jpg"
+import pro38 from "../../public/lovable-uploads/Projects/Youtube/3.jpg"
+import pro39 from "../../public/lovable-uploads/Projects/Youtube/4.jpg"
+import pro40 from "../../public/lovable-uploads/Projects/Youtube/5.jpg"
+import pro41 from "../../public/lovable-uploads/Projects/Youtube/6.jpg"
+import pro42 from "../../public/lovable-uploads/Projects/Youtube/7.jpg"
+import pro43 from "../../public/lovable-uploads/Projects/Youtube/8.jpg"
+import pro44 from "../../public/lovable-uploads/Projects/Youtube/9.jpg"
+import pro45 from "../../public/lovable-uploads/Projects/Youtube/10.jpg"
+import pro46 from "../../public/lovable-uploads/Projects/Youtube/11.jpg"
+
+
+
+
+
+
+
 
 interface Project {
   id: string
@@ -23,6 +58,7 @@ interface Project {
   technologies: string[]
   links: { github?: string; live?: string }
   image: string
+  images?: string[] // Array of project workflow/process images
   date: string
   featured?: boolean
 }
@@ -32,6 +68,7 @@ const Projects: React.FC = () => {
   const [showAllProjects, setShowAllProjects] = useState(false)
   const [hoveredProject, setHoveredProject] = useState<string | null>(null)
   const [shouldAnimate, setShouldAnimate] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
 
   // Create a ref for the projects section
   const sectionRef = useRef<HTMLElement>(null)
@@ -65,16 +102,26 @@ const Projects: React.FC = () => {
       shortDescription: "Predicts YouTube comment sentiment and provides a video rating with visual charts.",
       fullDescription:
         "SentimentGuru AI is an end-to-end web application that analyzes YouTube video comments, predicts sentiment, and provides an overall rating and visual insights for a video. It helps content creators and viewers understand audience reactions at a glance.",
-      technologies: ["Python", "Flask", "Hugging Face Transformers", "WordCloud", "Data Visualization" , 'API' , 'HTML/CSS/JS'],
+      technologies: [
+        "Python",
+        "Flask",
+        "Hugging Face Transformers",
+        "WordCloud",
+        "Data Visualization",
+        "API",
+        "HTML/CSS/JS",
+      ],
       links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
       image: pro25,
+      images: [pro25,  pro37 , pro38 , pro39 , pro40 , pro41 , pro42 , pro43 , pro44 , pro45 , pro46], // added multiple images array
       date: "2025",
       featured: true,
     },
     {
       id: "project2",
       title: "InsightGuru AI",
-      shortDescription: "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
+      shortDescription:
+        "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
       fullDescription:
         "InsightGuru AI is an advanced AI system that analyzes YouTube videos by extracting transcripts through a 4-level pipeline (VTT → TimedText → Transcript API → Whisper ASR). It detects keyword-specific segments and generates precise, context-aware summaries using FLAN-T5 transformers. The project includes real-time processing through a sleek Flask web interface, helping users quickly find what a speaker said about any topic or person.",
       technologies: [
@@ -86,54 +133,71 @@ const Projects: React.FC = () => {
         "YouTube API",
         "NLP",
         "Text Summarization",
-        "HTML/CSS/JS"
+        "HTML/CSS/JS",
       ],
       links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
-      image: pro26, // replace with your actual imported image variable
+      image: pro34,
+      images: [ pro35 ,pro34], // added multiple images array
       date: "2025",
       featured: true,
     },
-    
+
     {
       id: "project3",
+      title: "GuruDoc AI",
+      shortDescription:
+        "GuruDoc AI is a production-aligned backend AI system that demonstrates how modern enterprises build accurate, trustworthy document question-answering solutions using Retrieval-Augmented Generation.",
+      fullDescription:
+        "GuruDoc AI is a backend, API-first AI system that enables users to upload PDF documents and ask natural-language questions. The system returns accurate, document-grounded answers using a Retrieval-Augmented Generation (RAG) architecture. This project focuses purely on core AI intelligence and backend design. There is no frontend implementation. All APIs are tested and validated using Swagger UI.",
+      technologies: [
+        "Python",
+        "NLP",
+        "RAG",
+        "Sentence Transformers",
+        " FAISS",
+        "Gemini LLM",
+        " FastAPI",
+        " Vector Databases",
+      ],
+      links: { github: " https://github.com/Guruvd07/DocGuru-AI.git" },
+      image: pro27,
+      images: [pro27, pro28, pro29 , pro30 , pro31 , pro32 , pro33], // added multiple images array
+      date: "2025",
+      featured: true,
+    },
+
+    {
+      id: "project4",
       title: "CarGuru AI – Used Car Price Prediction",
       shortDescription: "AI-powered platform for accurate and transparent used car pricing.",
       fullDescription:
         "Background: The used car market often lacks transparency in pricing due to varying conditions, locations, and seller bias. Motivation: To bring accuracy, transparency, and trust in pricing using machine learning and real-world data. Project Idea: An end-to-end system covering data engineering, data cleaning, data analysis, ML engineering, and deployment. Real car listings were scraped, preprocessed, and analyzed. A CatBoost regression model (R² = 88%) was trained for price prediction. Finally, a Flask-based web app with HTML/CSS/JS frontend was deployed, allowing users to predict car prices, view brand logos, and explore similar cars in real-time.",
-      technologies: [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "Selenium",
-        "CatBoost",
-        "scikit-learn",
-        "Flask",
-        "HTML",
-        "CSS",
-      ],
-      links: { github: "https://github.com/Guruvd07/car-price-predictor",
-      live: "https://car-price-predictor-1gcq.onrender.com/"},
+      technologies: ["Python", "Pandas", "NumPy", "Selenium", "CatBoost", "scikit-learn", "Flask", "HTML", "CSS"],
+      links: {
+        github: "https://github.com/Guruvd07/car-price-predictor",
+        live: "https://car-price-predictor-1gcq.onrender.com/",
+      },
       image: pro11,
+      images: [pro11], // added multiple images array
       date: "2025",
       featured: false,
     },
 
     {
-      id: "project4",
+      id: "project5",
       title: "GuruCare+",
       shortDescription: "AI-Based Disease Prediction System",
       fullDescription:
         "MediPlus is an AI-powered healthcare web application that enables accurate disease prediction at your fingertips. Users can input symptoms such as fatigue, fever, or sore throat to receive instant, highly accurate predictions. The system provides severity analysis to determine if a condition is mild, moderate, or severe, helping users make informed decisions. It also offers personalized treatment advice including rest, medication, or further consultation options. Built using Machine Learning, Flask, and HTML/CSS, MediPlus is designed to make early diagnosis fast, intelligent, and accessible.",
-      technologies: ["Machine Learning", "NodeJs" , "Flask", "Html/CSS", "Streamlit" , "Healthcare"],
-      links: { github: "https://github.com/Guruvd07/GuruCare",
-               live: "https://medical-frontend-oxk9.onrender.com/"
-    },
+      technologies: ["Machine Learning", "NodeJs", "Flask", "Html/CSS", "Streamlit", "Healthcare"],
+      links: { github: "https://github.com/Guruvd07/GuruCare", live: "https://medical-frontend-oxk9.onrender.com/" },
       image: pro01,
+      images: [pro01], // added multiple images array
       date: "2025",
       featured: true,
     },
     {
-      id: "project5",
+      id: "project6",
       title: "ReportEase",
       shortDescription: "Automated Smart Reporting Portal for educational institutions",
       fullDescription:
@@ -141,12 +205,13 @@ const Projects: React.FC = () => {
       technologies: ["AWS", "Node.js", "React.js", "Database Management", "Data Visualization"],
       links: { github: "https://github.com/SashwatOrg/v_07" },
       image: pro19,
+      images: [pro19], // added multiple images array
       date: "2024",
       featured: true,
     },
-    
+
     {
-      id: "project3",
+      id: "project7",
       title: "ClubRankers",
       shortDescription: "Empowering College Clubs and Students to connect and showcase activities",
       fullDescription:
@@ -154,12 +219,13 @@ const Projects: React.FC = () => {
       technologies: ["Flask", "MySQL", "Python", "HTML/CSS", "JavaScript"],
       links: { github: "https://github.com/virajmandlik" },
       image: pro06,
+      images: [pro06], // added multiple images array
       date: "2022",
       featured: true,
     },
-  
+
     {
-      id: "project5",
+      id: "project8",
       title: "Gamified AI Platform for Coding & Language Mastery",
       shortDescription: "Making Learning Addictive with Quizzes, XP & Leaderboards",
       fullDescription: `🎓 Students (Ages 15–35): School & college learners struggling with syntax and structure.\n\n
@@ -175,35 +241,26 @@ const Projects: React.FC = () => {
       technologies: ["React", "Node.js", "MongoDB", "AWS"],
       links: { github: "https://github.com/Guruvd07" },
       image: pro13,
+      images: [pro13], // added multiple images array
       date: "2025",
       featured: false,
     },
     {
-      id: "project6",
+      id: "project9",
       title: "Narmada Traders - Bilingual Billing System",
       shortDescription: "Professional billing system with English-to-Marathi conversion and PDF generation",
-      fullDescription: "🏪 A modern, bilingual billing system built for Narmada Traders furniture store. Features smart item entry with auto-complete suggestions, real-time English-to-Marathi conversion, and professional PDF generation with perfect Devanagari font rendering. Includes cultural elements like traditional god names, signature sections, and optimized single-page A4 layout for business use.",
+      fullDescription:
+        "🏪 A modern, bilingual billing system built for Narmada Traders furniture store. Features smart item entry with auto-complete suggestions, real-time English-to-Marathi conversion, and professional PDF generation with perfect Devanagari font rendering. Includes cultural elements like traditional god names, signature sections, and optimized single-page A4 layout for business use.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "html2pdf.js", "Vite"],
-      links: { 
+      links: {
         github: "https://github.com/Guruvd07/Billing-System.git",
-        live: "https://billing-system-lime.vercel.app/" // Add your deployed URL here
+        live: "https://billing-system-lime.vercel.app/",
       },
-      image: pro24, // Add your project screenshot variable here
+      image: pro24,
+      images: [pro24], // added multiple images array
       date: "2025",
-      featured: true, // Set to true since it's a comprehensive, unique project
+      featured: true,
     },
-    // {
-    //   id: "project7",
-    //   title: "Mental Health Mood Prediction using Streamlit & Random Forest",
-    //   shortDescription: "WebApp which Predict the user's mood based on past behavior patterns",
-    //   fullDescription:
-    //     "📘 Project Overview: This interactive Streamlit application enables users to log daily digital platform usage and mental health indicators (like anxiety, depression levels, and self-esteem). The app stores data locally and leverages machine learning to predict the user's mood based on past behavior patterns.",
-    //   technologies: ["Machine Learning", "Streamlit", "Flask", "Python"],
-    //   links: { github: "https://github.com/Guruvd07" },
-    //   image: pro05,
-    //   date: "2023",
-    //   featured: false,
-    // },
   ]
 
   const displayedProjects = showAllProjects ? projects : projects.filter((_, index) => index < 6)
@@ -379,6 +436,118 @@ const Projects: React.FC = () => {
       y: 0,
       transition: { duration: 0.3 },
     },
+  }
+
+  const FullscreenImageViewer = ({
+    images,
+    initialIndex,
+  }: {
+    images: string[]
+    initialIndex: number
+  }) => {
+    const [currentIndex, setCurrentIndex] = useState(initialIndex)
+
+    const handleNext = () => {
+      setCurrentIndex((prev) => (prev + 1) % images.length)
+    }
+
+    const handlePrev = () => {
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+    }
+
+    return (
+      <motion.div
+        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setSelectedImageIndex(null)}
+      >
+        <motion.div
+          className="relative w-full max-w-4xl max-h-[90vh] flex flex-col"
+          onClick={(e) => e.stopPropagation()}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
+        >
+          {/* Close button */}
+          <motion.button
+            className="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 rounded-full p-2 backdrop-blur-sm transition-colors"
+            onClick={() => setSelectedImageIndex(null)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <X size={24} className="text-white" />
+          </motion.button>
+
+          {/* Main image */}
+          <motion.div
+            className="relative flex-1 overflow-hidden rounded-lg bg-black/50"
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img
+              src={images[currentIndex] || "/placeholder.svg"}
+              alt={`Project view ${currentIndex + 1}`}
+              className="w-full h-full object-contain"
+            />
+          </motion.div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-between mt-4">
+            <motion.button
+              className="bg-white/10 hover:bg-white/20 rounded-full p-2 backdrop-blur-sm transition-colors"
+              onClick={handlePrev}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              disabled={images.length === 1}
+            >
+              <ChevronLeft size={24} className="text-white" />
+            </motion.button>
+
+            {/* Image counter and thumbnails */}
+            <div className="flex-1 mx-4">
+              <div className="text-center text-white text-sm mb-3">
+                {currentIndex + 1} / {images.length}
+              </div>
+              <div className="flex gap-2 justify-center flex-wrap">
+                {images.map((img, idx) => (
+                  <motion.button
+                    key={idx}
+                    className={`w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+                      idx === currentIndex
+                        ? "border-blue-500 ring-2 ring-blue-400"
+                        : "border-white/20 opacity-50 hover:opacity-100"
+                    }`}
+                    onClick={() => setCurrentIndex(idx)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <img
+                      src={img || "/placeholder.svg"}
+                      alt={`Thumbnail ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+
+            <motion.button
+              className="bg-white/10 hover:bg-white/20 rounded-full p-2 backdrop-blur-sm transition-colors"
+              onClick={handleNext}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              disabled={images.length === 1}
+            >
+              <ChevronLeft size={24} className="text-white rotate-180" />
+            </motion.button>
+          </div>
+        </motion.div>
+      </motion.div>
+    )
   }
 
   return (
@@ -595,6 +764,35 @@ const Projects: React.FC = () => {
                           {project.fullDescription}
                         </motion.p>
 
+                        {project.images && project.images.length > 0 && (
+                          <motion.div variants={modalItemVariants}>
+                            <h4 className="text-sm uppercase text-gray-400 mb-3">Project Gallery - How It Works</h4>
+                            <div className="grid grid-cols-3 gap-3">
+                              {project.images.map((img, idx) => (
+                                <motion.button
+                                  key={idx}
+                                  className="relative h-32 rounded-lg overflow-hidden group cursor-pointer"
+                                  onClick={() => setSelectedImageIndex(idx)}
+                                  whileHover={{ scale: 1.05 }}
+                                  whileTap={{ scale: 0.95 }}
+                                >
+                                  <img
+                                    src={img || "/placeholder.svg"}
+                                    alt={`Project view ${idx + 1}`}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                  />
+                                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                    <ChevronDownIcon
+                                      size={24}
+                                      className="text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                                    />
+                                  </div>
+                                </motion.button>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+
                         <motion.div variants={modalItemVariants}>
                           <h4 className="text-sm uppercase text-gray-400 mb-2">Technologies</h4>
                           <div className="flex flex-wrap gap-2">
@@ -650,6 +848,16 @@ const Projects: React.FC = () => {
               </motion.div>
             </motion.div>
           )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {selectedImageIndex !== null &&
+            (() => {
+              const project = projects.find((p) => p.id === selectedProject)
+              return project?.images ? (
+                <FullscreenImageViewer images={project.images} initialIndex={selectedImageIndex} />
+              ) : null
+            })()}
         </AnimatePresence>
       </div>
     </section>

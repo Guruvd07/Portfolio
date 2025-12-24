@@ -3,9 +3,19 @@
 import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import { Trophy, Award, Calendar, ChevronDown, ChevronUp, ExternalLink, Users, Sparkles } from 'lucide-react'
+import {
+  Trophy,
+  Calendar,
+  ChevronDown,
+  ChevronUp,
+  ExternalLink,
+  Users,
+  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  X,
+} from "lucide-react"
 import SectionHeading from "./SectionHeading"
-import AnimatedCard from "./AnimatedCard"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog"
 import hack01 from "../../public/lovable-uploads/Hackthon & Competion/AvinyaCompetion/1.jpeg"
 import hack02 from "../../public/lovable-uploads/Hackthon & Competion/AvinyaCompetion/2.jpeg"
@@ -39,8 +49,6 @@ import hack28 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars
 import hack29 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758727000041.jpeg"
 import hack30 from "../../public/lovable-uploads/Hackthon & Competion/PromptWars/1758727000745.jpeg"
 
-
-
 interface Hackathon {
   id: string
   title: string
@@ -58,24 +66,20 @@ const Hackathons: React.FC = () => {
   const [showAll, setShowAll] = useState(false)
   const [selectedHackathon, setSelectedHackathon] = useState<Hackathon | null>(null)
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [shouldAnimate, setShouldAnimate] = useState(false)
-  
-  // Create a ref for the section
+
   const sectionRef = useRef<HTMLElement>(null)
-  
-  // Use Framer Motion's useInView hook to detect when the section is in view
+
   const isInView = useInView(sectionRef, {
-    once: false, // Trigger every time, not just once
-    amount: 0.1, // Trigger when at least 10% of the element is in view
+    once: false,
+    amount: 0.1,
   })
-  
-  // Effect to handle animation state based on view
+
   useEffect(() => {
     if (isInView) {
-      // When section comes into view, trigger animations
       setShouldAnimate(true)
     } else {
-      // When section goes out of view, reset animations after a delay
       const timer = setTimeout(() => {
         setShouldAnimate(false)
       }, 500)
@@ -87,96 +91,72 @@ const Hackathons: React.FC = () => {
     {
       id: "hack1",
       title: "Smart India Hackathon 2024",
-      description: "Selected as a finalist in this prestigious national-level competition, demonstrating technical problem-solving skills on real-world challenges at IIT Tirupati.",
-      fullDescription: "We are thrilled to share our journey as Finalists at the Smart India Hackathon 2024! 🎉 Team Sashwat is incredibly grateful for this opportunity to innovate, collaborate, and push the boundaries of technology for good. A special thank you to IIT Tirupati for hosting such a well-organized and impactful finale, and for providing constant support throughout the event.\n\nWe would also like to extend our heartfelt thanks to our Academic Mentor, Amar Sir, and our Industrial Mentor, Neeraj Kumar, for their invaluable guidance and unwavering support. Their expertise and encouragement played a crucial role in our journey.\n\nThis experience has been nothing short of transformative. We are excited to continue our exploration, learning, and creation in the tech space, with a focus on driving meaningful impact. Here's to more opportunities to innovate and contribute to the future!",
+      description:
+        "Selected as a finalist in this prestigious national-level competition, demonstrating technical problem-solving skills on real-world challenges at IIT Tirupati.",
+      fullDescription:
+        "We are thrilled to share our journey as Finalists at the Smart India Hackathon 2024! 🎉 Team Sashwat is incredibly grateful for this opportunity to innovate, collaborate, and push the boundaries of technology for good. A special thank you to IIT Tirupati for hosting such a well-organized and impactful finale, and for providing constant support throughout the event.\n\nWe would also like to extend our heartfelt thanks to our Academic Mentor, Amar Sir, and our Industrial Mentor, Neeraj Kumar, for their invaluable guidance and unwavering support. Their expertise and encouragement played a crucial role in our journey.\n\nThis experience has been nothing short of transformative. We are excited to continue our exploration, learning, and creation in the tech space, with a focus on driving meaningful impact. Here's to more opportunities to innovate and contribute to the future!",
       achievement: "Grand Finalist",
       date: "2024",
       team: "Team Shashwat",
       image: hack13,
-      images: [
-        hack13,
-        hack14,
-        hack15,
-        hack16,
-        hack17,
-        hack18,
-        hack19,
-        hack20,
-        hack21,
-        hack22,
-        hack23,
-        hack24,
-        hack25
-      ],
-      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_sih2024-teamsashwat-sihfinalist-activity-7273925986352578561-ITmJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
+      images: [hack13, hack14, hack15, hack16, hack17, hack18, hack19, hack20, hack21, hack22, hack23, hack24, hack25],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_sih2024-teamsashwat-sihfinalist-activity-7273925986352578561-ITmJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA",
     },
     {
       id: "hack2",
       title: "BMC Hackademia 2025 ",
       description: "✨ BMC Hackademia 2025 – A Remarkable Experience!",
-      fullDescription: "We had the incredible opportunity to be finalists at BMC Hackademia 2025, where we worked on a Generative AI project aimed at driving innovation and shaping the future of technology. This journey was both challenging and rewarding, pushing us to explore new possibilities and tackle complex problems.",
+      fullDescription:
+        "We had the incredible opportunity to be finalists at BMC Hackademia 2025, where we worked on a Generative AI project aimed at driving innovation and shaping the future of technology. This journey was both challenging and rewarding, pushing us to explore new possibilities and tackle complex problems.",
       achievement: "Finalist",
       date: "2025",
       team: "Team Shashwat",
       image: hack10,
-      images: [
-        hack10,
-        hack11,
-        hack12,
-        hack03
-      ],
-      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_bmchackademia2025-generativeai-hackathon-activity-7300037843525988352-7gFD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
+      images: [hack10, hack11, hack12, hack03],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_bmchackademia2025-generativeai-hackathon-activity-7300037843525988352-7gFD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA",
     },
     {
       id: "hack3",
       title: "MIT E-SUMMIT 2024 Ideathon",
-      description: "Our team Shashwat won First Prize in the Ideathon at MIT E-SUMMIT 2024, competing alongside talented innovators and pushing creative boundaries.",
-      fullDescription: "Thrilled to share that our team Sashwat won First Prize in the Ideathon at MIT E-SUMMIT 2024! 🏆 It was an incredible experience competing alongside talented innovators, pushing the boundaries of creativity and impact. Grateful for this opportunity and excited for what lies ahead!",
+      description:
+        "Our team Shashwat won First Prize in the Ideathon at MIT E-SUMMIT 2024, competing alongside talented innovators and pushing creative boundaries.",
+      fullDescription:
+        "Thrilled to share that our team Sashwat won First Prize in the Ideathon at MIT E-SUMMIT 2024! 🏆 It was an incredible experience competing alongside talented innovators, pushing the boundaries of creativity and impact. Grateful for this opportunity and excited for what lies ahead!",
       achievement: "First Prize",
       date: "2024",
       team: "Team Shashwat",
       image: hack07,
-      images: [
-        hack07,
-        hack08,
-        hack09,
-        hack09a,
-    
-      ],
-      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_mitesummit2024-innovation-ideathon-activity-7260965387998035968-uW-b?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
+      images: [hack07, hack08, hack09, hack09a],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_mitesummit2024-innovation-ideathon-activity-7260965387998035968-uW-b?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA",
     },
     {
       id: "hack4",
       title: "Microsoft , Edunet Foundation , TechSaksham Regional Showcase 2025",
-      description: "Team Shashwat won First Consolation Prize at the Microsoft Edunet Foundation TechSaksham Regional Showcase!",
-      fullDescription: "It was an incredible experience presenting our project at this event, where innovation and technology came together. A big thank you to Microsoft, Edunet Foundation, SAP, and MIT Academy of Engineering for organizing this platform and fostering innovation.",
+      description:
+        "Team Shashwat won First Consolation Prize at the Microsoft Edunet Foundation TechSaksham Regional Showcase!",
+      fullDescription:
+        "It was an incredible experience presenting our project at this event, where innovation and technology came together. A big thank you to Microsoft, Edunet Foundation, SAP, and MIT Academy of Engineering for organizing this platform and fostering innovation.",
       achievement: "First Consolation Prize",
       date: "2025",
       team: "Team Shashwat",
       image: hack04,
-      images: [
-        hack04,
-        hack05,
-        hack06
-      ],
-      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_microsoft-techsaksham-teamshashwat-activity-7314134778994159616-BqCS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
+      images: [hack04, hack05, hack06],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_microsoft-techsaksham-teamshashwat-activity-7314134778994159616-BqCS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA",
     },
     {
       id: "hack5",
       title: "MITAOE DATATHON First RunnerUp",
-      description: "Secured First Runner-up position at the MITAOE DATATHON 2025 – a national-level Software and Hardware Hackathon!",
-      fullDescription: "🚀 It was an incredible journey tackling a real-world problem statement provided by WorqHat and we're grateful for the opportunity to innovate and present our solution in front of an amazing panel.",
+      description:
+        "Secured First Runner-up position at the MITAOE DATATHON 2025 – a national-level Software and Hardware Hackathon!",
+      fullDescription:
+        "🚀 It was an incredible journey tackling a real-world problem statement provided by WorqHat and we're grateful for the opportunity to innovate and present our solution in front of an amazing panel.",
       achievement: "First RunnerUp",
       date: "2025",
       team: "Team Shashwat",
       image: hack01,
-      images: [
-        hack01,
-        hack02,
-      ],
-      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_datathon2025-teamshashwat-hackathonwinners-activity-7316120214511706115-VqTs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA"
+      images: [hack01, hack02],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_datathon2025-teamshashwat-hackathonwinners-activity-7316120214511706115-VqTs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_8Z6ABnjwj7meVtWdU95R9kczlmGIrMDA",
     },
-
     {
       id: "hack6",
       title: "Judge – PromptWars 2025",
@@ -186,26 +166,15 @@ const Hackathons: React.FC = () => {
       achievement: "Judge – PromptWars 2025",
       date: "2025",
       team: "Judging Panel",
-      image: hack27, // Add your image import here
-      images: [
-        hack27, // main image
-        hack26,
-        hack28,
-        hack29,
-        hack30 // additional event photos if available
-      ],
-      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_promptwars-judge-mitaoe-activity-XXXX", // Replace with your actual LinkedIn post link
-    }
-    
-
-
+      image: hack27,
+      images: [hack27, hack26, hack28, hack29, hack30],
+      link: "https://www.linkedin.com/posts/guru-dahiphale-02862225b_promptwars-judge-mitaoe-activity-XXXX",
+    },
   ]
 
   const displayedHackathons = showAll ? hackathons : hackathons.slice(0, 3)
 
-  // Define animation variants for the hackathon cards
   const cardVariants = [
-    // 3D Flip animation
     {
       hidden: { opacity: 0, rotateY: 90, scale: 0.8 },
       visible: (i: number) => ({
@@ -219,13 +188,12 @@ const Hackathons: React.FC = () => {
           delay: i * 0.15,
         },
       }),
-      hover: { 
-        y: -10, 
+      hover: {
+        y: -10,
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
-        transition: { duration: 0.3 } 
+        transition: { duration: 0.3 },
       },
     },
-    // Staggered reveal from bottom with bounce
     {
       hidden: { opacity: 0, y: 100, scale: 0.9 },
       visible: (i: number) => ({
@@ -239,13 +207,12 @@ const Hackathons: React.FC = () => {
           delay: i * 0.15,
         },
       }),
-      hover: { 
-        scale: 1.05, 
+      hover: {
+        scale: 1.05,
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
-        transition: { duration: 0.3 } 
+        transition: { duration: 0.3 },
       },
     },
-    // Zoom and rotate
     {
       hidden: { opacity: 0, scale: 0.5, rotate: -10 },
       visible: (i: number) => ({
@@ -259,16 +226,15 @@ const Hackathons: React.FC = () => {
           delay: i * 0.15,
         },
       }),
-      hover: { 
-        rotate: 2, 
-        scale: 1.03, 
+      hover: {
+        rotate: 2,
+        scale: 1.03,
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
-        transition: { duration: 0.3 } 
+        transition: { duration: 0.3 },
       },
     },
   ]
 
-  // Image animation variants
   const imageVariants = {
     hidden: { opacity: 0.6, scale: 1.2, filter: "blur(10px)" },
     visible: {
@@ -283,7 +249,6 @@ const Hackathons: React.FC = () => {
     },
   }
 
-  // Badge animation variants
   const badgeVariants = {
     hidden: { opacity: 0, scale: 0, x: 20 },
     visible: {
@@ -299,7 +264,6 @@ const Hackathons: React.FC = () => {
     },
   }
 
-  // Button animation variants
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -320,7 +284,6 @@ const Hackathons: React.FC = () => {
     tap: { scale: 0.95 },
   }
 
-  // Section heading animation variants
   const headingVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
@@ -335,31 +298,72 @@ const Hackathons: React.FC = () => {
     },
   }
 
+  const handlePrevImage = () => {
+    if (!selectedHackathon?.images) return
+    setCurrentImageIndex((prev) => (prev === 0 ? selectedHackathon.images!.length - 1 : prev - 1))
+    setSelectedImage(
+      selectedHackathon.images[currentImageIndex === 0 ? selectedHackathon.images.length - 1 : currentImageIndex - 1],
+    )
+  }
+
+  const handleNextImage = () => {
+    if (!selectedHackathon?.images) return
+    setCurrentImageIndex((prev) => (prev === selectedHackathon.images!.length - 1 ? 0 : prev + 1))
+    setSelectedImage(selectedHackathon.images[(currentImageIndex + 1) % selectedHackathon.images.length])
+  }
+
+  const openImageLightbox = (image: string) => {
+    if (!selectedHackathon?.images) return
+    const index = selectedHackathon.images.indexOf(image)
+    setCurrentImageIndex(index >= 0 ? index : 0)
+    setSelectedImage(image)
+  }
+
+  const lightboxVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.3 },
+    },
+    exit: { opacity: 0, transition: { duration: 0.2 } },
+  }
+
+  const imageDisplayVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.4, type: "spring", stiffness: 100 },
+    },
+    exit: { opacity: 0, scale: 0.9, transition: { duration: 0.2 } },
+  }
+
+  const galleryThumbnailVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.05, duration: 0.3 },
+    }),
+    hover: { scale: 1.05, transition: { duration: 0.2 } },
+  }
+
   return (
-    <section 
-      id="hackathons" 
+    <section
+      id="hackathons"
       className="section-padding bg-gradient-to-b from-background to-background/95 relative overflow-hidden"
       ref={sectionRef}
     >
-      {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-purple-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-500/10 rounded-full blur-3xl"></div>
-      
+
       <div className="section-container relative z-10">
-        <motion.div
-          variants={headingVariants}
-          initial="hidden"
-          animate={shouldAnimate ? "visible" : "hidden"}
-        >
-          <SectionHeading 
-            title="Hackathons & Competitions" 
-            subtitle="Problem Solving in Action" 
-          />
+        <motion.div variants={headingVariants} initial="hidden" animate={shouldAnimate ? "visible" : "hidden"}>
+          <SectionHeading title="Hackathons & Competitions" subtitle="Problem Solving in Action" />
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 perspective-container">
           {displayedHackathons.map((hackathon, index) => {
-            // Select a different animation style based on index
             const animationIndex = index % cardVariants.length
             const animation = cardVariants[animationIndex]
 
@@ -374,22 +378,22 @@ const Hackathons: React.FC = () => {
                 className="hackathon-card"
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <div 
+                <div
                   className="h-full glass-morphism rounded-xl overflow-hidden cursor-pointer hover:border-primary/30 transition-colors"
                   onClick={() => setSelectedHackathon(hackathon)}
                 >
                   <div className="relative aspect-video mb-4 overflow-hidden rounded-t-lg bg-gray-800">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <motion.img 
-                      src={hackathon.image} 
-                      alt={hackathon.title} 
+                    <motion.img
+                      src={hackathon.image}
+                      alt={hackathon.title}
                       className="w-full h-full object-contain"
                       variants={imageVariants}
                       initial="hidden"
                       animate={shouldAnimate ? "visible" : "hidden"}
                       whileHover="hover"
                     />
-                    <motion.div 
+                    <motion.div
                       className="absolute top-3 right-3 z-20"
                       variants={badgeVariants}
                       initial="hidden"
@@ -401,11 +405,11 @@ const Hackathons: React.FC = () => {
                       </span>
                     </motion.div>
                   </div>
-                  
+
                   <div className="p-5">
                     <h3 className="text-xl font-semibold mb-2">{hackathon.title}</h3>
                     <p className="text-gray-300 text-sm mb-4">{hackathon.description}</p>
-                    
+
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center text-sm">
                         <Calendar size={16} className="mr-2 text-primary" />
@@ -422,8 +426,7 @@ const Hackathons: React.FC = () => {
             )
           })}
         </div>
-        
-        {/* Show more/less button */}
+
         <div className="flex justify-center">
           <motion.button
             variants={buttonVariants}
@@ -448,12 +451,14 @@ const Hackathons: React.FC = () => {
           </motion.button>
         </div>
 
-        {/* Dialog for hackathon details */}
         {selectedHackathon && (
-          <Dialog open={!!selectedHackathon} onOpenChange={() => {
-            setSelectedHackathon(null)
-            setSelectedImage(null)
-          }}>
+          <Dialog
+            open={!!selectedHackathon}
+            onOpenChange={() => {
+              setSelectedHackathon(null)
+              setSelectedImage(null)
+            }}
+          >
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold flex items-center">
@@ -476,50 +481,91 @@ const Hackathons: React.FC = () => {
                   </div>
                 </DialogDescription>
               </DialogHeader>
-              
+
               {selectedHackathon.images && selectedHackathon.images.length > 0 && (
-                <div className="mt-4 mb-6">
-                  {/* Main image display */}
-                  <div 
-                    className="relative aspect-video rounded-lg overflow-hidden bg-gray-800 cursor-pointer"
-                    onClick={() => setSelectedImage(selectedHackathon.images![0])}
+                <div className="mt-6 mb-6">
+                  <h4 className="text-lg font-semibold mb-3 flex items-center text-primary">
+                    <Sparkles size={18} className="mr-2" />
+                    Hackathon Gallery - How It Unfolded
+                  </h4>
+
+                  <motion.div
+                    className="relative aspect-video rounded-lg overflow-hidden bg-gray-800 cursor-pointer group"
+                    onClick={() => openImageLightbox(selectedHackathon.images![0])}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <img 
-                      src={selectedHackathon.images[0] || "/placeholder.svg"} 
-                      alt={selectedHackathon.title} 
+                    <motion.img
+                      src={selectedHackathon.images[0] || "/placeholder.svg"}
+                      alt={selectedHackathon.title}
                       className="w-full h-full object-contain"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
                     />
-                  </div>
-                  
-                  {/* Thumbnail grid */}
-                  <div className="grid grid-cols-4 gap-2 mt-2">
-                    {selectedHackathon.images.slice(1).map((img, idx) => (
-                      <div 
-                        key={idx} 
-                        className="relative aspect-video rounded-lg overflow-hidden bg-gray-800 cursor-pointer"
-                        onClick={() => setSelectedImage(img)}
-                      >
-                        <img 
-                          src={img || "/placeholder.svg"} 
-                          alt={`${selectedHackathon.title} - ${idx + 1}`} 
-                          className="w-full h-full object-cover"
-                        />
+                    <motion.div
+                      className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100"
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="text-white text-center">
+                        <Sparkles size={32} className="mx-auto mb-2" />
+                        <p className="text-sm font-medium">Click to expand</p>
                       </div>
+                    </motion.div>
+                  </motion.div>
+
+                  <motion.div
+                    className="grid grid-cols-4 gap-2 mt-3"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                      visible: {
+                        transition: {
+                          staggerChildren: 0.05,
+                        },
+                      },
+                    }}
+                  >
+                    {selectedHackathon.images.map((img, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="relative aspect-video rounded-lg overflow-hidden bg-gray-800 cursor-pointer group ring-2 ring-transparent hover:ring-primary/50 transition-all"
+                        onClick={() => openImageLightbox(img)}
+                        custom={idx}
+                        variants={galleryThumbnailVariants}
+                        whileHover="hover"
+                      >
+                        <motion.img
+                          src={img || "/placeholder.svg"}
+                          alt={`${selectedHackathon.title} - ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                        <motion.div
+                          className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                          transition={{ duration: 0.2 }}
+                        >
+                          <p className="text-white text-xs font-medium">{idx + 1}</p>
+                        </motion.div>
+                      </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               )}
-              
+
               <div className="my-6">
-                {selectedHackathon.fullDescription.split('\n\n').map((paragraph, idx) => (
-                  <p key={idx} className="mb-4 text-gray-300">{paragraph}</p>
+                {selectedHackathon.fullDescription.split("\n\n").map((paragraph, idx) => (
+                  <p key={idx} className="mb-4 text-gray-300">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
-              
+
               {selectedHackathon.link && (
-                <a 
-                  href={selectedHackathon.link} 
-                  target="_blank" 
+                <a
+                  href={selectedHackathon.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-primary text-sm hover:underline mt-2"
                 >
@@ -531,29 +577,109 @@ const Hackathons: React.FC = () => {
           </Dialog>
         )}
 
-        {/* Image viewer dialog */}
-        {selectedImage && (
-          <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-            <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden p-0 bg-transparent border-none">
-              <div className="relative w-full h-full flex items-center justify-center">
-                <img 
-                  src={selectedImage || "/placeholder.svg"} 
-                  alt="Selected hackathon image" 
-                  className="max-w-full max-h-[80vh] object-contain"
-                />
-                <button 
-                  onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 bg-black/50 rounded-full p-2 hover:bg-black/75 transition-colors"
+        <AnimatePresence>
+          {selectedImage && selectedHackathon?.images && (
+            <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+              <DialogContent className="max-w-7xl max-h-[95vh] overflow-hidden p-0 bg-black/95 border-none">
+                <motion.div
+                  className="relative w-full h-full flex flex-col items-center justify-center"
+                  variants={lightboxVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
-              </div>
-            </DialogContent>
-          </Dialog>
-        )}
+                  <motion.button
+                    onClick={() => setSelectedImage(null)}
+                    className="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors backdrop-blur-sm"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <X size={24} className="text-white" />
+                  </motion.button>
+
+                  <motion.div
+                    className="relative flex-1 flex items-center justify-center w-full"
+                    variants={imageDisplayVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    key={currentImageIndex}
+                  >
+                    <img
+                      src={selectedImage || "/placeholder.svg"}
+                      alt="Selected hackathon image"
+                      className="max-w-full max-h-[75vh] object-contain"
+                    />
+                  </motion.div>
+
+                  {selectedHackathon.images.length > 1 && (
+                    <>
+                      <motion.button
+                        onClick={handlePrevImage}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors backdrop-blur-sm"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <ChevronLeft size={28} className="text-white" />
+                      </motion.button>
+
+                      <motion.button
+                        onClick={handleNextImage}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 bg-white/10 hover:bg-white/20 rounded-full p-3 transition-colors backdrop-blur-sm"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <ChevronRight size={28} className="text-white" />
+                      </motion.button>
+                    </>
+                  )}
+
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <div className="text-center mb-4">
+                      <motion.p
+                        className="text-white/70 text-sm font-medium"
+                        key={currentImageIndex}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        Image {currentImageIndex + 1} of {selectedHackathon.images.length}
+                      </motion.p>
+                    </div>
+
+                    <div className="flex gap-2 overflow-x-auto justify-center pb-2">
+                      {selectedHackathon.images.map((img, idx) => (
+                        <motion.button
+                          key={idx}
+                          onClick={() => {
+                            setCurrentImageIndex(idx)
+                            setSelectedImage(img)
+                          }}
+                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden ring-2 transition-all ${
+                            idx === currentImageIndex ? "ring-primary" : "ring-white/20 hover:ring-white/40"
+                          }`}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <img
+                            src={img || "/placeholder.svg"}
+                            alt={`Thumbnail ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </motion.button>
+                      ))}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </DialogContent>
+            </Dialog>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   )

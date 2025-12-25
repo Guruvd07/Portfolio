@@ -13,16 +13,19 @@ import {
   MicrophoneStage,
   Robot,
   Function,
-  ChartLineUp,
+  ChartLine,
   TrendUp,
   RocketLaunch,
   Gauge,
   Circuitry,
   TextAlignLeft,
   Leaf,
-  GitBranch,
   Database as DBModern,
+  Plugs,
+  MagicWand
 } from "@phosphor-icons/react";
+
+
 
 // React Icons
 import { BsLightningCharge } from "react-icons/bs";
@@ -90,22 +93,23 @@ const About: React.FC = () => {
         { icon: <TrendUp size={24} weight="duotone" />, name: "ETL Pipelines", color: "bg-orange-100 text-orange-600" },
         { icon: <GlobeHemisphereWest size={24} weight="duotone" />, name: "REST API Extraction", color: "bg-blue-100 text-blue-600" },
         { icon: <Robot size={24} weight="duotone" />, name: "Web Scraping", color: "bg-emerald-100 text-emerald-600" },
+        { icon: <TextAlignLeft size={24} weight="duotone" />, name: "PDF & OCR Ingestion", color: "bg-purple-100 text-purple-600" },
       ],
     },
-
+  
     {
       name: "Data Analysis",
-      icon: <ChartLineUp size={22} weight="duotone" />,
+      icon: <ChartLine size={22} weight="duotone" />,
       color: "from-cyan-600 to-sky-600",
       skills: [
-        { icon: <ChartLineUp size={24} weight="duotone" />, name: "EDA", color: "bg-blue-100 text-blue-600" },
-        { icon: <ChartLineUp size={24} weight="duotone" />, name: "Power BI", color: "bg-orange-100 text-orange-600" },
-        { icon: <ChartLineUp size={24} weight="duotone" />, name: "Pandas", color: "bg-red-100 text-red-600" },
+        { icon: <ChartLine size={24} weight="duotone" />, name: "EDA", color: "bg-blue-100 text-blue-600" },
+        { icon: <ChartLine size={24} weight="duotone" />, name: "Power BI", color: "bg-orange-100 text-orange-600" },
+        { icon: <ChartLine size={24} weight="duotone" />, name: "Pandas", color: "bg-red-100 text-red-600" },
         { icon: <Function size={24} weight="duotone" />, name: "NumPy", color: "bg-emerald-100 text-emerald-600" },
-        { icon: <ChartLineUp size={24} weight="duotone" />, name: "Statistical Analysis", color: "bg-yellow-100 text-yellow-600" },
+        { icon: <ChartLine size={24} weight="duotone" />, name: "Statistical Analysis", color: "bg-yellow-100 text-yellow-600" },
       ],
     },
-
+  
     {
       name: "Machine Learning",
       icon: <Brain size={22} weight="duotone" />,
@@ -113,11 +117,11 @@ const About: React.FC = () => {
       skills: [
         { icon: <Brain size={24} weight="duotone" />, name: "Scikit-Learn", color: "bg-blue-100 text-blue-600" },
         { icon: <TrendUp size={24} weight="duotone" />, name: "Predictive Modeling", color: "bg-emerald-100 text-emerald-600" },
-        { icon: <RocketLaunch size={24} weight="duotone" />, name: "Model Deployment (Flask)", color: "bg-red-100 text-red-600" },
         { icon: <Gauge size={24} weight="duotone" />, name: "Model Evaluation", color: "bg-yellow-100 text-yellow-600" },
+        { icon: <RocketLaunch size={24} weight="duotone" />, name: "API-based Deployment", color: "bg-red-100 text-red-600" },
       ],
     },
-
+  
     {
       name: "Deep Learning & NLP",
       icon: <Lightning size={22} weight="duotone" />,
@@ -131,28 +135,43 @@ const About: React.FC = () => {
         { icon: <Robot size={24} weight="duotone" />, name: "Hugging Face", color: "bg-yellow-100 text-yellow-600" },
       ],
     },
-
+  
     {
-      name: "OCR",
-      icon: <TextAlignLeft size={22} weight="duotone" />,
-      color: "from-rose-500 to-red-600",
+      name: "Generative AI & RAG",
+      icon: <MagicWand size={22} weight="duotone" />,
+      color: "from-fuchsia-500 to-rose-600",
       skills: [
-        { icon: <Scan size={24} weight="duotone" />, name: "OCR", color: "bg-purple-100 text-purple-600" },
-        { icon: <Scan size={24} weight="duotone" />, name: "Tesseract OCR", color: "bg-yellow-100 text-yellow-600" },
+        { icon: <MagicWand size={24} weight="duotone" />, name: "RAG", color: "bg-pink-100 text-pink-600" },
+        { icon: <Brain size={24} weight="duotone" />, name: "Semantic Embeddings", color: "bg-indigo-100 text-indigo-600" },
+        { icon: <DBModern size={24} weight="duotone" />, name: "FAISS (Vector DB)", color: "bg-teal-100 text-teal-600" },
+        { icon: <Robot size={24} weight="duotone" />, name: "LLMs (Gemini)", color: "bg-purple-100 text-purple-600" },
       ],
     },
-
+    
+  
+    {
+      name: "Backend & APIs",
+      icon: <Plugs size={22} weight="duotone" />,
+      color: "from-slate-600 to-gray-700",
+      skills: [
+        { icon: <Plugs size={24} weight="duotone" />, name: "FastAPI", color: "bg-slate-100 text-slate-600" },
+        { icon: <RocketLaunch size={24} weight="duotone" />, name: "REST API Design", color: "bg-blue-100 text-blue-600" },
+        { icon: <Gauge size={24} weight="duotone" />, name: "Swagger UI Testing", color: "bg-emerald-100 text-emerald-600" },
+      ],
+    },
+  
     {
       name: "Database",
       icon: <DBModern size={22} weight="duotone" />,
       color: "from-emerald-500 to-teal-600",
       skills: [
-        { icon: <DBModern size={24} weight="duotone" />, name: "MySQL", color: "bg-blue-50 text-blue-500" },
         { icon: <DBModern size={24} weight="duotone" />, name: "SQL", color: "bg-teal-100 text-teal-600" },
+        { icon: <DBModern size={24} weight="duotone" />, name: "MySQL", color: "bg-blue-50 text-blue-500" },
         { icon: <Leaf size={24} weight="duotone" />, name: "MongoDB", color: "bg-green-100 text-green-600" },
       ],
     },
   ];
+  
 
   const allSkills = skillCategories.flatMap((c) => c.skills);
 
@@ -195,51 +214,72 @@ const About: React.FC = () => {
         </motion.div>
 
         {/* Main content grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+<div className="grid md:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT SIDE TEXT */}
-          <motion.div initial="hidden" animate={shouldAnimate ? "visible" : "hidden"} variants={containerVariants}>
-            <div className="space-y-6 text-gray-300">
+{/* LEFT SIDE TEXT */}
+<motion.div
+  initial="hidden"
+  animate={shouldAnimate ? "visible" : "hidden"}
+  variants={containerVariants}
+>
+  <div className="space-y-6 text-gray-300">
 
-              <motion.p variants={fadeInUpVariants} custom={0} className="text-lg">
-                I'm a{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-semibold">
-                  Data Engineering, Data Analysis, and ML/Deep Learning Enthusiast
-                </span>{" "}
-                passionate about building real-world AI systems and automation using deep learning, NLP, and OCR.
-              </motion.p>
+    <motion.p variants={fadeInUpVariants} custom={0} className="text-lg">
+      I'm a{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-semibold">
+        Data Engineer, ML Engineer & Generative AI Engineer
+      </span>{" "}
+      focused on building backend, production-ready AI systems using modern data
+      pipelines, machine learning, and LLM-based architectures.
+    </motion.p>
 
-              <motion.p variants={fadeInUpVariants} custom={1}>
-                My expertise in{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-medium">
-                  Data Engineering
-                </span>{" "}
-                includes{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
-                  ETL pipelines, REST API extraction, Web Scraping, Data Loading, Storage & Transformations
-                </span>{" "}
-                enabling me to convert raw data into structured, usable formats for advanced analytics.
-              </motion.p>
+    <motion.p variants={fadeInUpVariants} custom={1}>
+      My expertise in{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-medium">
+        Data Engineering
+      </span>{" "}
+      includes{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
+        ETL pipelines, REST API-based data extraction, PDF/OCR data ingestion,
+        data transformation, and structured storage
+      </span>{" "}
+      to convert raw, unstructured data into analytics- and ML-ready formats.
+    </motion.p>
 
-              <motion.p variants={fadeInUpVariants} custom={2}>
-                I specialize in{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-500 font-medium">
-                  ML Engineering, Deep Learning & NLP
-                </span>{" "}
-                using{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium">
-                  predictive modeling, neural networks, transformers & deployment workflows
-                </span>{" "}
-                to build scalable AI solutions.
-              </motion.p>
+    <motion.p variants={fadeInUpVariants} custom={2}>
+      I specialize in{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-500 font-medium">
+        ML Engineering, Deep Learning & NLP
+      </span>{" "}
+      using{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium">
+        predictive modeling, feature engineering, transformer-based models,
+        and API-driven inference pipelines
+      </span>{" "}
+      to build scalable and reliable AI solutions.
+    </motion.p>
 
-              <motion.p variants={fadeInUpVariants} custom={3}>
-                I thrive in{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-medium">
-                  real-world projects, hackathons, and competitions
-                </span>{" "}
-                delivering production-ready AI systems that bridge raw data and real impact.
-              </motion.p>
+    <motion.p variants={fadeInUpVariants} custom={3}>
+      I actively build{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-medium">
+        Generative AI systems
+      </span>{" "}
+      using{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-500 font-medium">
+        Retrieval-Augmented Generation (RAG), semantic embeddings, vector
+        databases (FAISS), and LLMs
+      </span>{" "}
+      to deliver accurate, context-grounded AI applications.
+    </motion.p>
+
+    <motion.p variants={fadeInUpVariants} custom={4}>
+      I thrive in{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-500 font-medium">
+        real-world projects, hackathons, and competitive environments
+      </span>{" "}
+      where I design and ship end-to-end AI systems that bridge raw data,
+      intelligent models, and real business impact.
+    </motion.p>
 
               {/* Button */}
               <motion.div variants={fadeInUpVariants} custom={4} className="pt-4">

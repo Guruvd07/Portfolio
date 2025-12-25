@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="inline-block glass-morphism px-4 py-2 rounded-full mb-3"
         >
-          <span className="text-sm font-medium">Data Innovator</span>
+          <span className="text-sm font-medium">AI & Data Engineer</span>
         </motion.div>
         
         <motion.h1
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-3 text-xl md:text-2xl text-blue-300 font-medium max-w-3xl mx-auto"
         >
-          Data Engineer | Data Analyst | ML Engineer
+          Data Engineer | Generative AI Engineer | ML Engineer
         </motion.p>
         
         <motion.p
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-6 text-md md:text-lg text-gray-300 max-w-2xl mx-auto"
         >
-          Turning complexity into clarity with data and ML
+          Transforming complex data into intelligent, scalable AI solutions
         </motion.p>
         
         <motion.div 

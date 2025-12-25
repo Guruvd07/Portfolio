@@ -35,7 +35,17 @@ interface Skill {
   name: string
   level: number
   icon: React.ElementType
-  category: "Data Engineering" | "Data Analysis" | "Machine Learning Engineering" | "Database" | "OCR" | "tools" | "other"
+  category:
+  | "Data Engineering"
+  | "Data Analysis"
+  | "Machine Learning Engineering"
+  | "Deep Learning"
+  | "Generative AI & RAG"
+  | "Database"
+  | "OCR"
+  | "tools"
+  | "other"
+
 }
 
 const Skills: React.FC = () => {
@@ -87,13 +97,22 @@ const Skills: React.FC = () => {
     // -------------------------------------
     { name: "ANN", level: 85, icon: Layers, category: "Deep Learning" },
     { name: "CNN", level: 85, icon: Layers, category: "Deep Learning" },
-    { name: "Transfer Learning", level: 80, icon: Layers, category: "Deep Learning" },
+    { name: "LSTM/RNN", level: 80, icon: Layers, category: "Deep Learning" },
   
     // NLP inside DL Category
-    { name: "Transformers (BERT, T5)", level: 90, icon: Brain, category: "Deep Learning" },
+    { name: "Transformers ", level: 90, icon: Brain, category: "Deep Learning" },
     { name: "Hugging Face", level: 85, icon: Bot, category: "Deep Learning" },
     { name: "Whisper ASR", level: 80, icon: Bot, category: "Deep Learning" },
   
+    // -------------------------------------
+// GENERATIVE AI & RAG
+// -------------------------------------
+{ name: "Retrieval-Augmented Generation (RAG)", level: 90, icon: Sparkles, category: "Generative AI & RAG" },
+{ name: "Semantic Embeddings", level: 90, icon: Brain, category: "Generative AI & RAG" },
+{ name: "Vector Databases (FAISS)", level: 85, icon: Database, category: "Generative AI & RAG" },
+{ name: "LLMs ", level: 85, icon: Bot, category: "Generative AI & RAG" },
+{ name: "Prompt Engineering", level: 85, icon: BookOpen, category: "Generative AI & RAG" },
+
     // -------------------------------------
     // OCR
     // -------------------------------------
@@ -107,6 +126,7 @@ const Skills: React.FC = () => {
     { name: "SQL", level: 90, icon: Database, category: "Database" },
     { name: "MySQL", level: 85, icon: Database, category: "Database" },
     { name: "MongoDB", level: 80, icon: Database, category: "Database" },
+    { name: "Vector Databases (FAISS)", level: 80, icon: Database, category: "Database" },
   
     // -------------------------------------
     // TOOLS
@@ -164,6 +184,14 @@ const Skills: React.FC = () => {
       lightColor: "from-fuchsia-400 to-violet-400",
     },
     {
+      id: "Generative AI & RAG",
+      name: "Generative AI & RAG",
+      icon: Sparkles,
+      description: "RAG pipelines, LLMs, embeddings, vector search",
+      color: "from-fuchsia-600 to-rose-600",
+      lightColor: "from-fuchsia-400 to-rose-400",
+    },
+    {
       id: "OCR",
       name: "OCR",
       icon: FileText,
@@ -204,7 +232,7 @@ const Skills: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">My Skills</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my technical expertise across Data Engineering, ML, Deep Learning, NLP, and more.
+            Explore my technical expertise across Data Engineering, ML, Deep Learning, NLP, GenAI, OCR and more.
           </p>
         </div>
 

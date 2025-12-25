@@ -43,13 +43,6 @@ import pro44 from "../../public/lovable-uploads/Projects/Youtube/9.jpg"
 import pro45 from "../../public/lovable-uploads/Projects/Youtube/10.jpg"
 import pro46 from "../../public/lovable-uploads/Projects/Youtube/11.jpg"
 
-
-
-
-
-
-
-
 interface Project {
   id: string
   title: string
@@ -113,7 +106,7 @@ const Projects: React.FC = () => {
       ],
       links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
       image: pro25,
-      images: [pro25,  pro37 , pro38 , pro39 , pro40 , pro41 , pro42 , pro43 , pro44 , pro45 , pro46], // added multiple images array
+      images: [pro25, pro37, pro38, pro39, pro40, pro41, pro42, pro43, pro44, pro45, pro46], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -137,7 +130,7 @@ const Projects: React.FC = () => {
       ],
       links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
       image: pro34,
-      images: [ pro35 ,pro34], // added multiple images array
+      images: [pro35, pro34], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -161,7 +154,7 @@ const Projects: React.FC = () => {
       ],
       links: { github: " https://github.com/Guruvd07/DocGuru-AI.git" },
       image: pro27,
-      images: [pro27, pro28, pro29 , pro30 , pro31 , pro32 , pro33], // added multiple images array
+      images: [pro27, pro28, pro29, pro30, pro31, pro32, pro33], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -716,7 +709,7 @@ const Projects: React.FC = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="glass-morphism max-w-3xl w-full rounded-xl p-0 overflow-hidden"
+                className="glass-morphism max-w-3xl w-full rounded-xl overflow-y-auto max-h-[90vh]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {(() => {

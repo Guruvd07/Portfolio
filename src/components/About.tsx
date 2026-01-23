@@ -90,10 +90,10 @@ const About: React.FC = () => {
       icon: <GlobeHemisphereWest size={22} weight="duotone" />,
       color: "from-blue-500 to-indigo-600",
       skills: [
+        { icon: <TrendUp size={24} weight="duotone" />, name: "Apache Kafka", color: "bg-orange-100 text-orange-600" },
         { icon: <TrendUp size={24} weight="duotone" />, name: "ETL Pipelines", color: "bg-orange-100 text-orange-600" },
         { icon: <GlobeHemisphereWest size={24} weight="duotone" />, name: "REST API Extraction", color: "bg-blue-100 text-blue-600" },
         { icon: <Robot size={24} weight="duotone" />, name: "Web Scraping", color: "bg-emerald-100 text-emerald-600" },
-        { icon: <TextAlignLeft size={24} weight="duotone" />, name: "PDF & OCR Ingestion", color: "bg-purple-100 text-purple-600" },
       ],
     },
   

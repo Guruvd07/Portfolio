@@ -42,6 +42,14 @@ import pro43 from "../../public/lovable-uploads/Projects/Youtube/8.jpg"
 import pro44 from "../../public/lovable-uploads/Projects/Youtube/9.jpg"
 import pro45 from "../../public/lovable-uploads/Projects/Youtube/10.jpg"
 import pro46 from "../../public/lovable-uploads/Projects/Youtube/11.jpg"
+import pro47 from "../../public/lovable-uploads/Projects/Kafka-1/1.jpg"
+import pro48 from "../../public/lovable-uploads/Projects/Kafka-1/2.jpg"
+import pro49 from "../../public/lovable-uploads/Projects/Kafka-1/3.jpg"
+import pro50 from "../../public/lovable-uploads/Projects/Kafka-1/4.jpg"
+import pro51 from "../../public/lovable-uploads/Projects/Kafka-1/5.jpg"
+import pro52 from "../../public/lovable-uploads/Projects/Kafka-1/6.jpg"
+import pro53 from "../../public/lovable-uploads/Projects/Kafka-1/7.jpg"
+
 
 interface Project {
   id: string
@@ -160,8 +168,34 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project4",
-      title: "CarGuru AI – Used Car Price Prediction",
+      id: "project5",
+      title: "Apache Kafka : Real-Time E-Commerce Order Pipeline",
+      shortDescription: "Production-style real-time event-driven e-commerce system using Kafka, Python, and FastAPI.",
+      fullDescription:
+        "Background: Modern e-commerce platforms require real-time processing, scalability, and fault tolerance. Motivation: To design a production-style distributed system that reflects real-world enterprise architectures. Project Idea: A real-time microservices-based order processing pipeline using Apache Kafka, Python, and FastAPI. Orders are created via REST API or Web UI and streamed into Kafka topics. Independent consumer services asynchronously handle inventory management, notifications, and analytics processing. This project demonstrates event-driven architecture, microservices design, and real-time data streaming for enterprise-grade systems.",
+      technologies: [
+        "Apache Kafka",
+        "Python",
+        "FastAPI",
+        "kafka-python",
+        "Uvicorn",
+        "HTML",
+        "CSS",
+        "REST APIs",
+      ],
+      links: {
+        github: "https://github.com/Guruvd07/Apache-Kafka-1.git",
+      },
+      image: pro47,
+      images: [pro47 , pro48  , pro49 , pro50 , pro51 , pro52 , pro53],
+      date: "2026",
+      featured: true,
+    },
+    
+
+    {
+      id: "project5",
+      title: "CarGuru AI : Used Car Price Prediction",
       shortDescription: "AI-powered platform for accurate and transparent used car pricing.",
       fullDescription:
         "Background: The used car market often lacks transparency in pricing due to varying conditions, locations, and seller bias. Motivation: To bring accuracy, transparency, and trust in pricing using machine learning and real-world data. Project Idea: An end-to-end system covering data engineering, data cleaning, data analysis, ML engineering, and deployment. Real car listings were scraped, preprocessed, and analyzed. A CatBoost regression model (R² = 88%) was trained for price prediction. Finally, a Flask-based web app with HTML/CSS/JS frontend was deployed, allowing users to predict car prices, view brand logos, and explore similar cars in real-time.",
@@ -177,7 +211,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project5",
+      id: "project6",
       title: "GuruCare+",
       shortDescription: "AI-Based Disease Prediction System",
       fullDescription:
@@ -190,7 +224,7 @@ const Projects: React.FC = () => {
       featured: true,
     },
     {
-      id: "project6",
+      id: "project7",
       title: "ReportEase",
       shortDescription: "Automated Smart Reporting Portal for educational institutions",
       fullDescription:
@@ -204,7 +238,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project7",
+      id: "project8",
       title: "ClubRankers",
       shortDescription: "Empowering College Clubs and Students to connect and showcase activities",
       fullDescription:
@@ -218,7 +252,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project8",
+      id: "project9",
       title: "Gamified AI Platform for Coding & Language Mastery",
       shortDescription: "Making Learning Addictive with Quizzes, XP & Leaderboards",
       fullDescription: `🎓 Students (Ages 15–35): School & college learners struggling with syntax and structure.\n\n
@@ -239,7 +273,7 @@ const Projects: React.FC = () => {
       featured: false,
     },
     {
-      id: "project9",
+      id: "project10",
       title: "Narmada Traders - Bilingual Billing System",
       shortDescription: "Professional billing system with English-to-Marathi conversion and PDF generation",
       fullDescription:

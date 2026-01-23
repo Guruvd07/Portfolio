@@ -60,10 +60,10 @@ const Skills: React.FC = () => {
     // -------------------------------------
     // DATA ENGINEERING
     // -------------------------------------
+    { name: "Apache Kafka", level: 90, icon: Shuffle, category: "Data Engineering" },
     { name: "ETL Pipelines", level: 90, icon: Shuffle, category: "Data Engineering" },
     { name: "REST API Extraction", level: 85, icon: Globe, category: "Data Engineering" },
     { name: "Web Scraping", level: 85, icon: Globe, category: "Data Engineering" },
-    { name: "Data Cleaning", level: 90, icon: Eraser, category: "Data Engineering" },
     { name: "Data Transformation", level: 90, icon: Eraser, category: "Data Engineering" },
     { name: "Data Loading", level: 85, icon: Globe, category: "Data Engineering" },
   

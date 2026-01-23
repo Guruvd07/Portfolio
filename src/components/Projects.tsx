@@ -168,7 +168,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project5",
+      id: "project4",
       title: "Apache Kafka : Real-Time E-Commerce Order Pipeline",
       shortDescription: "Production-style real-time event-driven e-commerce system using Kafka, Python, and FastAPI.",
       fullDescription:

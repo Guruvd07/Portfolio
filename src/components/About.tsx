@@ -144,7 +144,35 @@ const About: React.FC = () => {
         { icon: <MagicWand size={24} weight="duotone" />, name: "RAG", color: "bg-pink-100 text-pink-600" },
         { icon: <Brain size={24} weight="duotone" />, name: "Semantic Embeddings", color: "bg-indigo-100 text-indigo-600" },
         { icon: <DBModern size={24} weight="duotone" />, name: "FAISS (Vector DB)", color: "bg-teal-100 text-teal-600" },
-        { icon: <Robot size={24} weight="duotone" />, name: "LLMs (Gemini)", color: "bg-purple-100 text-purple-600" },
+        { icon: <Robot size={24} weight="duotone" />, name: "LLMs ", color: "bg-purple-100 text-purple-600" },
+      ],
+    },
+
+    {
+      name: "Agentic AI",
+      icon: <MagicWand size={22} weight="duotone" />,
+      color: "from-fuchsia-500 to-rose-600",
+      skills: [
+        {
+          icon: <Robot size={24} weight="duotone" />,
+          name: "AutoML Agents",
+          color: "bg-pink-100 text-pink-600"
+        },
+        {
+          icon: <Brain size={24} weight="duotone" />,
+          name: "Tool Calling",
+          color: "bg-indigo-100 text-indigo-600"
+        },
+        {
+          icon: <MagicWand size={24} weight="duotone" />,
+          name: "LLM Orchestration",
+          color: "bg-teal-100 text-teal-600"
+        },
+        {
+          icon: <DBModern size={24} weight="duotone" />,
+          name: "Multi-Agent Systems",
+          color: "bg-purple-100 text-purple-600"
+        },
       ],
     },
     
@@ -214,72 +242,72 @@ const About: React.FC = () => {
         </motion.div>
 
         {/* Main content grid */}
-<div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
 
-{/* LEFT SIDE TEXT */}
-<motion.div
-  initial="hidden"
-  animate={shouldAnimate ? "visible" : "hidden"}
-  variants={containerVariants}
->
-  <div className="space-y-6 text-gray-300">
+            {/* LEFT SIDE TEXT */}
+            <motion.div
+              initial="hidden"
+              animate={shouldAnimate ? "visible" : "hidden"}
+              variants={containerVariants}
+            >
+              <div className="space-y-6 text-gray-300">
 
-    <motion.p variants={fadeInUpVariants} custom={0} className="text-lg">
-      I'm a{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-semibold">
-        Data Engineer, ML Engineer & Generative AI Engineer
-      </span>{" "}
-      focused on building backend, production-ready AI systems using modern data
-      pipelines, machine learning, and LLM-based architectures.
-    </motion.p>
+              <motion.p variants={fadeInUpVariants} custom={0} className="text-lg">
+              I'm a{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 font-semibold">
+              AI Engineer , Data Engineer, ML Engineer & Agentic AI Engineer
+              </span>{" "}
+              focused on building backend, production-ready intelligent systems using
+              modern data pipelines, machine learning, LLMs and autonomous agents.
+            </motion.p>
 
-    <motion.p variants={fadeInUpVariants} custom={1}>
-      My expertise in{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-medium">
-        Data Engineering
-      </span>{" "}
-      includes{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
-        ETL pipelines, REST API-based data extraction, PDF/OCR data ingestion,
-        data transformation, and structured storage
-      </span>{" "}
-      to convert raw, unstructured data into analytics- and ML-ready formats.
-    </motion.p>
+            <motion.p variants={fadeInUpVariants} custom={1}>
+              My expertise in{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-medium">
+                Data Engineering
+              </span>{" "}
+              includes{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 font-medium">
+                ETL pipelines, REST API extraction, Kafka streaming, PDF/OCR ingestion,
+                transformation pipelines and structured storage
+              </span>{" "}
+              to convert raw data into analytics- and ML-ready systems.
+            </motion.p>
 
-    <motion.p variants={fadeInUpVariants} custom={2}>
-      I specialize in{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-500 font-medium">
-        ML Engineering, Deep Learning & NLP
-      </span>{" "}
-      using{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium">
-        predictive modeling, feature engineering, transformer-based models,
-        and API-driven inference pipelines
-      </span>{" "}
-      to build scalable and reliable AI solutions.
-    </motion.p>
+            <motion.p variants={fadeInUpVariants} custom={2}>
+              I specialize in{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-500 font-medium">
+                ML Engineering, Deep Learning & NLP
+              </span>{" "}
+              using{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-medium">
+                predictive modeling, feature engineering, transformers,
+                model optimization and inference pipelines
+              </span>{" "}
+              to build scalable AI solutions.
+            </motion.p>
 
-    <motion.p variants={fadeInUpVariants} custom={3}>
-      I actively build{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-medium">
-        Generative AI systems
-      </span>{" "}
-      using{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-500 font-medium">
-        Retrieval-Augmented Generation (RAG), semantic embeddings, vector
-        databases (FAISS), and LLMs
-      </span>{" "}
-      to deliver accurate, context-grounded AI applications.
-    </motion.p>
+            <motion.p variants={fadeInUpVariants} custom={3}>
+              I build{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-medium">
+                Generative AI and Agentic AI systems
+              </span>{" "}
+              using{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-500 font-medium">
+                RAG, embeddings, vector databases, tool-calling, AutoML agents,
+                workflow orchestration and LLM-powered autonomous agents
+              </span>{" "}
+              to deliver intelligent context-aware applications.
+            </motion.p>
 
-    <motion.p variants={fadeInUpVariants} custom={4}>
-      I thrive in{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-500 font-medium">
-        real-world projects, hackathons, and competitive environments
-      </span>{" "}
-      where I design and ship end-to-end AI systems that bridge raw data,
-      intelligent models, and real business impact.
-    </motion.p>
+            <motion.p variants={fadeInUpVariants} custom={4}>
+              I thrive in{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-500 font-medium">
+                real-world projects, hackathons and production environments
+              </span>{" "}
+              where I design and ship end-to-end systems that connect raw data,
+              intelligent models, autonomous agents and business impact.
+            </motion.p>
 
               {/* Button */}
               <motion.div variants={fadeInUpVariants} custom={4} className="pt-4">

@@ -41,6 +41,7 @@ interface Skill {
   | "Machine Learning Engineering"
   | "Deep Learning"
   | "Generative AI & RAG"
+  | "Agentic AI"
   | "Database"
   | "OCR"
   | "tools"
@@ -112,7 +113,17 @@ const Skills: React.FC = () => {
 { name: "Vector Databases (FAISS)", level: 85, icon: Database, category: "Generative AI & RAG" },
 { name: "LLMs ", level: 85, icon: Bot, category: "Generative AI & RAG" },
 { name: "Prompt Engineering", level: 85, icon: BookOpen, category: "Generative AI & RAG" },
+    
 
+    // -------------------------------------
+    // AGENTIC AI
+    // -------------------------------------
+    { name: "AutoML Agents", level: 90, icon: Bot, category: "Agentic AI" },
+    { name: "Tool Calling", level: 85, icon: Wrench, category: "Agentic AI" },
+    { name: "LLM Orchestration", level: 85, icon: Brain, category: "Agentic AI" },
+    { name: "Multi-Agent Systems", level: 80, icon: Shuffle, category: "Agentic AI" },
+    { name: "Autonomous Workflows", level: 85, icon: Cpu, category: "Agentic AI" },
+    { name: "Planning Agents", level: 80, icon: Sparkles, category: "Agentic AI" },
     // -------------------------------------
     // OCR
     // -------------------------------------
@@ -190,6 +201,14 @@ const Skills: React.FC = () => {
       description: "RAG pipelines, LLMs, embeddings, vector search",
       color: "from-fuchsia-600 to-rose-600",
       lightColor: "from-fuchsia-400 to-rose-400",
+    },
+    {
+      id: "Agentic AI",
+      name: "Agentic AI",
+      icon: Bot,
+      description: "Autonomous agents, tool use and orchestration",
+      color: "from-pink-600 to-fuchsia-600",
+      lightColor: "from-pink-400 to-fuchsia-400",
     },
     {
       id: "OCR",

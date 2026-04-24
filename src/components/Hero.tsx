@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-3 text-xl md:text-2xl text-blue-300 font-medium max-w-3xl mx-auto"
         >
-          Data Engineer | Generative AI Engineer | ML Engineer
+          Data Engineer | AI Engineer | ML Engineer
         </motion.p>
         
         <motion.p

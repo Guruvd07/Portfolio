@@ -21,6 +21,7 @@ import pro11 from "../../public/lovable-uploads/Projects/FrieghtTransportationSy
 import pro13 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
 import pro19 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
 import pro24 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
+import pro57 from "../../public/lovable-uploads/Projects/Guru DOC AI/cover.png"
 import pro27 from "../../public/lovable-uploads/Projects/Guru DOC AI/1.jpg"
 import pro28 from "../../public/lovable-uploads/Projects/Guru DOC AI/2.jpg"
 import pro29 from "../../public/lovable-uploads/Projects/Guru DOC AI/3.jpg"
@@ -30,6 +31,7 @@ import pro32 from "../../public/lovable-uploads/Projects/Guru DOC AI/6.jpg"
 import pro33 from "../../public/lovable-uploads/Projects/Guru DOC AI/7.jpg"
 import pro34 from "../../public/lovable-uploads/Projects/GuruInsightAI/After.jpg"
 import pro35 from "../../public/lovable-uploads/Projects/GuruInsightAI/Before.jpg"
+import pro56 from "../../public/lovable-uploads/Projects/GuruInsightAI/cover.png"
 import pro25 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
 // import pro36 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
 import pro37 from "../../public/lovable-uploads/Projects/Youtube/2.jpg"
@@ -49,6 +51,11 @@ import pro50 from "../../public/lovable-uploads/Projects/Kafka-1/4.jpg"
 import pro51 from "../../public/lovable-uploads/Projects/Kafka-1/5.jpg"
 import pro52 from "../../public/lovable-uploads/Projects/Kafka-1/6.jpg"
 import pro53 from "../../public/lovable-uploads/Projects/Kafka-1/7.jpg"
+import pro55 from "../../public/lovable-uploads/Projects/Kafka-1/cover.png"
+import pro54 from "../../public/lovable-uploads/Projects/Auto_ML_AGent/ML.png"
+
+
+
 
 
 interface Project {
@@ -137,8 +144,8 @@ const Projects: React.FC = () => {
         "HTML/CSS/JS",
       ],
       links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
-      image: pro34,
-      images: [pro35, pro34], // added multiple images array
+      image: pro56,
+      images: [pro56 , pro35, pro34], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -161,14 +168,44 @@ const Projects: React.FC = () => {
         " Vector Databases",
       ],
       links: { github: " https://github.com/Guruvd07/DocGuru-AI.git" },
-      image: pro27,
-      images: [pro27, pro28, pro29, pro30, pro31, pro32, pro33], // added multiple images array
+      image: pro57,
+      images: [pro57 , pro27, pro28, pro29, pro30, pro31, pro32, pro33], // added multiple images array
       date: "2025",
       featured: true,
     },
 
+
     {
       id: "project4",
+      title: "AutoML Agent : Agentic AI Data Scientist",
+      shortDescription: "End-to-end Agentic AutoML platform that detects ML problems, trains multiple models, compares them, makes predictions, and saves best models automatically.",
+      fullDescription:
+        "Background: Traditional machine learning workflows require manual preprocessing, model selection, evaluation, and deployment. Motivation: To build an intelligent agent-like AutoML system that automates the full data science workflow with minimal user intervention. Project Idea: An Agentic AI Data Scientist platform built using Python and Streamlit where users upload a dataset, select a target column, and the system automatically detects whether the task is regression or classification, preprocesses data, trains multiple machine learning models, compares performance metrics, selects the best model, visualizes results using confusion matrix and ROC curves, supports interactive prediction through UI forms, and allows exporting trained models in .pkl format. The project demonstrates AutoML, agent-based orchestration, model evaluation, and production deployment using Render.",
+      technologies: [
+        "Python",
+        "Streamlit",
+        "Scikit-learn",
+        "XGBoost",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Joblib",
+        "Render",
+        "Agentic AI"
+      ],
+      links: {
+        github: "https://github.com/Guruvd07/AutoML-Agent.git",
+        live: "https://automl-agent-r7yp.onrender.com"
+      },
+      image: pro54,
+      images: [pro54],
+      date: "2026",
+      featured: true,
+    },
+    
+
+    {
+      id: "project5",
       title: "Apache Kafka : Real-Time E-Commerce Order Pipeline",
       shortDescription: "Production-style real-time event-driven e-commerce system using Kafka, Python, and FastAPI.",
       fullDescription:
@@ -186,15 +223,15 @@ const Projects: React.FC = () => {
       links: {
         github: "https://github.com/Guruvd07/Apache-Kafka-1.git",
       },
-      image: pro47,
-      images: [pro47 , pro48  , pro49 , pro50 , pro51 , pro52 , pro53],
+      image: pro55,
+      images: [pro55 , pro47 , pro48  , pro49 , pro50 , pro51 , pro52 , pro53],
       date: "2026",
       featured: true,
     },
     
 
     {
-      id: "project5",
+      id: "project6",
       title: "CarGuru AI : Used Car Price Prediction",
       shortDescription: "AI-powered platform for accurate and transparent used car pricing.",
       fullDescription:
@@ -211,7 +248,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project6",
+      id: "project7",
       title: "GuruCare+",
       shortDescription: "AI-Based Disease Prediction System",
       fullDescription:
@@ -224,7 +261,7 @@ const Projects: React.FC = () => {
       featured: true,
     },
     {
-      id: "project7",
+      id: "project8",
       title: "ReportEase",
       shortDescription: "Automated Smart Reporting Portal for educational institutions",
       fullDescription:
@@ -238,7 +275,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project8",
+      id: "project9",
       title: "ClubRankers",
       shortDescription: "Empowering College Clubs and Students to connect and showcase activities",
       fullDescription:
@@ -252,7 +289,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: "project9",
+      id: "project10",
       title: "Gamified AI Platform for Coding & Language Mastery",
       shortDescription: "Making Learning Addictive with Quizzes, XP & Leaderboards",
       fullDescription: `🎓 Students (Ages 15–35): School & college learners struggling with syntax and structure.\n\n
@@ -273,7 +310,7 @@ const Projects: React.FC = () => {
       featured: false,
     },
     {
-      id: "project10",
+      id: "project11",
       title: "Narmada Traders - Bilingual Billing System",
       shortDescription: "Professional billing system with English-to-Marathi conversion and PDF generation",
       fullDescription:

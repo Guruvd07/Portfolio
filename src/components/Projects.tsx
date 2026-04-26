@@ -195,7 +195,7 @@ const Projects: React.FC = () => {
       ],
       links: {
         github: "https://github.com/Guruvd07/AutoML-Agent.git",
-        live: "https://automl-agent-r7yp.onrender.com"
+        live: "https://automl-agent-zenu.onrender.com/"
       },
       image: pro54,
       images: [pro54],

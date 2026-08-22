@@ -53,7 +53,18 @@ import pro52 from "../../public/lovable-uploads/Projects/Kafka-1/6.jpg"
 import pro53 from "../../public/lovable-uploads/Projects/Kafka-1/7.jpg"
 import pro55 from "../../public/lovable-uploads/Projects/Kafka-1/cover.png"
 import pro54 from "../../public/lovable-uploads/Projects/Auto_ML_AGent/ML.png"
-
+import pro60 from "../../public/lovable-uploads/Projects/EvaloforgeAI/EvaloforgeAI.png"
+import pro71 from "../../public/lovable-uploads/Projects/EvaloforgeAI/Rectangle.png"
+import pro61 from "../../public/lovable-uploads/Projects/EvaloforgeAI/1.png"
+import pro62 from "../../public/lovable-uploads/Projects/EvaloforgeAI/2.png"
+import pro63 from "../../public/lovable-uploads/Projects/EvaloforgeAI/3.png"
+import pro64 from "../../public/lovable-uploads/Projects/EvaloforgeAI/4.png"
+import pro65 from "../../public/lovable-uploads/Projects/EvaloforgeAI/5.png"
+import pro66 from "../../public/lovable-uploads/Projects/EvaloforgeAI/6.png"
+import pro67 from "../../public/lovable-uploads/Projects/EvaloforgeAI/7.png"
+import pro68 from "../../public/lovable-uploads/Projects/EvaloforgeAI/8.png"
+import pro69 from "../../public/lovable-uploads/Projects/EvaloforgeAI/9.png"
+import pro70 from "../../public/lovable-uploads/Projects/EvaloforgeAI/10.png"
 
 
 
@@ -105,48 +116,31 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      id: "project1",
-      title: "SentimentGuru AI",
-      shortDescription: "Predicts YouTube comment sentiment and provides a video rating with visual charts.",
-      fullDescription:
-        "SentimentGuru AI is an end-to-end web application that analyzes YouTube video comments, predicts sentiment, and provides an overall rating and visual insights for a video. It helps content creators and viewers understand audience reactions at a glance.",
-      technologies: [
-        "Python",
-        "Flask",
-        "Hugging Face Transformers",
-        "WordCloud",
-        "Data Visualization",
-        "API",
-        "HTML/CSS/JS",
-      ],
-      links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
-      image: pro25,
-      images: [pro25, pro37, pro38, pro39, pro40, pro41, pro42, pro43, pro44, pro45, pro46], // added multiple images array
-      date: "2025",
-      featured: true,
-    },
-    {
-      id: "project2",
-      title: "InsightGuru AI",
+      id: "project12",
+      title: "EvalForge AI",
       shortDescription:
-        "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
+        "EvalForge AI is an LLM evaluation and model comparison platform that evaluates multiple AI models using standardized prompts and compares quality, latency, token usage, and cost.",
       fullDescription:
-        "InsightGuru AI is an advanced AI system that analyzes YouTube videos by extracting transcripts through a 4-level pipeline (VTT → TimedText → Transcript API → Whisper ASR). It detects keyword-specific segments and generates precise, context-aware summaries using FLAN-T5 transformers. The project includes real-time processing through a sleek Flask web interface, helping users quickly find what a speaker said about any topic or person.",
+        "EvalForge AI is a full-stack AI evaluation platform that allows users to create experiments, add evaluation prompts, run multiple LLMs using the same inputs, and compare their performance. The system automatically evaluates responses based on relevance, correctness, coherence, instruction following, and overall quality while tracking latency, token usage, and cost. It includes JWT-based authentication, user-specific experiment isolation, dashboards, analytics, and model leaderboards.",
       technologies: [
         "Python",
-        "Flask",
-        "Hugging Face Transformers",
-        "FLAN-T5",
-        "Whisper ASR",
-        "YouTube API",
-        "NLP",
-        "Text Summarization",
-        "HTML/CSS/JS",
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "SQLAlchemy",
+        "LLM Evaluation",
+        "OpenRouter",
+        "JWT Authentication",
+        "REST APIs",
       ],
-      links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
-      image: pro56,
-      images: [pro56 , pro35, pro34], // added multiple images array
-      date: "2025",
+      links: {
+        live: "https://evalforge-ai-frontend.onrender.com/",
+        github: "https://github.com/Guruvd07/EvalForge-AI",
+      },
+      image: pro71,
+      images: [pro60,pro61 ,pro62,pro63,pro64,pro65,pro66,pro67,pro68,pro69,pro70],
+      date: "",
       featured: true,
     },
 
@@ -174,6 +168,30 @@ const Projects: React.FC = () => {
       featured: true,
     },
 
+    {
+      id: "project2",
+      title: "InsightGuru AI",
+      shortDescription:
+        "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
+      fullDescription:
+        "InsightGuru AI is an advanced AI system that analyzes YouTube videos by extracting transcripts through a 4-level pipeline (VTT → TimedText → Transcript API → Whisper ASR). It detects keyword-specific segments and generates precise, context-aware summaries using FLAN-T5 transformers. The project includes real-time processing through a sleek Flask web interface, helping users quickly find what a speaker said about any topic or person.",
+      technologies: [
+        "Python",
+        "Flask",
+        "Hugging Face Transformers",
+        "FLAN-T5",
+        "Whisper ASR",
+        "YouTube API",
+        "NLP",
+        "Text Summarization",
+        "HTML/CSS/JS",
+      ],
+      links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
+      image: pro56,
+      images: [pro56 , pro35, pro34], // added multiple images array
+      date: "2025",
+      featured: true,
+    },
 
     {
       id: "project4",
@@ -202,8 +220,28 @@ const Projects: React.FC = () => {
       date: "2026",
       featured: true,
     },
-    
 
+    {
+      id: "project1",
+      title: "SentimentGuru AI",
+      shortDescription: "Predicts YouTube comment sentiment and provides a video rating with visual charts.",
+      fullDescription:
+        "SentimentGuru AI is an end-to-end web application that analyzes YouTube video comments, predicts sentiment, and provides an overall rating and visual insights for a video. It helps content creators and viewers understand audience reactions at a glance.",
+      technologies: [
+        "Python",
+        "Flask",
+        "Hugging Face Transformers",
+        "WordCloud",
+        "Data Visualization",
+        "API",
+        "HTML/CSS/JS",
+      ],
+      links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
+      image: pro25,
+      images: [pro25, pro37, pro38, pro39, pro40, pro41, pro42, pro43, pro44, pro45, pro46], // added multiple images array
+      date: "2025",
+      featured: true,
+    },
     {
       id: "project5",
       title: "Apache Kafka : Real-Time E-Commerce Order Pipeline",

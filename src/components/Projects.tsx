@@ -15,58 +15,85 @@ import {
   ChevronDownIcon,
 } from "lucide-react"
 import SectionHeading from "./SectionHeading"
-import pro01 from "../../public/lovable-uploads/Projects/Aaroya/Mediplus.jpg"
-import pro06 from "../../public/lovable-uploads/Projects/ClubRankers/21.png"
-import pro11 from "../../public/lovable-uploads/Projects/FrieghtTransportationSystem/Screenshot 2025-08-19 153027.jpg"
-import pro13 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
-import pro19 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
-import pro24 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
-import pro57 from "../../public/lovable-uploads/Projects/Guru DOC AI/cover.png"
-import pro27 from "../../public/lovable-uploads/Projects/Guru DOC AI/1.jpg"
-import pro28 from "../../public/lovable-uploads/Projects/Guru DOC AI/2.jpg"
-import pro29 from "../../public/lovable-uploads/Projects/Guru DOC AI/3.jpg"
-import pro30 from "../../public/lovable-uploads/Projects/Guru DOC AI/4.jpg"
-import pro31 from "../../public/lovable-uploads/Projects/Guru DOC AI/5.jpg"
-import pro32 from "../../public/lovable-uploads/Projects/Guru DOC AI/6.jpg"
-import pro33 from "../../public/lovable-uploads/Projects/Guru DOC AI/7.jpg"
-import pro34 from "../../public/lovable-uploads/Projects/GuruInsightAI/After.jpg"
-import pro35 from "../../public/lovable-uploads/Projects/GuruInsightAI/Before.jpg"
-import pro56 from "../../public/lovable-uploads/Projects/GuruInsightAI/cover.png"
-import pro25 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
-// import pro36 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
-import pro37 from "../../public/lovable-uploads/Projects/Youtube/2.jpg"
-import pro38 from "../../public/lovable-uploads/Projects/Youtube/3.jpg"
-import pro39 from "../../public/lovable-uploads/Projects/Youtube/4.jpg"
-import pro40 from "../../public/lovable-uploads/Projects/Youtube/5.jpg"
-import pro41 from "../../public/lovable-uploads/Projects/Youtube/6.jpg"
-import pro42 from "../../public/lovable-uploads/Projects/Youtube/7.jpg"
-import pro43 from "../../public/lovable-uploads/Projects/Youtube/8.jpg"
-import pro44 from "../../public/lovable-uploads/Projects/Youtube/9.jpg"
-import pro45 from "../../public/lovable-uploads/Projects/Youtube/10.jpg"
-import pro46 from "../../public/lovable-uploads/Projects/Youtube/11.jpg"
-import pro47 from "../../public/lovable-uploads/Projects/Kafka-1/1.jpg"
-import pro48 from "../../public/lovable-uploads/Projects/Kafka-1/2.jpg"
-import pro49 from "../../public/lovable-uploads/Projects/Kafka-1/3.jpg"
-import pro50 from "../../public/lovable-uploads/Projects/Kafka-1/4.jpg"
-import pro51 from "../../public/lovable-uploads/Projects/Kafka-1/5.jpg"
-import pro52 from "../../public/lovable-uploads/Projects/Kafka-1/6.jpg"
-import pro53 from "../../public/lovable-uploads/Projects/Kafka-1/7.jpg"
-import pro55 from "../../public/lovable-uploads/Projects/Kafka-1/cover.png"
-import pro54 from "../../public/lovable-uploads/Projects/Auto_ML_AGent/ML.png"
-import pro60 from "../../public/lovable-uploads/Projects/EvaloforgeAI/EvaloforgeAI.png"
-import pro71 from "../../public/lovable-uploads/Projects/EvaloforgeAI/Rectangle.png"
-import pro61 from "../../public/lovable-uploads/Projects/EvaloforgeAI/1.png"
-import pro62 from "../../public/lovable-uploads/Projects/EvaloforgeAI/2.png"
-import pro63 from "../../public/lovable-uploads/Projects/EvaloforgeAI/3.png"
-import pro64 from "../../public/lovable-uploads/Projects/EvaloforgeAI/4.png"
-import pro65 from "../../public/lovable-uploads/Projects/EvaloforgeAI/5.png"
-import pro66 from "../../public/lovable-uploads/Projects/EvaloforgeAI/6.png"
-import pro67 from "../../public/lovable-uploads/Projects/EvaloforgeAI/7.png"
-import pro68 from "../../public/lovable-uploads/Projects/EvaloforgeAI/8.png"
-import pro69 from "../../public/lovable-uploads/Projects/EvaloforgeAI/9.png"
-import pro70 from "../../public/lovable-uploads/Projects/EvaloforgeAI/10.png"
 
+// ---- Project 1: EvalForge AI ----
+import pro1 from "../../public/lovable-uploads/Projects/EvaloforgeAI/banner.jfif"
+import pro2 from "../../public/lovable-uploads/Projects/EvaloforgeAI/EvaloforgeAI.png"
+import pro3 from "../../public/lovable-uploads/Projects/EvaloforgeAI/1.png"
+import pro4 from "../../public/lovable-uploads/Projects/EvaloforgeAI/2.png"
+import pro5 from "../../public/lovable-uploads/Projects/EvaloforgeAI/3.png"
+import pro6 from "../../public/lovable-uploads/Projects/EvaloforgeAI/4.png"
+import pro7 from "../../public/lovable-uploads/Projects/EvaloforgeAI/5.png"
+import pro8 from "../../public/lovable-uploads/Projects/EvaloforgeAI/6.png"
+import pro9 from "../../public/lovable-uploads/Projects/EvaloforgeAI/7.png"
+import pro10 from "../../public/lovable-uploads/Projects/EvaloforgeAI/8.png"
+import pro11 from "../../public/lovable-uploads/Projects/EvaloforgeAI/9.png"
+import pro12 from "../../public/lovable-uploads/Projects/EvaloforgeAI/10.png"
 
+// ---- Project 2: GuruDoc AI ----
+import pro13 from "../../public/lovable-uploads/Projects/Guru DOC AI/GuruDoc AI.png"
+import pro14 from "../../public/lovable-uploads/Projects/Guru DOC AI/cover.png"
+import pro15 from "../../public/lovable-uploads/Projects/Guru DOC AI/1.jpg"
+import pro16 from "../../public/lovable-uploads/Projects/Guru DOC AI/2.jpg"
+import pro17 from "../../public/lovable-uploads/Projects/Guru DOC AI/3.jpg"
+import pro18 from "../../public/lovable-uploads/Projects/Guru DOC AI/4.jpg"
+import pro19 from "../../public/lovable-uploads/Projects/Guru DOC AI/5.jpg"
+import pro20 from "../../public/lovable-uploads/Projects/Guru DOC AI/6.jpg"
+import pro21 from "../../public/lovable-uploads/Projects/Guru DOC AI/7.jpg"
+
+// ---- Project 3: InsightGuru AI ----
+import pro22 from "../../public/lovable-uploads/Projects/GuruInsightAI/insightGuruAI.png"
+import pro23 from "../../public/lovable-uploads/Projects/GuruInsightAI/cover.png"
+import pro24 from "../../public/lovable-uploads/Projects/GuruInsightAI/Before.jpg"
+import pro25 from "../../public/lovable-uploads/Projects/GuruInsightAI/After.jpg"
+
+// ---- Project 4: AutoML Agent ----
+import pro26 from "../../public/lovable-uploads/Projects/Auto_ML_AGent/AutoML Agent.png"
+import pro27 from "../../public/lovable-uploads/Projects/Auto_ML_AGent/ML.png"
+
+// ---- Project 5: SentimentGuru AI ----
+import pro28 from "../../public/lovable-uploads/Projects/Youtube/sentiment1.png"
+import pro29 from "../../public/lovable-uploads/Projects/Youtube/1.jpg"
+import pro30 from "../../public/lovable-uploads/Projects/Youtube/2.jpg"
+import pro31 from "../../public/lovable-uploads/Projects/Youtube/3.jpg"
+import pro32 from "../../public/lovable-uploads/Projects/Youtube/4.jpg"
+import pro33 from "../../public/lovable-uploads/Projects/Youtube/5.jpg"
+import pro34 from "../../public/lovable-uploads/Projects/Youtube/6.jpg"
+import pro35 from "../../public/lovable-uploads/Projects/Youtube/7.jpg"
+import pro36 from "../../public/lovable-uploads/Projects/Youtube/8.jpg"
+import pro37 from "../../public/lovable-uploads/Projects/Youtube/9.jpg"
+import pro38 from "../../public/lovable-uploads/Projects/Youtube/10.jpg"
+import pro39 from "../../public/lovable-uploads/Projects/Youtube/11.jpg"
+
+// ---- Project 6: Apache Kafka ----
+import pro40 from "../../public/lovable-uploads/Projects/Kafka-1/ApacheKafka.png"
+import pro41 from "../../public/lovable-uploads/Projects/Kafka-1/cover.png"
+import pro42 from "../../public/lovable-uploads/Projects/Kafka-1/1.jpg"
+import pro43 from "../../public/lovable-uploads/Projects/Kafka-1/2.jpg"
+import pro44 from "../../public/lovable-uploads/Projects/Kafka-1/3.jpg"
+import pro45 from "../../public/lovable-uploads/Projects/Kafka-1/4.jpg"
+import pro46 from "../../public/lovable-uploads/Projects/Kafka-1/5.jpg"
+import pro47 from "../../public/lovable-uploads/Projects/Kafka-1/6.jpg"
+import pro48 from "../../public/lovable-uploads/Projects/Kafka-1/7.jpg"
+
+// ---- Project 7: CarGuru AI ----
+import pro49 from "../../public/lovable-uploads/Projects/FrieghtTransportationSystem/Screenshot 2025-08-19 153027.jpg"
+
+// ---- Project 8: GuruCare+ ----
+import pro50 from "../../public/lovable-uploads/Projects/Aaroya/Mediplus.jpg"
+
+// ---- Project 9: ReportEase ----
+import pro51 from "../../public/lovable-uploads/Projects/ReportEase/ReportEase01.jpg"
+
+// ---- Project 10: ClubRankers ----
+import pro52 from "../../public/lovable-uploads/Projects/ClubRankers/poster club rankers.png"
+import pro53 from "../../public/lovable-uploads/Projects/ClubRankers/21.png"
+
+// ---- Project 11: Gamified AI Platform ----
+import pro54 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
+
+// ---- Project 12: Narmada Traders ----
+import pro55 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
 
 
 interface Project {
@@ -138,9 +165,9 @@ const Projects: React.FC = () => {
         live: "https://evalforge-ai-frontend.onrender.com/",
         github: "https://github.com/Guruvd07/EvalForge-AI",
       },
-      image: pro71,
-      images: [pro60,pro61 ,pro62,pro63,pro64,pro65,pro66,pro67,pro68,pro69,pro70],
-      date: "",
+      image: pro1,
+      images: [pro2, pro3, pro4, pro5, pro6, pro7, pro8, pro9, pro10, pro11, pro12],
+      date: "2026",
       featured: true,
     },
 
@@ -162,8 +189,8 @@ const Projects: React.FC = () => {
         " Vector Databases",
       ],
       links: { github: " https://github.com/Guruvd07/DocGuru-AI.git" },
-      image: pro57,
-      images: [pro57 , pro27, pro28, pro29, pro30, pro31, pro32, pro33], // added multiple images array
+      image: pro13,
+      images: [pro14, pro15, pro16, pro17, pro18, pro19, pro20, pro21], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -187,8 +214,8 @@ const Projects: React.FC = () => {
         "HTML/CSS/JS",
       ],
       links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
-      image: pro56,
-      images: [pro56 , pro35, pro34], // added multiple images array
+      image: pro22,
+      images: [pro23, pro24, pro25], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -215,8 +242,8 @@ const Projects: React.FC = () => {
         github: "https://github.com/Guruvd07/AutoML-Agent.git",
         live: "https://automl-agent-zenu.onrender.com/"
       },
-      image: pro54,
-      images: [pro54],
+      image: pro26,
+      images: [pro27],
       date: "2026",
       featured: true,
     },
@@ -237,8 +264,8 @@ const Projects: React.FC = () => {
         "HTML/CSS/JS",
       ],
       links: { github: "https://github.com/Guruvd07/SentimentGuru-AI.git" },
-      image: pro25,
-      images: [pro25, pro37, pro38, pro39, pro40, pro41, pro42, pro43, pro44, pro45, pro46], // added multiple images array
+      image: pro28,
+      images: [pro29, pro30, pro31, pro32, pro33, pro34, pro35, pro36, pro37, pro38, pro39], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -261,12 +288,12 @@ const Projects: React.FC = () => {
       links: {
         github: "https://github.com/Guruvd07/Apache-Kafka-1.git",
       },
-      image: pro55,
-      images: [pro55 , pro47 , pro48  , pro49 , pro50 , pro51 , pro52 , pro53],
+      image: pro40,
+      images: [pro41, pro42, pro43, pro44, pro45, pro46, pro47, pro48],
       date: "2026",
       featured: true,
     },
-    
+
 
     {
       id: "project6",
@@ -279,8 +306,8 @@ const Projects: React.FC = () => {
         github: "https://github.com/Guruvd07/car-price-predictor",
         live: "https://car-price-predictor-1gcq.onrender.com/",
       },
-      image: pro11,
-      images: [pro11], // added multiple images array
+      image: pro49,
+      images: [pro49], // added multiple images array
       date: "2025",
       featured: false,
     },
@@ -293,8 +320,8 @@ const Projects: React.FC = () => {
         "MediPlus is an AI-powered healthcare web application that enables accurate disease prediction at your fingertips. Users can input symptoms such as fatigue, fever, or sore throat to receive instant, highly accurate predictions. The system provides severity analysis to determine if a condition is mild, moderate, or severe, helping users make informed decisions. It also offers personalized treatment advice including rest, medication, or further consultation options. Built using Machine Learning, Flask, and HTML/CSS, MediPlus is designed to make early diagnosis fast, intelligent, and accessible.",
       technologies: ["Machine Learning", "NodeJs", "Flask", "Html/CSS", "Streamlit", "Healthcare"],
       links: { github: "https://github.com/Guruvd07/GuruCare", live: "https://medical-frontend-oxk9.onrender.com/" },
-      image: pro01,
-      images: [pro01], // added multiple images array
+      image: pro50,
+      images: [pro50], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -306,8 +333,8 @@ const Projects: React.FC = () => {
         "Educational institutions generate vast amounts of diverse and fragmented data annually, making the preparation of comprehensive reports a complex and time-intensive task. This project introduces an automated Smart Reporting Portal designed to streamline data integration, analysis, and visualization. Leveraging cutting-edge technologies like AWS, Node.js, and React.js, the portal addresses inefficiencies in manual reporting by enabling secure data collection, real-time collaboration, and customizable visualizations. Key features include user authentication, automated report generation, and adherence to data privacy standards like GDPR. This innovative platform enhances reporting accuracy, facilitates insightful decision-making, and empowers educational institutions to focus on strategic growth.",
       technologies: ["AWS", "Node.js", "React.js", "Database Management", "Data Visualization"],
       links: { github: "https://github.com/SashwatOrg/v_07" },
-      image: pro19,
-      images: [pro19], // added multiple images array
+      image: pro51,
+      images: [pro51], // added multiple images array
       date: "2024",
       featured: true,
     },
@@ -320,8 +347,8 @@ const Projects: React.FC = () => {
         "ClubRankers - Empowering College Clubs and Students. Creating a platform for college clubs and students to connect and showcase activities. Facilitating club enrollment, event postings, recruitment, and achievements. Utilizing Flask framework with MySQL for robust data management and visualization. Developed a web application to address these challenges. Implemented features for club registration, event management, and data-driven insights through visualizations. Improved visibility and engagement for clubs and students alike.",
       technologies: ["Flask", "MySQL", "Python", "HTML/CSS", "JavaScript"],
       links: { github: "https://github.com/virajmandlik" },
-      image: pro06,
-      images: [pro06], // added multiple images array
+      image: pro52,
+      images: [pro53], // added multiple images array
       date: "2022",
       featured: true,
     },
@@ -342,8 +369,8 @@ const Projects: React.FC = () => {
 
       technologies: ["React", "Node.js", "MongoDB", "AWS"],
       links: { github: "https://github.com/Guruvd07" },
-      image: pro13,
-      images: [pro13], // added multiple images array
+      image: pro54,
+      images: [pro54], // added multiple images array
       date: "2025",
       featured: false,
     },
@@ -358,8 +385,8 @@ const Projects: React.FC = () => {
         github: "https://github.com/Guruvd07/Billing-System.git",
         live: "https://billing-system-lime.vercel.app/",
       },
-      image: pro24,
-      images: [pro24], // added multiple images array
+      image: pro55,
+      images: [pro55], // added multiple images array
       date: "2025",
       featured: true,
     },

@@ -12,23 +12,21 @@ import {
   Atom,
   Github,
   GitBranch,
-  Send,
   Cpu,
-  LayoutGrid,
   Star,
   Sparkles,
   Server,
   Shuffle,
   Globe,
   Eraser,
-  FileSpreadsheet,
   Calculator,
   LineChart,
   Layers,
-  TrendingUp,
   Bot,
   Wrench,
-  BookOpen
+  BookOpen,
+  Search,
+  Type,
 } from "lucide-react";
 
 interface Skill {
@@ -36,17 +34,13 @@ interface Skill {
   level: number
   icon: React.ElementType
   category:
-  | "Data Engineering"
+  | "Machine Learning & DL"
+  | "Generative AI & NLP"
+  | "Agentic AI Systems"
+  | "Vector Search & DB"
+  | "AI Engineering & APIs"
   | "Data Analysis"
-  | "Machine Learning Engineering"
-  | "Deep Learning"
-  | "Generative AI & RAG"
-  | "Agentic AI"
-  | "Database"
-  | "OCR"
-  | "tools"
-  | "other"
-
+  | "Languages & Tools"
 }
 
 const Skills: React.FC = () => {
@@ -59,183 +53,127 @@ const Skills: React.FC = () => {
 
   const skills: Skill[] = [
     // -------------------------------------
-    // DATA ENGINEERING
+    // MACHINE LEARNING & DEEP LEARNING
     // -------------------------------------
-    { name: "Apache Kafka", level: 90, icon: Shuffle, category: "Data Engineering" },
-    { name: "ETL Pipelines", level: 90, icon: Shuffle, category: "Data Engineering" },
-    { name: "REST API Extraction", level: 85, icon: Globe, category: "Data Engineering" },
-    { name: "Web Scraping", level: 85, icon: Globe, category: "Data Engineering" },
-    { name: "Data Transformation", level: 90, icon: Eraser, category: "Data Engineering" },
-    { name: "Data Loading", level: 85, icon: Globe, category: "Data Engineering" },
-  
+    { name: "Feature Engineering", level: 90, icon: Layers, category: "Machine Learning & DL" },
+    { name: "Neural Networks", level: 88, icon: Cpu, category: "Machine Learning & DL" },
+    { name: "Transformers", level: 90, icon: Brain, category: "Machine Learning & DL" },
+    { name: "Embeddings", level: 88, icon: Sparkles, category: "Machine Learning & DL" },
+
+    // -------------------------------------
+    // GENERATIVE AI & NLP
+    // -------------------------------------
+    { name: "LLMs", level: 92, icon: Bot, category: "Generative AI & NLP" },
+    { name: "RAG", level: 92, icon: Sparkles, category: "Generative AI & NLP" },
+    { name: "LLM Evaluation", level: 88, icon: Star, category: "Generative AI & NLP" },
+    { name: "NLP", level: 88, icon: FileText, category: "Generative AI & NLP" },
+    { name: "Tokenization", level: 85, icon: Type, category: "Generative AI & NLP" },
+    { name: "Semantic Search", level: 88, icon: Search, category: "Generative AI & NLP" },
+
+    // -------------------------------------
+    // AGENTIC AI SYSTEMS
+    // -------------------------------------
+    { name: "AI Agents", level: 90, icon: Bot, category: "Agentic AI Systems" },
+    { name: "Multi-Agent Systems", level: 85, icon: Shuffle, category: "Agentic AI Systems" },
+    { name: "Agent Memory", level: 82, icon: Brain, category: "Agentic AI Systems" },
+    { name: "Tool Calling", level: 88, icon: Wrench, category: "Agentic AI Systems" },
+    { name: "Autonomous AI Workflows", level: 85, icon: Cpu, category: "Agentic AI Systems" },
+
+    // -------------------------------------
+    // VECTOR SEARCH & DATABASES
+    // -------------------------------------
+    { name: "FAISS", level: 90, icon: Database, category: "Vector Search & DB" },
+    { name: "Sentence Transformers", level: 88, icon: Brain, category: "Vector Search & DB" },
+    { name: "Vector Databases", level: 88, icon: Database, category: "Vector Search & DB" },
+    { name: "PostgreSQL", level: 85, icon: Database, category: "Vector Search & DB" },
+    { name: "MySQL", level: 85, icon: Database, category: "Vector Search & DB" },
+
+    // -------------------------------------
+    // AI ENGINEERING & APIs
+    // -------------------------------------
+    { name: "FastAPI", level: 90, icon: Server, category: "AI Engineering & APIs" },
+    { name: "REST APIs", level: 90, icon: Globe, category: "AI Engineering & APIs" },
+    { name: "Hugging Face", level: 85, icon: Bot, category: "AI Engineering & APIs" },
+    { name: "Git", level: 90, icon: GitBranch, category: "AI Engineering & APIs" },
+    { name: "GitHub", level: 90, icon: Github, category: "AI Engineering & APIs" },
+
     // -------------------------------------
     // DATA ANALYSIS
     // -------------------------------------
     { name: "EDA", level: 90, icon: BarChart3, category: "Data Analysis" },
-    { name: "Power BI", level: 85, icon: BarChart3, category: "Data Analysis" },
-    { name: "Pandas", level: 90, icon: FileSpreadsheet, category: "Data Analysis" },
-    { name: "NumPy", level: 85, icon: Calculator, category: "Data Analysis" },
-    { name: "Visualization", level: 85, icon: LineChart, category: "Data Analysis" },
-  
-    // -------------------------------------
-    // MACHINE LEARNING (ONLY ML)
-    // -------------------------------------
-// -------------------------------------
-// MACHINE LEARNING (ONLY ML)
-// -------------------------------------
-{ name: "Scikit-Learn", level: 90, icon: Brain, category: "Machine Learning Engineering" },
-{ name: "Predictive Modeling", level: 90, icon: TrendingUp, category: "Machine Learning Engineering" },
-{ name: "Model Evaluation", level: 85, icon: Brain, category: "Machine Learning Engineering" },
-
-// NEW ML SKILLS
-{ name: "Feature Engineering", level: 85, icon: Layers, category: "Machine Learning Engineering" },
-{ name: "Hyperparameter Tuning", level: 80, icon: Wrench, category: "Machine Learning Engineering" },
-{ name: "Cross-Validation (CV)", level: 90, icon: Shuffle, category: "Machine Learning Engineering" },
-
-  
-    // -------------------------------------
-    // DEEP LEARNING + NLP (Combined)
-    // -------------------------------------
-    { name: "ANN", level: 85, icon: Layers, category: "Deep Learning" },
-    { name: "CNN", level: 85, icon: Layers, category: "Deep Learning" },
-    { name: "LSTM/RNN", level: 80, icon: Layers, category: "Deep Learning" },
-  
-    // NLP inside DL Category
-    { name: "Transformers ", level: 90, icon: Brain, category: "Deep Learning" },
-    { name: "Hugging Face", level: 85, icon: Bot, category: "Deep Learning" },
-    { name: "Whisper ASR", level: 80, icon: Bot, category: "Deep Learning" },
-  
-    // -------------------------------------
-// GENERATIVE AI & RAG
-// -------------------------------------
-{ name: "Retrieval-Augmented Generation (RAG)", level: 90, icon: Sparkles, category: "Generative AI & RAG" },
-{ name: "Semantic Embeddings", level: 90, icon: Brain, category: "Generative AI & RAG" },
-{ name: "Vector Databases (FAISS)", level: 85, icon: Database, category: "Generative AI & RAG" },
-{ name: "LLMs ", level: 85, icon: Bot, category: "Generative AI & RAG" },
-{ name: "Prompt Engineering", level: 85, icon: BookOpen, category: "Generative AI & RAG" },
-    
+    { name: "Data Cleaning", level: 88, icon: Eraser, category: "Data Analysis" },
+    { name: "Data Visualization", level: 85, icon: LineChart, category: "Data Analysis" },
+    { name: "Statistical Analysis", level: 85, icon: Calculator, category: "Data Analysis" },
 
     // -------------------------------------
-    // AGENTIC AI
+    // LANGUAGES & TOOLS
     // -------------------------------------
-    { name: "AutoML Agents", level: 90, icon: Bot, category: "Agentic AI" },
-    { name: "Tool Calling", level: 85, icon: Wrench, category: "Agentic AI" },
-    { name: "LLM Orchestration", level: 85, icon: Brain, category: "Agentic AI" },
-    { name: "Multi-Agent Systems", level: 80, icon: Shuffle, category: "Agentic AI" },
-    { name: "Autonomous Workflows", level: 85, icon: Cpu, category: "Agentic AI" },
-    { name: "Planning Agents", level: 80, icon: Sparkles, category: "Agentic AI" },
-    // -------------------------------------
-    // OCR
-    // -------------------------------------
-    { name: "OCR", level: 90, icon: FileText, category: "OCR" },
-    { name: "Tesseract OCR", level: 85, icon: Bot, category: "OCR" },
-    { name: "Image-to-Text Extraction", level: 85, icon: FileText, category: "OCR" },
-  
-    // -------------------------------------
-    // DATABASE
-    // -------------------------------------
-    { name: "SQL", level: 90, icon: Database, category: "Database" },
-    { name: "MySQL", level: 85, icon: Database, category: "Database" },
-    { name: "MongoDB", level: 80, icon: Database, category: "Database" },
-    { name: "Vector Databases (FAISS)", level: 80, icon: Database, category: "Database" },
-  
-    // -------------------------------------
-    // TOOLS
-    // -------------------------------------
-// -------------------------------------
-// TOOLS
-// -------------------------------------
-{ name: "Docker", level: 85, icon: Server, category: "tools" },
-{ name: "GitHub", level: 90, icon: Github, category: "tools" },
-{ name: "VS Code", level: 90, icon: Code, category: "tools" },
-{ name: "Jupyter Notebook", level: 90, icon: BookOpen, category: "tools" },
-{ name: "Google Colab", level: 85, icon: Atom, category: "tools" },
-{ name: "MySQL Workbench", level: 85, icon: Database, category: "tools" },
-
-  
-    // -------------------------------------
-    // OTHER
-    // -------------------------------------
-    { name: "OS Concepts", level: 85, icon: Cpu, category: "other" },
-    { name: "System Design", level: 85, icon: LayoutGrid, category: "other" },
-    { name: "Git", level: 90, icon: GitBranch, category: "other" },
+    { name: "Python", level: 92, icon: Code, category: "Languages & Tools" },
+    { name: "SQL", level: 88, icon: Database, category: "Languages & Tools" },
+    { name: "Jupyter Notebook", level: 90, icon: BookOpen, category: "Languages & Tools" },
+    { name: "Google Colab", level: 88, icon: Atom, category: "Languages & Tools" },
+    { name: "VS Code", level: 90, icon: Code, category: "Languages & Tools" },
   ];
-  
+
   const categories = [
     {
-      id: "Data Engineering",
-      name: "Data Engineering",
+      id: "Machine Learning & DL",
+      name: "Machine Learning & DL",
+      icon: Brain,
+      description: "Feature engineering, neural networks, transformers, embeddings",
+      color: "from-indigo-600 to-purple-600",
+      lightColor: "from-indigo-400 to-purple-400",
+    },
+    {
+      id: "Generative AI & NLP",
+      name: "Generative AI & NLP",
+      icon: Sparkles,
+      description: "LLMs, RAG, LLM evaluation, NLP, tokenization, semantic search",
+      color: "from-fuchsia-600 to-rose-600",
+      lightColor: "from-fuchsia-400 to-rose-400",
+    },
+    {
+      id: "Agentic AI Systems",
+      name: "Agentic AI Systems",
+      icon: Bot,
+      description: "AI agents, multi-agent systems, agent memory, tool calling",
+      color: "from-purple-600 to-pink-600",
+      lightColor: "from-purple-400 to-pink-400",
+    },
+    {
+      id: "Vector Search & DB",
+      name: "Vector Search & DB",
+      icon: Database,
+      description: "FAISS, sentence transformers, vector databases, PostgreSQL, MySQL",
+      color: "from-emerald-600 to-teal-600",
+      lightColor: "from-emerald-400 to-teal-400",
+    },
+    {
+      id: "AI Engineering & APIs",
+      name: "AI Engineering & APIs",
       icon: Server,
-      description: "Pipelines, APIs, data preparation",
-      color: "from-blue-600 to-indigo-600",
-      lightColor: "from-blue-400 to-indigo-400",
+      description: "FastAPI, REST APIs, Hugging Face, Git, GitHub",
+      color: "from-slate-600 to-gray-700",
+      lightColor: "from-slate-400 to-gray-400",
     },
     {
       id: "Data Analysis",
       name: "Data Analysis",
       icon: BarChart3,
-      description: "Exploratory analysis, BI, visualization",
+      description: "EDA, data cleaning, visualization, statistical analysis",
       color: "from-cyan-600 to-sky-600",
       lightColor: "from-cyan-400 to-sky-400",
     },
     {
-      id: "Machine Learning Engineering",
-      name: "Machine Learning",
-      icon: Brain,
-      description: "ML models, predictive modeling, evaluation",
-      color: "from-purple-600 to-pink-600",
-      lightColor: "from-purple-400 to-pink-400",
-    },
-    {
-      id: "Deep Learning",
-      name: "Deep Learning & NLP",
-      icon: Layers,
-      description: "Neural networks, Transformers, Whisper ASR, NLP tasks",
-      color: "from-fuchsia-600 to-violet-600",
-      lightColor: "from-fuchsia-400 to-violet-400",
-    },
-    {
-      id: "Generative AI & RAG",
-      name: "Generative AI & RAG",
-      icon: Sparkles,
-      description: "RAG pipelines, LLMs, embeddings, vector search",
-      color: "from-fuchsia-600 to-rose-600",
-      lightColor: "from-fuchsia-400 to-rose-400",
-    },
-    {
-      id: "Agentic AI",
-      name: "Agentic AI",
-      icon: Bot,
-      description: "Autonomous agents, tool use and orchestration",
-      color: "from-pink-600 to-fuchsia-600",
-      lightColor: "from-pink-400 to-fuchsia-400",
-    },
-    {
-      id: "OCR",
-      name: "OCR",
-      icon: FileText,
-      description: "Extracting text from images & PDFs",
-      color: "from-red-600 to-rose-600",
-      lightColor: "from-red-400 to-rose-400",
-    },
-    {
-      id: "Database",
-      name: "Database",
-      icon: Database,
-      description: "Storage, querying, and management",
-      color: "from-emerald-600 to-teal-600",
-      lightColor: "from-emerald-400 to-teal-400",
-    },
-    {
-      id: "tools",
-      name: "Tools",
-      icon: Wrench,
-      description: "Developer tools & productivity",
-      color: "from-orange-600 to-amber-600",
-      lightColor: "from-orange-400 to-amber-400",
+      id: "Languages & Tools",
+      name: "Languages & Tools",
+      icon: Code,
+      description: "Python, SQL, Jupyter, Google Colab, VS Code",
+      color: "from-blue-600 to-indigo-600",
+      lightColor: "from-blue-400 to-indigo-400",
     },
   ];
-  
+
   const groupedSkills = categories.map((category) => ({
     ...category,
     skills: skills.filter((skill) => skill.category === category.id),
@@ -243,15 +181,15 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
-      {/* Background */}  
+      {/* Background */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500 opacity-10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-500 opacity-10 rounded-full blur-3xl"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">My Skills</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my technical expertise across Data Engineering, ML, Deep Learning, NLP, GenAI, OCR and more.
+            Explore my technical expertise across Machine Learning, Generative AI, Agentic AI, Vector Search, and AI Engineering.
           </p>
         </div>
 
@@ -264,9 +202,9 @@ const Skills: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <DomainBox 
-                domain={domain} 
-                hoveredSkill={hoveredSkill} 
+              <DomainBox
+                domain={domain}
+                hoveredSkill={hoveredSkill}
                 onHoverSkill={setHoveredSkill}
               />
             </motion.div>

@@ -10,7 +10,7 @@ import Events from '@/components/Events';
 import Affiliations from '@/components/Affiliations';
 import Contact from '@/components/Contact';
 import BackgroundEffects from '@/components/BackgroundEffects';
-import VirtualAssistant from '@/components/VirtualAssistant';
+// import VirtualAssistant from '@/components/VirtualAssistant';
 import MyJourney from '@/components/MyJourney';
 
 const Index = () => {
@@ -60,13 +60,13 @@ const Index = () => {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <BackgroundEffects />
-      <VirtualAssistant />
+      {/* <VirtualAssistant /> */}
       
       <main>
         <section id="home">
           <Hero />
         </section>
-        <MyJourney />
+        {/* <MyJourney /> */}
         <section id="about">
           <About />
         </section>

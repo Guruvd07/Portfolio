@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { 
@@ -31,24 +30,27 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [visible, setVisible] = useState(true);
   const isMobile = useIsMobile();
+  const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Navbar shows on any scroll (up or down) and then auto-hides
+  // after the user has stopped scrolling for 3 seconds. Any new
+  // scroll event cancels the pending hide and shows it again.
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMobile) {
-        setVisible(false);
-      } else {
-        setVisible(true);
+      setVisible(true);
+
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
       }
-      setLastScrollY(currentScrollY);
-      
+      idleTimerRef.current = setTimeout(() => {
+        setVisible(false);
+      }, 3000);
+
       const sections = navItems.map(item => item.href.substring(1));
-      
+
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -61,9 +63,20 @@ const Navbar: React.FC = () => {
       }
     };
 
+    // Start the same 3s idle countdown immediately on mount, so
+    // the nav also hides if the user never scrolls at all.
+    idleTimerRef.current = setTimeout(() => {
+      setVisible(false);
+    }, 3000);
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isMobile]);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+    };
+  }, []);
 
   // Expand navbar on hover
   const handleMouseEnter = () => {
@@ -87,9 +100,9 @@ const Navbar: React.FC = () => {
     <AnimatePresence>
       {visible && (
         <motion.nav
-          initial={{ y: isMobile ? 100 : 100, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: isMobile ? 100 : 100, opacity: 0 }}
+          exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3 }}
           className={cn(
             "fixed z-50 flex justify-center pointer-events-none w-full",
@@ -126,7 +139,7 @@ const Navbar: React.FC = () => {
                   <a
                     href={item.href}
                     className={cn(
-                      "flex flex-col items-center font-medium transition-all duration-200",
+                      "relative flex flex-col items-center font-medium transition-all duration-200 pb-2",
                       isMobile ? "text-[8px]" : "text-xs",
                       activeSection === item.href.substring(1)
                         ? "text-primary"
@@ -134,31 +147,22 @@ const Navbar: React.FC = () => {
                     )}
                     onClick={(e) => handleNavClick(e, item.href.substring(1))}
                   >
-                    <div className="relative">
-                      <motion.div
-                        className={cn(
-                          "rounded-full relative",
-                          isMobile ? "p-1" : "p-2"
-                        )}
-                        whileHover={{ scale: 1.15, y: -5 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                      >
-                        <item.icon size={isMobile ? 14 : 20} className={isMobile ? "mb-0" : "mb-1"} />
-                        {activeSection === item.href.substring(1) && (
-                          <motion.div
-                            layoutId="activeSection"
-                            className="absolute -bottom-1 w-full h-0.5 bg-primary"
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                          />
-                        )}
-                      </motion.div>
-                    </div>
+                    <motion.div
+                      className={cn(
+                        "rounded-full",
+                        isMobile ? "p-1" : "p-2"
+                      )}
+                      whileHover={{ scale: 1.15, y: -5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    >
+                      <item.icon size={isMobile ? 14 : 20} className={isMobile ? "mb-0" : "mb-1"} />
+                    </motion.div>
                     <span>{item.label}</span>
                   </a>
                 </motion.li>
               ))}
             </ul>
-          </motion.div>
+      </motion.div>
         </motion.nav>
       )}
     </AnimatePresence>

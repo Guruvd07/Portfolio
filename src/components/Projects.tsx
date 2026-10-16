@@ -95,6 +95,24 @@ import pro54 from "../../public/lovable-uploads/Projects/Aaroya/nirman.jpg"
 // ---- Project 12: Narmada Traders ----
 import pro55 from "../../public/lovable-uploads/Projects/Sentify/1.jpg"
 
+// ---- Project 13: Narmada Traders ----
+import pro56 from "../../public/lovable-uploads/Projects/Handio/01.jpg"
+import pro57 from "../../public/lovable-uploads/Projects/Handio/1.jpg"
+import pro58 from "../../public/lovable-uploads/Projects/Handio/2.jpg"
+import pro59 from "../../public/lovable-uploads/Projects/Handio/3.jpg"
+import pro60 from "../../public/lovable-uploads/Projects/Handio/4.jpg"
+import pro61 from "../../public/lovable-uploads/Projects/Handio/5.jpg"
+import pro62 from "../../public/lovable-uploads/Projects/Handio/6.jpg"
+import pro63 from "../../public/lovable-uploads/Projects/Handio/7.jpg"
+import pro64 from "../../public/lovable-uploads/Projects/Handio/8.jpg"
+import pro65 from "../../public/lovable-uploads/Projects/Handio/9.jpg"
+import pro66 from "../../public/lovable-uploads/Projects/Handio/10.jpg"
+import pro67 from "../../public/lovable-uploads/Projects/Handio/11.jpg"
+import pro68 from "../../public/lovable-uploads/Projects/Handio/Handio_ Smarter Home Services.png"
+import pro69 from "../../public/lovable-uploads/Projects/Handio/Handio Smart Services Banner.png"
+
+
+
 
 interface Project {
   id: string
@@ -172,6 +190,39 @@ const Projects: React.FC = () => {
     },
 
     {
+      id: "project13",
+      title: "Handio AI",
+      shortDescription:
+        "Handio AI is an AI-powered home service marketplace that connects customers with service providers using intelligent service matching, LLM-based conversational AI, and personalized provider discovery.",
+      fullDescription:
+        "Handio AI is a full-stack intelligent service marketplace built using the MERN stack. It integrates AI-powered service matching and an LLM-based conversational assistant to help users discover relevant home services through natural language interactions. The platform includes customer, provider, and admin roles, provider search with filters, end-to-end booking workflows, real-time messaging using Socket.IO, reviews and ratings, and role-specific dashboards. It combines Generative AI integration with scalable REST APIs, JWT-based authentication, and MongoDB-backed data management to deliver an intelligent service discovery experience.",
+      technologies: [
+        "Python",
+        "Generative AI",
+        "Large Language Models (LLMs)",
+        "Prompt Engineering",
+        "AI Service Matching",
+        "Recommendation Systems",
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "JavaScript",
+        "Socket.IO",
+        "JWT Authentication",
+        "REST APIs",
+      ],
+      links: {
+        live: "https://handio-frontend.vercel.app/",
+        github: "https://github.com/Guruvd07/Handio-backend",
+      },
+      image: pro69,
+      images: [pro56, pro57, pro58 , pro59 , pro60 , pro61 , pro62 , pro63 , pro64 , pro65 , pro66 , pro67 , pro68 ],
+      date: "2026",
+      featured: true,
+    },
+
+    {
       id: "project3",
       title: "GuruDoc AI",
       shortDescription:
@@ -191,31 +242,6 @@ const Projects: React.FC = () => {
       links: { github: " https://github.com/Guruvd07/DocGuru-AI.git" },
       image: pro13,
       images: [pro14, pro15, pro16, pro17, pro18, pro19, pro20, pro21], // added multiple images array
-      date: "2025",
-      featured: true,
-    },
-
-    {
-      id: "project2",
-      title: "InsightGuru AI",
-      shortDescription:
-        "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
-      fullDescription:
-        "InsightGuru AI is an advanced AI system that analyzes YouTube videos by extracting transcripts through a 4-level pipeline (VTT → TimedText → Transcript API → Whisper ASR). It detects keyword-specific segments and generates precise, context-aware summaries using FLAN-T5 transformers. The project includes real-time processing through a sleek Flask web interface, helping users quickly find what a speaker said about any topic or person.",
-      technologies: [
-        "Python",
-        "Flask",
-        "Hugging Face Transformers",
-        "FLAN-T5",
-        "Whisper ASR",
-        "YouTube API",
-        "NLP",
-        "Text Summarization",
-        "HTML/CSS/JS",
-      ],
-      links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
-      image: pro22,
-      images: [pro23, pro24, pro25], // added multiple images array
       date: "2025",
       featured: true,
     },
@@ -293,6 +319,32 @@ const Projects: React.FC = () => {
       date: "2026",
       featured: true,
     },
+
+    {
+      id: "project2",
+      title: "InsightGuru AI",
+      shortDescription:
+        "Extracts keyword-specific insights from YouTube videos using multi-level transcript processing and transformer-based summarization.",
+      fullDescription:
+        "InsightGuru AI is an advanced AI system that analyzes YouTube videos by extracting transcripts through a 4-level pipeline (VTT → TimedText → Transcript API → Whisper ASR). It detects keyword-specific segments and generates precise, context-aware summaries using FLAN-T5 transformers. The project includes real-time processing through a sleek Flask web interface, helping users quickly find what a speaker said about any topic or person.",
+      technologies: [
+        "Python",
+        "Flask",
+        "Hugging Face Transformers",
+        "FLAN-T5",
+        "Whisper ASR",
+        "YouTube API",
+        "NLP",
+        "Text Summarization",
+        "HTML/CSS/JS",
+      ],
+      links: { github: "https://github.com/Guruvd07/GuruInsight-AI.git" },
+      image: pro22,
+      images: [pro23, pro24, pro25], // added multiple images array
+      date: "2025",
+      featured: true,
+    },
+
 
 
     {

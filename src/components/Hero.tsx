@@ -1196,7 +1196,7 @@ const Hero: React.FC = () => {
         {/* Instagram */}
 
         <motion.a
-          href="https://www.instagram.com/guruvd_07"
+          href="https://www.instagram.com/guruu.d7"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"

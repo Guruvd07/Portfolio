@@ -11,7 +11,7 @@ import Affiliations from '@/components/Affiliations';
 import Contact from '@/components/Contact';
 import BackgroundEffects from '@/components/BackgroundEffects';
 // import VirtualAssistant from '@/components/VirtualAssistant';
-import MyJourney from '@/components/MyJourney';
+import Experience from '@/components/experience';
 
 const Index = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -70,6 +70,10 @@ const Index = () => {
         <section id="about">
           <About />
         </section>
+
+        <section id="experience">
+          <Experience />
+        </section>
         
         <section id="skills">
           <Skills />
@@ -86,7 +90,7 @@ const Index = () => {
         <section id="events">
           <Events />
         </section>
-        
+       
         <section id="affiliations">
           <Affiliations />
         </section>

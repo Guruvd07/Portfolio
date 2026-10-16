@@ -601,21 +601,25 @@ const About: React.FC = () => {
               </h3>
 
               <div className="space-y-4">
-                {[
-                  {
-                    label: "Current Role",
-                    value: "AI/ML Engineer",
-                  },
-                  {
-                    label: "Education",
-                    value:
-                      "B.Tech, Computer Engineering — MIT Academy of Engineering",
-                  },
-                  {
-                    label: "Experience",
-                    value:
-                      "Ex - Data Scientist Intern at BTD Service India",
-                  },
+              {[
+                {
+                  label: "Current Role",
+                  value: "AI/ML Engineer",
+                },
+                {
+                  label: "Education",
+                  value:
+                    "B.Tech, Computer Engineering — MIT Academy of Engineering",
+                },
+                {
+                  label: "Experience",
+                  value: "AI/ML Intern at Ethovise Tech Consultancy",
+                },
+                {
+                  label: "Previous Experience",
+                  value: "Data Scientist Intern at BTD Service India",
+                },
+
                 ].map((item, index) => (
                   <motion.div
                     key={index}

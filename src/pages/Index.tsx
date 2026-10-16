@@ -11,7 +11,7 @@ import Affiliations from '@/components/Affiliations';
 import Contact from '@/components/Contact';
 import BackgroundEffects from '@/components/BackgroundEffects';
 // import VirtualAssistant from '@/components/VirtualAssistant';
-import Experience from '@/components/experience';
+import Experience from '@/components/Experience';
 
 const Index = () => {
   const [showNavbar, setShowNavbar] = useState(false);
